@@ -6,14 +6,14 @@ build/
 *.pyc 
 *~.nib/
 
-*.pbxuser
-*.mode1v3
-*.perspective
-*.perspectivev3
+# *.pbxuser
+# *.mode1v3
+# *.perspective
+# *.perspectivev3
 
 # the above lines are simplify as below:
 
-# *.xcodeproj/
+*.xcodeproj/
 # !*.xcodeproj/project.pbxproj
 
 # osx noise
