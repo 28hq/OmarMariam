@@ -13,7 +13,7 @@ build/
 
 # the above lines are simplify as below:
 
-.xcodeproj/* 
+*.xcodeproj/
 !*.xcodeproj/project.pbxproj
 
 # osx noise
