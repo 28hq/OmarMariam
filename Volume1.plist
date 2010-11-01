@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>LabelGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>عمر</string>
+					<key>picture</key>
+					<string>umar</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>مريم</string>
+					<key>picture</key>
+					<string>maryam</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قطه</string>
+					<key>picture</key>
+					<string>qittah</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>عمر</string>
+					<key>picture</key>
+					<string>umar</string>
+				</dict>
+			</array>
+			<string></string>
+		</array>
+		<key>ClozeGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>هذا</string>
+					<key>sentence</key>
+					<string># غمر.</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>هده</string>
+					<key>sentence</key>
+					<string>و # مريم.</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>انا</string>
+				</dict>
+				<string>omarmariam</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>هذا</string>
+					<key>sentence</key>
+					<string># غمر.</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>مريم</string>
+					<key>sentence</key>
+					<string>هذه #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>هذه</string>
+					<key>sentence</key>
+					<string> # قطة.</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يجب</string>
+					<key>sentence</key>
+					<string> عمر # القطة.</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تحب</string>
+					<key>sentence</key>
+					<string>مري # القطة.</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>آحب</string>
+					<key>sentence</key>
+					<string>آنا # القطة.</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+		</array>
+		<key>QuizGame</key>
+		<array>
+			<dict>
+				<key>question</key>
+				<string>من هذا؟</string>
+				<key>answer</key>
+				<string>هذا عمر</string>
+				<key>picture</key>
+				<string>umar</string>
+				<key>choices</key>
+				<array>
+					<string>هذه مريم</string>
+					<string>هذه عمر</string>
+				</array>
+			</dict>
+			<array>
+				<dict>
+					<key>question</key>
+					<string>من هذا؟</string>
+					<key>answer</key>
+					<string>هذا عمر</string>
+					<key>picture</key>
+					<string></string>
+					<key>choices</key>
+					<array>
+						<string>هذه مريم</string>
+						<string>هذه عمر</string>
+					</array>
+				</dict>
+				<dict/>
+				<dict/>
+				<dict/>
+				<dict/>
+			</array>
+		</array>
+	</dict>
+</array>
+</plist>
