@@ -44,9 +44,15 @@
 @property (nonatomic, retain) IBOutlet UIButton *continueButton;
 @property (nonatomic, retain) IBOutlet UIImageView *gameNumber;
 
+@property (nonatomic, retain) IBOutlet UIView *cover;
+@property (nonatomic, retain) IBOutlet UIView *game;
+@property (nonatomic, retain) IBOutlet UIView *end;
+
 - (void)levelSelector:(int)level;
 - (BOOL)noQuestionLeft;
 - (void)nextLevel;
+- (void)createLevelIndicator;
 - (IBAction)startGameAtLevel:(id)sender;
+- (IBAction)playAgain:(id)sender;
 
 @end

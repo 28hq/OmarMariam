@@ -134,6 +134,7 @@
 				viewController.questionLeft = viewController.questionLeft - 1;
 				if ([viewController noQuestionLeft]) 
 				{
+					NSLog(@"going next");
 					[viewController nextLevel];
 				}
 				

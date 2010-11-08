@@ -6,11 +6,11 @@
 //  Copyright 2010 Brainstorm Technologies Sdn Bhd. All rights reserved.
 //
 
+#import <QuartzCore/QuartzCore.h>
 #import "LabelViewController.h"
 #import "LabelView.h"
 
-#define kIndicatorHeight 30.0
-#define kIndicatorWidth 100.0
+#import "Constants.h"
 
 @interface LabelViewController()
 
@@ -34,6 +34,7 @@ extern float const LBMagnification;
 // IBOutlet
 @synthesize gameNumber, levelIndicator;
 @synthesize continueButtonView, continueButton;
+@synthesize cover, game, end;
 
 int const LBPaddingTop = 50;
 int const LBPaddingRight = 100;
@@ -108,7 +109,9 @@ float const LBMagnification = 2.0;
 
 - (void)nextLevel {
 
-	if (self.isAtLevel + 1 == self.totalLevel) {
+	// is at the end of the game. encounter last question.
+	if (self.isAtLevel == self.totalLevel) {
+		[self.view addSubview:self.end];
 		return;
 	}
 	self.isAtLevel = self.isAtLevel + 1;
@@ -167,6 +170,9 @@ float const LBMagnification = 2.0;
 		[self.dropViews removeAllObjects];
 	}
 	
+	// Create level indicator
+	[self createLevelIndicator];
+	
 	// Positioning Text on views.
 	NSUInteger i, count = [self._theData count];
 	
@@ -205,11 +211,25 @@ float const LBMagnification = 2.0;
 			[textLabel release];
 			[word release];
 			
-			// Set the location of the `picture`
-			NSBundle *myBundle = [NSBundle mainBundle];
+			//NSLog(@"",);//%@/Volume1/LabelGames/Game1/Images/%@.png);
 			
-			UIImage *image = [[UIImage alloc] initWithContentsOfFile:
-							  [NSString stringWithFormat:@"%@/Volume1/LabelGames/Game1/Images/%@.png", [myBundle bundlePath], [obj valueForKey:@"picture"]]];
+			NSString *directory = [NSString stringWithString:@"Volume1/LabelGames/Game1/Images"];
+			NSFileManager *fileMgr = [NSFileManager defaultManager];
+			NSString *filePath = [[NSBundle mainBundle] pathForResource:[obj valueForKey:@"picture"]
+																 ofType:@"png"
+															inDirectory:directory];
+			
+			// Automatically determine the existence of image.
+			// If image does not exist in book directory, find it in root directory.
+			
+			if (![fileMgr fileExistsAtPath:filePath]) {
+				filePath = [[NSBundle mainBundle] pathForResource:[obj valueForKey:@"picture"]
+														   ofType:@"png"];
+			}
+			
+			// Set the location of the `picture`
+			
+			UIImage *image = [[UIImage alloc] initWithContentsOfFile:filePath];
 			
 			if (nil != image) 
 			{
@@ -249,10 +269,11 @@ float const LBMagnification = 2.0;
 				dropRect.origin.y = frame.origin.y + frame.size.height;
 				
 				UIView *dropPlace = [[UIView alloc] initWithFrame:dropRect];
-				dropPlace.backgroundColor = [UIColor redColor];
+				dropPlace.backgroundColor = [UIColor clearColor];
+				dropPlace.layer.borderColor = [[UIColor blackColor] CGColor];
+				dropPlace.layer.borderWidth = 1;
 				dropPlace.tag = i;
-				
-				
+								
 				[self.dropViews addObject:dropPlace];
 				[self.view addSubview:dropPlace];
 				[dropPlace release];
@@ -263,12 +284,19 @@ float const LBMagnification = 2.0;
 		}
 		[obj release];
 	}
+		
+	[self._theData release];
+	self._theData = nil;
+}
+
+- (void)createLevelIndicator {
 	
 	// Creating level state indicator
 	
 	for (int i = 0; i < self.totalLevel; i++) 	
 	{
 		UIView * indicatorBox = [[UIView alloc] init];
+		indicatorBox.tag = kLevelIndicatorViewID;
 		
 		CGRect indicatorFrame = CGRectMake(self.levelIndicator.frame.origin.x 
 										   + self.levelIndicator.frame.size.width
@@ -283,9 +311,9 @@ float const LBMagnification = 2.0;
 			indicatorBox.backgroundColor = [UIColor yellowColor];
 		}
 		else {
-			indicatorBox.backgroundColor = [UIColor clearColor];
+			indicatorBox.backgroundColor = [UIColor lightGrayColor];
 		}
-
+		
 		
 		[self.view addSubview:indicatorBox];
 		
@@ -305,16 +333,23 @@ float const LBMagnification = 2.0;
 	labelLevel.frame = aFrame;
 	labelLevel.backgroundColor = [UIColor clearColor];
 	labelLevel.text = @"LEVEL";
+	labelLevel.tag = kLevelIndicatorViewID;
 	labelLevel.textAlignment = UITextAlignmentRight;
 	[self.view addSubview:labelLevel];
 	[labelLevel release];
-	
-	[self._theData release];
-	self._theData = nil;
 }
 
 - (IBAction)startGameAtLevel:(id)sender {
 	[self levelSelector:(int)[sender tag]];
+}
+
+- (IBAction)playAgain:(id)sender 
+{	
+	self.isAtLevel = 1;
+	
+	[self levelSelector:self.isAtLevel];
+	
+	[[self.view viewWithTag:503] removeFromSuperview];
 }
 
 - (BOOL)noQuestionLeft 

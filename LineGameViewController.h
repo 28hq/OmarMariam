@@ -10,7 +10,44 @@
 
 
 @interface LineGameViewController : UIViewController {
+	NSMutableArray *wordViews;
+	NSMutableArray *pictureViews;
+
+	NSArray * theData;
+	UIImage * gameNumberImage;
+	int questionLeft;
+	int isAtLevel;
+	int totalLevel;
+	
+	// IBOutlet
+	UIView *cover, *game, *end;
+	UIView *levelIndicator;
+	UIView *wordView, *pictureView;
+	UIButton *continueButton;
+	UIImageView *levelImageView, *levelImageView2, *gameNumber, *gameNumber2;
 
 }
+
+@property (nonatomic, retain) NSMutableArray	*wordViews;
+@property (nonatomic, retain) NSMutableArray	*pictureViews;
+@property (nonatomic, retain) UIImage			*gameNumberImage;
+@property (nonatomic, retain) NSArray			*theData;
+@property int questionLeft, isAtLevel, totalLevel;
+
+// IBOutlet
+@property (nonatomic, retain) IBOutlet UIView		*cover, *game, *end;
+@property (nonatomic, retain) IBOutlet UIView		*levelIndicator;
+@property (nonatomic, retain) IBOutlet UIView		*wordView, *pictureView;
+@property (nonatomic, retain) IBOutlet UIButton		*continueButton;
+@property (nonatomic, retain) IBOutlet UIImageView *levelImageView, *levelImageView2, *gameNumber, *gameNumber2;
+
+
+- (IBAction)startGame:(id)sender;
+- (IBAction)playAgain:(id)sender;
+- (void)levelSelector:(int)level;
+- (void)createLevelIndicator;
+- (void)checkLevelCompletion;
+- (void)continueToNextLevel;
+- (void)cleanUp;
 
 @end

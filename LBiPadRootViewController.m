@@ -7,8 +7,8 @@
 //
 
 #import "LBiPadRootViewController.h"
-//#import "LBiBook7Page28n29ViewController.h"
 #import "BookViewController.h"
+#import "LineGameViewController.h"
 #import "LabelViewController.h"
 #import "ClozeGameViewController.h"
 #import "QuizViewController.h"
@@ -102,10 +102,10 @@
 
 - (IBAction)openBook1:(id)sender
 {
-//	LBiBook7Page28n29ViewController *rvc = [[[LBiBook7Page28n29ViewController alloc] init] autorelease];
-//	nvcBook1 = [[UINavigationController alloc] initWithRootViewController:rvc];
-//	nvcBook1.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-//	[self presentModalViewController:nvcBook1 animated:YES];
+	UIViewController *viewController;
+	
+	viewController = [[LineGameViewController alloc] initWithNibName:@"LineGameViewController" bundle:nil];
+	[self presentModalViewController:viewController animated:YES];
 }
 
 - (IBAction)openBook2:(id)sender

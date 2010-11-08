@@ -9,19 +9,8 @@
 #import "ClozeGameViewController.h"
 #import "AppDelegate_iPad.h"
 
-#define kIndicatorHeight 30.0
-#define kIndicatorWidth 100.0
+#import "Constants.h"
 
-#define kLBPaddingTop 20.0
-#define kLBPaddingRight 100.0
-#define kLBPaddingBottom 100.0
-#define kLBPaddingLeft 80.0
-#define kLBGap 80.0
-#define kLBWidth 200.0
-#define kLBMagnification 2.0
-#define kBlankWidth 100.0
-
-#define kLevelIndicatorViewID 1001
 
 @implementation ClozeGameViewController
 
@@ -108,7 +97,7 @@
 	
 	for (UIView * subview in [self.view subviews]) 
 	{
-		if (subview.tag == 51 || subview.tag == kLevelIndicatorViewID) {
+		if (subview.tag == kUnderlineViewID || subview.tag == kLevelIndicatorViewID) {
 			[subview removeFromSuperview];
 			//break;
 		}
@@ -287,7 +276,7 @@
 					// Create underline.
 					UIView *underline = [[UIView alloc] initWithFrame:dropRect];
 					underline.backgroundColor = [UIColor blackColor];
-					underline.tag = 51;
+					underline.tag = kUnderlineViewID;
 					CGRect lineFrame = dropRect;
 					
 					lineFrame.size.height = 2.0;				
@@ -371,7 +360,7 @@
 			indicatorBox.backgroundColor = [UIColor yellowColor];
 		}
 		else {
-			indicatorBox.backgroundColor = [UIColor clearColor];
+			indicatorBox.backgroundColor = [UIColor lightGrayColor];
 		}
 		
 		
@@ -393,6 +382,7 @@
 	labelLevel.frame = aFrame;
 	labelLevel.backgroundColor = [UIColor clearColor];
 	labelLevel.text = @"LEVEL";
+	labelLevel.tag = kLevelIndicatorViewID;
 	labelLevel.textAlignment = UITextAlignmentRight;
 	[self.view addSubview:labelLevel];
 	[labelLevel release];
