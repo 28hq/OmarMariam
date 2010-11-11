@@ -3,6 +3,70 @@
 <plist version="1.0">
 <array>
 	<dict>
+		<key>ClozeGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>هذا</string>
+					<key>sentence</key>
+					<string>   # عمر</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>هذه</string>
+					<key>sentence</key>
+					<string>و # مريم.</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>انا</string>
+				</dict>
+				<dict/>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>هذا</string>
+					<key>sentence</key>
+					<string>   # عمر</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>مريم</string>
+					<key>sentence</key>
+					<string>هذه #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>هذه</string>
+					<key>sentence</key>
+					<string> # قطة.</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يجب</string>
+					<key>sentence</key>
+					<string> عمر # القطة.</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تحب</string>
+					<key>sentence</key>
+					<string>مري # القطة.</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>آحب</string>
+					<key>sentence</key>
+					<string>آنا # القطة.</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+		</array>
 		<key>LineGame</key>
 		<array>
 			<array>
@@ -81,70 +145,6 @@
 					<key>picture</key>
 					<string>omar</string>
 				</dict>
-			</array>
-		</array>
-		<key>ClozeGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>هذا</string>
-					<key>sentence</key>
-					<string># غمر.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>هده</string>
-					<key>sentence</key>
-					<string>و # مريم.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>انا</string>
-				</dict>
-				<string>omarmariam</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>هذا</string>
-					<key>sentence</key>
-					<string># غمر.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>sentence</key>
-					<string>هذه #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>هذه</string>
-					<key>sentence</key>
-					<string> # قطة.</string>
-				</dict>
-				<string>omarmariamqittah</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يجب</string>
-					<key>sentence</key>
-					<string> عمر # القطة.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تحب</string>
-					<key>sentence</key>
-					<string>مري # القطة.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>آحب</string>
-					<key>sentence</key>
-					<string>آنا # القطة.</string>
-				</dict>
-				<string>omarmariamqittah</string>
 			</array>
 		</array>
 		<key>QuizGame</key>
