@@ -18,6 +18,8 @@
 		28AD733F0D9D9553002E5188 /* MainWindow_iPad.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow_iPad.xib */; };
 		28EEBFDD1118E19E00187D67 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28EEBFDC1118E19E00187D67 /* CoreData.framework */; };
 		28EEC04B1118E28000187D67 /* AppDelegate_Shared.m in Sources */ = {isa = PBXBuildFile; fileRef = 28EEC04A1118E28000187D67 /* AppDelegate_Shared.m */; };
+		3A16FB74128AC559004343ED /* GamesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A16FB72128AC559004343ED /* GamesViewController.m */; };
+		3A16FB75128AC559004343ED /* GamesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A16FB73128AC559004343ED /* GamesViewController.xib */; };
 		3A199C34127D802100C022B1 /* omarmariam-o.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A199C33127D802100C022B1 /* omarmariam-o.png */; };
 		3A199C36127D802F00C022B1 /* omarmariamqittah-o.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A199C35127D802F00C022B1 /* omarmariamqittah-o.png */; };
 		3A199C4D127D847F00C022B1 /* QuizViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A199C4B127D847F00C022B1 /* QuizViewController.m */; };
@@ -166,6 +168,9 @@
 		28EEC04A1118E28000187D67 /* AppDelegate_Shared.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate_Shared.m; path = Shared/AppDelegate_Shared.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = Shared/main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* OmarMariam_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OmarMariam_Prefix.pch; sourceTree = "<group>"; };
+		3A16FB71128AC559004343ED /* GamesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GamesViewController.h; sourceTree = "<group>"; };
+		3A16FB72128AC559004343ED /* GamesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GamesViewController.m; sourceTree = "<group>"; };
+		3A16FB73128AC559004343ED /* GamesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamesViewController.xib; sourceTree = "<group>"; };
 		3A199C33127D802100C022B1 /* omarmariam-o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omarmariam-o.png"; sourceTree = "<group>"; };
 		3A199C35127D802F00C022B1 /* omarmariamqittah-o.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "omarmariamqittah-o.png"; sourceTree = "<group>"; };
 		3A199C4A127D847F00C022B1 /* QuizViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuizViewController.h; sourceTree = "<group>"; };
@@ -423,6 +428,7 @@
 				3A63438712566E9A00EE14DA /* BP101.jpg */,
 			);
 			name = BookCover;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		3A944573128067BA00590EFA /* Game Images */ = {
@@ -534,6 +540,7 @@
 		7A61728E12375F8300C7A5F4 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				3A3E856D1258371400FAB522 /* BookCover */,
 				3A9446561280E15300590EFA /* Game Audios */,
 				3A944573128067BA00590EFA /* Game Images */,
 				3A199C59127D8BD500C022B1 /* pictureFrame.png */,
@@ -590,7 +597,6 @@
 		7AD05BFA1234DC3F00C2EC84 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3A3E856D1258371400FAB522 /* BookCover */,
 				3A3E83C5125835AE00FAB522 /* Volume1 */,
 				7A61728E12375F8300C7A5F4 /* Common */,
 			);
@@ -620,6 +626,9 @@
 				3A199C4A127D847F00C022B1 /* QuizViewController.h */,
 				3A199C4B127D847F00C022B1 /* QuizViewController.m */,
 				3A199C4C127D847F00C022B1 /* QuizViewController.xib */,
+				3A16FB71128AC559004343ED /* GamesViewController.h */,
+				3A16FB72128AC559004343ED /* GamesViewController.m */,
+				3A16FB73128AC559004343ED /* GamesViewController.xib */,
 			);
 			name = iBooks;
 			sourceTree = "<group>";
@@ -785,6 +794,7 @@
 				3A9446B01280E6EF00590EFA /* cover6.png in Resources */,
 				3A9446B11280E6EF00590EFA /* cover7.png in Resources */,
 				3A28FC401282E16300FACC97 /* omarmariam.png in Resources */,
+				3A16FB75128AC559004343ED /* GamesViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -813,6 +823,7 @@
 				3A199C4D127D847F00C022B1 /* QuizViewController.m in Sources */,
 				3A89B406127E7705008F313D /* LBiPadRootViewController.m in Sources */,
 				3A28F7ED128255BB00FACC97 /* LineView.m in Sources */,
+				3A16FB74128AC559004343ED /* GamesViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

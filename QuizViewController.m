@@ -503,6 +503,7 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	
 	
 	self.currentQuestionNo = 1;
+	self.totalScore = 0;
 	
 	[[self.view viewWithTag:503] removeFromSuperview];
 	

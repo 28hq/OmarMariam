@@ -24,6 +24,7 @@
 - (id)initWithBookNumber:(int)number 
 {
 	self.bookNumber = number;
+	//self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	
 	NSString *bookPath = [NSString stringWithFormat:@"Volume1/iBooks/iBook%d", number];
     
@@ -64,6 +65,10 @@
     [super dealloc];
 }
 
+- (void)exitBook {
+	[self dismissModalViewControllerAnimated:YES];
+}
+
 #pragma mark  LeavesViewDelegate methods
 
 - (void) leavesView:(LeavesView *)leavesView willTurnToPageAtIndex:(NSUInteger)pageIndex {
@@ -98,6 +103,12 @@
 		soundPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathToMusicFile] error:NULL];
 		soundPlay.delegate = self;
 	}
+	
+	// last page.
+	
+	if (pageIndex >= images.count-1) {
+		[self performSelector:@selector(exitBook) withObject:self afterDelay:3];
+	}
 }
 
 #pragma mark LeavesViewDataSource methods
@@ -115,6 +126,7 @@
 	CGContextConcatCTM(ctx, transform);
 	CGContextDrawImage(ctx, imageRect, [image CGImage]);
 }
+
 
 #pragma mark Audio Player
 

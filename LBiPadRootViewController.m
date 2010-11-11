@@ -7,6 +7,7 @@
 //
 
 #import "LBiPadRootViewController.h"
+#import "GamesViewController.h"
 #import "BookViewController.h"
 #import "LineGameViewController.h"
 #import "LabelViewController.h"
@@ -78,7 +79,7 @@
 	// Customize shelves and book covers here.
 	//btnBook2.hidden = YES;
 	//btnBook3.hidden = YES;
-	btnBook4.hidden = YES;
+	//btnBook4.hidden = YES;
 	//btnBook5.hidden = YES;
 	//btnBook6.hidden = YES;
 	//btnBook7.hidden = YES;
@@ -102,70 +103,72 @@
 
 - (IBAction)openBook1:(id)sender
 {
-	UIViewController *viewController;
+	GamesViewController *gameController;
 	
-	viewController = [[LineGameViewController alloc] initWithNibName:@"LineGameViewController" bundle:nil];
-	[self presentModalViewController:viewController animated:YES];
+	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
+	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	gameController.bookNumber = 1;
+	[self presentModalViewController:gameController animated:YES];
 }
 
 - (IBAction)openBook2:(id)sender
 {
-	UIViewController *viewController;
+	GamesViewController *gameController;
 	
-	viewController = [[[BookViewController alloc] initWithBookNumber:2] autorelease];
-	[self presentModalViewController:viewController animated:YES];
+	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
+	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	gameController.bookNumber = 2;
+	[self presentModalViewController:gameController animated:YES];
 }
 
 - (IBAction)openBook3:(id)sender
 {
-	UIViewController *viewController;
+	GamesViewController *gameController;
 	
-	viewController = [[[BookViewController alloc] initWithBookNumber:3] autorelease];
-	[self presentModalViewController:viewController animated:YES];
+	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
+	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	gameController.bookNumber = 3;
+	[self presentModalViewController:gameController animated:YES];
 }
 
 - (IBAction)openBook4:(id)sender
 {
-	UIViewController *viewController;
+	GamesViewController *gameController;
 	
-	viewController = [[[BookViewController alloc] initWithBookNumber:4] autorelease];
-	[self presentModalViewController:viewController animated:YES];
+	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
+	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	gameController.bookNumber = 4;
+	[self presentModalViewController:gameController animated:YES];
 }
 
 - (IBAction)openBook5:(id)sender
 {
-//	UIViewController *viewController;
-//	
-//	viewController = [[[BookViewController alloc] initWithBookNumber:5] autorelease];
-//	[self presentModalViewController:viewController animated:YES];
+	GamesViewController *gameController;
 	
-	QuizViewController *viewController;
-	viewController = [[QuizViewController alloc] initWithNibName:@"QuizViewController" bundle:nil];
-	[self presentModalViewController:viewController animated:YES];
+	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
+	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	gameController.bookNumber = 5;
+	[self presentModalViewController:gameController animated:YES];
 }
 
 - (IBAction)openBook6:(id)sender
 {
-//	UIViewController *viewController;
-//	
-//	viewController = [[[BookViewController alloc] initWithBookNumber:6] autorelease];
-//	[self presentModalViewController:viewController animated:YES];
+	GamesViewController *gameController;
 	
-	ClozeGameViewController *viewController;
-	viewController = [[ClozeGameViewController alloc] initWithNibName:@"ClozeGameViewController" bundle:nil];
-	[self presentModalViewController:viewController animated:YES];
+	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
+	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	gameController.bookNumber = 6;
+	[self presentModalViewController:gameController animated:YES];
 }
 
 - (IBAction)openBook7:(id)sender
 {
-//	UIViewController *viewController;
-//	
-//	viewController = [[[BookViewController alloc] initWithBookNumber:7] autorelease];
-//	[self presentModalViewController:viewController animated:YES];
+	GamesViewController *gameController;
 	
-	LabelViewController *viewController; 
-	viewController = [[LabelViewController alloc] initWithNibName:@"LabelViewController" bundle:nil];
-	[self presentModalViewController:viewController animated:YES];
+	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
+	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+	gameController.bookNumber = 7;
+	[self presentModalViewController:gameController animated:YES];
 }
 
 @end
