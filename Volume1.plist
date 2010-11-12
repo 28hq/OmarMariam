@@ -1255,61 +1255,143 @@
 			<array>
 				<dict>
 					<key>word</key>
-					<string>هذا</string>
+					<string>المدرسة</string>
 					<key>sentence</key>
-					<string>   # عمر</string>
+					<string>  عمر و مريم يذهبان إلي #</string>
 				</dict>
 				<dict>
 					<key>word</key>
-					<string>هذه</string>
+					<string>الحقيبة</string>
 					<key>sentence</key>
-					<string>و # مريم.</string>
+					<string> عمر و مريم عند هما # </string>
 				</dict>
 				<dict>
 					<key>word</key>
-					<string>انا</string>
+					<string>صفراء</string>
+					<key>sentence</key>
+					<string>حقيبة عمر #</string>
 				</dict>
-				<dict/>
+				<dict>
+					<key>word</key>
+					<string>خضراء</string>
+					<key>sentence</key>
+					<string>وحقيبه مريم #</string>
+				</dict>
 			</array>
 			<array>
 				<dict>
 					<key>word</key>
-					<string>هذا</string>
+					<string>يلبس</string>
 					<key>sentence</key>
-					<string>   # عمر</string>
+					<string> عمر# الحذاء</string>
 				</dict>
 				<dict>
 					<key>word</key>
-					<string>مريم</string>
+					<string>تلبس ، الحذاء</string>
 					<key>sentence</key>
-					<string>هذه #</string>
+					<string>مريم # #</string>
 				</dict>
 				<dict>
 					<key>word</key>
-					<string>هذه</string>
+					<string>يلبسان</string>
 					<key>sentence</key>
-					<string> # قطة.</string>
+					<string>عمر و مريم # الحذاء</string>
 				</dict>
 				<string>omarmariamkitten</string>
 			</array>
 			<array>
 				<dict>
 					<key>word</key>
-					<string>يجب</string>
+					<string>يگتب</string>
 					<key>sentence</key>
-					<string> عمر # القطة.</string>
+					<string> عمر # في المدرسه</string>
 				</dict>
 				<dict>
 					<key>word</key>
-					<string>تحب</string>
+					<string>تگتب</string>
 					<key>sentence</key>
-					<string>مري # القطة.</string>
+					<string>مريم # في المدرسه</string>
 				</dict>
 				<dict>
 					<key>word</key>
-					<string>آحب</string>
+					<string>يأگلان</string>
 					<key>sentence</key>
-					<string>آنا # القطة.</string>
+					<string>عمرومريم # الطعام</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>المطعم</string>
+					<key>sentence</key>
+					<string>في #</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>الأصدقاء</string>
+					<key>sentence</key>
+					<string> عمريلعب بالگرة مع #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الصديقات</string>
+					<key>sentence</key>
+					<string>مريم تلعب الگرة مع #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الآن ، الملعب</string>
+					<key>sentence</key>
+					<string>هما # في #</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>المصلي</string>
+					<key>sentence</key>
+					<string> عمر و مريم في #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يصلي</string>
+					<key>sentence</key>
+					<string>عمر # مع الأصدقاء</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تصلي</string>
+					<key>sentence</key>
+					<string>مريم # مع الصديقات</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>جماعة</string>
+					<key>sentence</key>
+					<string>هم يصلون #</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>المصلي</string>
+					<key>sentence</key>
+					<string> عمر و مريم في #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يدعو ، تدعو</string>
+					<key>sentence</key>
+					<string>عمر # ، و مريم # </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الجماعة</string>
+					<key>sentence</key>
+					<string>همايدعوان مع #</string>
 				</dict>
 				<string>omarmariamkitten</string>
 			</array>
