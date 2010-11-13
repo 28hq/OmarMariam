@@ -20,3 +20,6 @@ build/
 .DS_Store
 profile
 
+# application specific
+Volume1.plist
+

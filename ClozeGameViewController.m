@@ -385,12 +385,25 @@
 
 - (UIImage *)getImage:(NSString *)imageName 
 {
+
 	NSString *directory = [NSString stringWithFormat:@"Volume1/ClozeGames/Game%d/Images", self.bookNumber];
 
-	NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageName
-														 ofType:@"png"
-													inDirectory:directory];
+	NSString *imagePath;
+	
+	NSRange range = [imageName rangeOfString:@"."];
 
+	if (range.location != NSNotFound) 
+	{
+		imagePath = [[NSBundle mainBundle] pathForResource:[imageName substringToIndex:range.location]
+															  ofType:[imageName substringFromIndex:range.location+1]
+														 inDirectory:directory];
+	}
+	else {
+		imagePath = [[NSBundle mainBundle] pathForResource:imageName
+															  ofType:@"png"
+														 inDirectory:directory];
+	}
+	
 	UIImage * image = [[UIImage alloc] initWithContentsOfFile:imagePath];
 
 	[image autorelease];
