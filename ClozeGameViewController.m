@@ -162,7 +162,7 @@
 	{
 		NSObject * obj = [[self.theData objectAtIndex:i] retain];
 		
-		if ([obj isKindOfClass:[NSDictionary class]]) 
+		if ([obj isKindOfClass:[NSDictionary class]] && [(NSDictionary*)obj count] > 0) 
 		{
 			
 			// Set the location of the `word`
@@ -219,10 +219,11 @@
 			
 			NSUInteger j, count = [stringArray count];
 			
+			
 			for (j = 0; j < count; j++) 
 			{
 				NSString * ayat = [stringArray objectAtIndex:j];
-				//NSLog(@"%@", ayat);			
+				NSLog(@"%@", ayat);			
 				
 				UILabel *sentence = [[UILabel alloc] initWithFrame:CGRectZero];
 				sentence.backgroundColor = [UIColor clearColor];
