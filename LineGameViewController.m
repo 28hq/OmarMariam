@@ -16,6 +16,7 @@
 
 @synthesize theData;
 @synthesize questionLeft, totalLevel, isAtLevel;
+@synthesize bookNumber;
 
 @synthesize cover, game, end;
 @synthesize wordViews, pictureViews; // for array storing the views
@@ -25,14 +26,36 @@
 @synthesize continueButton, levelIndicator;
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
+//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
+//    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+//        // Custom initialization
+//		
+//		NSArray *_tmpData = [[NSArray alloc] init];
+//		self.theData = _tmpData;
+//		[_tmpData release];
+//
+//		NSMutableArray *_wordViews = [[NSMutableArray alloc] init];
+//		self.wordViews = _wordViews;
+//		[_wordViews release];
+//		
+//		NSMutableArray *_pictureViews = [[NSMutableArray alloc] init];
+//		self.pictureViews = _pictureViews;
+//		[_pictureViews release];
+//		
+//    }
+//    return self;
+//}
+
+- (id)initWithBookNumber:(int)number 
+{
+	if (self = [super init]) 
+	{
+		self.bookNumber = number;
 		
 		NSArray *_tmpData = [[NSArray alloc] init];
 		self.theData = _tmpData;
 		[_tmpData release];
-
+		
 		NSMutableArray *_wordViews = [[NSMutableArray alloc] init];
 		self.wordViews = _wordViews;
 		[_wordViews release];
@@ -40,9 +63,9 @@
 		NSMutableArray *_pictureViews = [[NSMutableArray alloc] init];
 		self.pictureViews = _pictureViews;
 		[_pictureViews release];
-		
-    }
-    return self;
+	}
+	
+	return self;
 }
 
 
@@ -60,7 +83,7 @@
 	int gameNo = 1;
 	
 	NSString *imagePath = [[NSString alloc] init];
-	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"cover%d", gameNo] 
+	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"cover%d", self.bookNumber] 
 												ofType:@"png"];
 	
 	UIImage *image = [[UIImage alloc] initWithContentsOfFile:imagePath];
@@ -136,10 +159,10 @@
 	AppDelegate_iPad *delegate = [[UIApplication sharedApplication] delegate];
 	
 	self.isAtLevel = level;
-	self.totalLevel = [[[delegate.volume1 objectAtIndex:0] // iBook1, 2, 3 etc.
+	self.totalLevel = [[[delegate.volume1 objectAtIndex:self.bookNumber-1] // iBook1, 2, 3 etc.
 						objectForKey:@"LineGame"] count];
 	
-	self.theData = [[[[delegate.volume1 objectAtIndex:0] // iBook1, 2, 3 etc.
+	self.theData = [[[[delegate.volume1 objectAtIndex:self.bookNumber-1] // iBook1, 2, 3 etc.
 					  objectForKey:@"LineGame"] // LabelGame, ClozeGame
 					 objectAtIndex:level-1] retain]; // Game No.
 													 // Level1, 2, 3 etc.

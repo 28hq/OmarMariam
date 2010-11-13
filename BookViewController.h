@@ -34,5 +34,6 @@
 
 - (id)initWithBookNumber:(int)bookNumber ;
 - (void)playSound:(id)sender;
+- (void)exitBook;
 
 @end
