@@ -587,7 +587,7 @@
 					<key>sentence</key>
 					<string>هاهي. هذه # </string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>01.png</string>
 			</array>
 			<array>
 				<dict>
@@ -608,7 +608,7 @@
 					<key>sentence</key>
 					<string> # يقفزان علي الأعشاب  </string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>02.png</string>
 			</array>
 			<array>
 				<dict>
@@ -629,7 +629,7 @@
 					<key>sentence</key>
 					<string># علي بعض# </string>
 				</dict>
-				<dict/>
+				<string>03.png</string>
 			</array>
 			<array>
 				<dict>
@@ -656,7 +656,7 @@
 					<key>sentence</key>
 					<string>  نحن # الگعك</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>04.png</string>
 			</array>
 			<array>
 				<dict>
@@ -677,7 +677,7 @@
 					<key>sentence</key>
 					<string>قال عمر: # #  العصر</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>05.png</string>
 			</array>
 		</array>
 		<key>LineGame</key>
@@ -810,6 +810,7 @@
 					<key>sentence</key>
 					<string>مريم # علي #</string>
 				</dict>
+				<string>01.png</string>
 			</array>
 			<array>
 				<dict>
@@ -830,7 +831,7 @@
 					<key>sentence</key>
 					<string>  القطة تجري # الگرة</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>02.png</string>
 			</array>
 			<array>
 				<dict>
@@ -857,7 +858,7 @@
 					<key>sentence</key>
 					<string>عمر # الطعام للقطة</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>03.png</string>
 			</array>
 			<array>
 				<dict>
@@ -878,7 +879,7 @@
 					<key>sentence</key>
 					<string>القطة #</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>04.png</string>
 			</array>
 			<array>
 				<dict>
@@ -905,7 +906,7 @@
 					<key>sentence</key>
 					<string>عمر و مريم يقرءان # </string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>05.png</string>
 			</array>
 		</array>
 		<key>LineGame</key>
@@ -1303,6 +1304,7 @@
 					<key>sentence</key>
 					<string>وحقيبه مريم #</string>
 				</dict>
+				<string>01.png</string>
 			</array>
 			<array>
 				<dict>
@@ -1323,7 +1325,7 @@
 					<key>sentence</key>
 					<string>عمر و مريم # الحذاء</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>02.png</string>
 			</array>
 			<array>
 				<dict>
@@ -1350,7 +1352,7 @@
 					<key>sentence</key>
 					<string>في #</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>03.png</string>
 			</array>
 			<array>
 				<dict>
@@ -1371,7 +1373,7 @@
 					<key>sentence</key>
 					<string>هما # في #</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>04.png</string>
 			</array>
 			<array>
 				<dict>
@@ -1398,7 +1400,7 @@
 					<key>sentence</key>
 					<string>هم يصلون #</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>05.png</string>
 			</array>
 			<array>
 				<dict>
@@ -1419,7 +1421,7 @@
 					<key>sentence</key>
 					<string>همايدعوان مع #</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>06.png</string>
 			</array>
 		</array>
 		<key>LineGame</key>
