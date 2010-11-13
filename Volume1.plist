@@ -3,69 +3,6 @@
 <plist version="1.0">
 <array>
 	<dict>
-		<key>ClozeGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>هذا</string>
-					<key>sentence</key>
-					<string>   # عمر</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>هذه</string>
-					<key>sentence</key>
-					<string>و # مريم.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>انا</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>هذا</string>
-					<key>sentence</key>
-					<string>   # عمر</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>sentence</key>
-					<string>هذه #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>هذه</string>
-					<key>sentence</key>
-					<string> # قطة.</string>
-				</dict>
-				<string>omarmariamkitten</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يجب</string>
-					<key>sentence</key>
-					<string> عمر # القطة.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تحب</string>
-					<key>sentence</key>
-					<string>مري # القطة.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>آحب</string>
-					<key>sentence</key>
-					<string>آنا # القطة.</string>
-				</dict>
-				<string>omarmariamkitten</string>
-			</array>
-		</array>
 		<key>LineGame</key>
 		<array>
 			<array>
@@ -172,41 +109,6 @@
 				</dict>
 			</array>
 		</array>
-		<key>QuizGame</key>
-		<array>
-			<dict>
-				<key>timer</key>
-				<integer>20</integer>
-				<key>question</key>
-				<string>من هذا؟</string>
-				<key>answer</key>
-				<string>هذا عمر</string>
-				<key>picture</key>
-				<string>omar</string>
-				<key>choices</key>
-				<array>
-					<string>هذه مريم</string>
-					<string>هذه عمر</string>
-				</array>
-			</dict>
-			<dict>
-				<key>timer</key>
-				<integer>25</integer>
-				<key>question</key>
-				<string>من هذه؟</string>
-				<key>answer</key>
-				<string>هذه مريم</string>
-				<key>picture</key>
-				<string>mariam</string>
-				<key>choices</key>
-				<array>
-					<string>هذه قطة</string>
-					<string>هذا عمر</string>
-				</array>
-			</dict>
-		</array>
-	</dict>
-	<dict>
 		<key>ClozeGame</key>
 		<array>
 			<array>
@@ -214,11 +116,11 @@
 					<key>word</key>
 					<string>هذا</string>
 					<key>sentence</key>
-					<string>   # عمر</string>
+					<string># غمر.</string>
 				</dict>
 				<dict>
 					<key>word</key>
-					<string>هذه</string>
+					<string>هده</string>
 					<key>sentence</key>
 					<string>و # مريم.</string>
 				</dict>
@@ -226,14 +128,14 @@
 					<key>word</key>
 					<string>انا</string>
 				</dict>
-				<dict/>
+				<string>omarmariam</string>
 			</array>
 			<array>
 				<dict>
 					<key>word</key>
 					<string>هذا</string>
 					<key>sentence</key>
-					<string>   # عمر</string>
+					<string># غمر.</string>
 				</dict>
 				<dict>
 					<key>word</key>
@@ -247,7 +149,7 @@
 					<key>sentence</key>
 					<string> # قطة.</string>
 				</dict>
-				<string>omarmariamkitten</string>
+				<string>omarmariamqittah</string>
 			</array>
 			<array>
 				<dict>
@@ -268,1239 +170,7 @@
 					<key>sentence</key>
 					<string>آنا # القطة.</string>
 				</dict>
-				<string>omarmariamkitten</string>
-			</array>
-		</array>
-		<key>LineGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر و مريم</string>
-					<key>picture</key>
-					<string>omarmariam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-		</array>
-		<key>LabelGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطه</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-			</array>
-		</array>
-		<key>QuizGame</key>
-		<array>
-			<dict>
-				<key>timer</key>
-				<integer>20</integer>
-				<key>question</key>
-				<string>من هذا؟</string>
-				<key>answer</key>
-				<string>هذا عمر</string>
-				<key>picture</key>
-				<string>omar</string>
-				<key>choices</key>
-				<array>
-					<string>هذه مريم</string>
-					<string>هذه عمر</string>
-				</array>
-			</dict>
-			<dict>
-				<key>timer</key>
-				<integer>25</integer>
-				<key>question</key>
-				<string>من هذه؟</string>
-				<key>answer</key>
-				<string>هذه مريم</string>
-				<key>picture</key>
-				<string>mariam</string>
-				<key>choices</key>
-				<array>
-					<string>هذه قطة</string>
-					<string>هذا عمر</string>
-				</array>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>ClozeGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>هذا</string>
-					<key>sentence</key>
-					<string>   # عمر</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>هذه</string>
-					<key>sentence</key>
-					<string>و # مريم.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>انا</string>
-				</dict>
-				<dict/>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>هذا</string>
-					<key>sentence</key>
-					<string>   # عمر</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>sentence</key>
-					<string>هذه #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>هذه</string>
-					<key>sentence</key>
-					<string> # قطة.</string>
-				</dict>
-				<string>omarmariamkitten</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يجب</string>
-					<key>sentence</key>
-					<string> عمر # القطة.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تحب</string>
-					<key>sentence</key>
-					<string>مري # القطة.</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>آحب</string>
-					<key>sentence</key>
-					<string>آنا # القطة.</string>
-				</dict>
-				<string>omarmariamkitten</string>
-			</array>
-		</array>
-		<key>LineGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر و مريم</string>
-					<key>picture</key>
-					<string>omarmariam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-		</array>
-		<key>LabelGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطه</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-			</array>
-		</array>
-		<key>QuizGame</key>
-		<array>
-			<dict>
-				<key>timer</key>
-				<integer>20</integer>
-				<key>question</key>
-				<string>من هذا؟</string>
-				<key>answer</key>
-				<string>هذا عمر</string>
-				<key>picture</key>
-				<string>omar</string>
-				<key>choices</key>
-				<array>
-					<string>هذه مريم</string>
-					<string>هذه عمر</string>
-				</array>
-			</dict>
-			<dict>
-				<key>timer</key>
-				<integer>25</integer>
-				<key>question</key>
-				<string>من هذه؟</string>
-				<key>answer</key>
-				<string>هذه مريم</string>
-				<key>picture</key>
-				<string>mariam</string>
-				<key>choices</key>
-				<array>
-					<string>هذه قطة</string>
-					<string>هذا عمر</string>
-				</array>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>ClozeGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>sentence</key>
-					<string>قالت #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>البلونات</string>
-					<key>sentence</key>
-					<string>هذه بعض # لك</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>لك</string>
-					<key>sentence</key>
-					<string>هاهي. هذه # </string>
-				</dict>
-				<string>01.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يقفر</string>
-					<key>sentence</key>
-					<string> عمر باءگانه أن # </string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>باءمگانها  ، تقفر</string>
-					<key>sentence</key>
-					<string>و مريم # أن # </string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>هما</string>
-					<key>sentence</key>
-					<string> # يقفزان علي الأعشاب  </string>
-				</dict>
-				<string>02.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>نذهب</string>
-					<key>sentence</key>
-					<string>    قل عمر: علينا أن #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>بإمگاننا</string>
-					<key>sentence</key>
-					<string>قالت مريم : هل # أن</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>نحصل ، الگعك</string>
-					<key>sentence</key>
-					<string># علي بعض# </string>
-				</dict>
-				<string>03.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>إلي</string>
-					<key>sentence</key>
-					<string>  هيا نذب # الدگان</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>شراء</string>
-					<key>sentence</key>
-					<string> ل # بعض الگعك</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>هؤلاء</string>
-					<key>sentence</key>
-					<string> # عندهم گعك</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>نحب</string>
-					<key>sentence</key>
-					<string>  نحن # الگعك</string>
-				</dict>
-				<string>04.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>البيت</string>
-					<key>sentence</key>
-					<string> قالت مريم : نحن في # </string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مرحنا</string>
-					<key>sentence</key>
-					<string>نحن # في الحديقة</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>هيابنا ، نصل</string>
-					<key>sentence</key>
-					<string>قال عمر: # #  العصر</string>
-				</dict>
-				<string>05.png</string>
-			</array>
-		</array>
-		<key>LineGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر و مريم</string>
-					<key>picture</key>
-					<string>omarmariam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-		</array>
-		<key>LabelGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطه</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-			</array>
-		</array>
-		<key>QuizGame</key>
-		<array>
-			<dict>
-				<key>timer</key>
-				<integer>20</integer>
-				<key>question</key>
-				<string>من هذا؟</string>
-				<key>answer</key>
-				<string>هذا عمر</string>
-				<key>picture</key>
-				<string>omar</string>
-				<key>choices</key>
-				<array>
-					<string>هذه مريم</string>
-					<string>هذه عمر</string>
-				</array>
-			</dict>
-			<dict>
-				<key>timer</key>
-				<integer>25</integer>
-				<key>question</key>
-				<string>من هذه؟</string>
-				<key>answer</key>
-				<string>هذه مريم</string>
-				<key>picture</key>
-				<string>mariam</string>
-				<key>choices</key>
-				<array>
-					<string>هذه قطة</string>
-					<string>هذا عمر</string>
-				</array>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>ClozeGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يجلس</string>
-					<key>sentence</key>
-					<string>   عمر # علي المقعد</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تجلس ، المقعد</string>
-					<key>sentence</key>
-					<string>مريم # علي #</string>
-				</dict>
-				<string>01.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يعلب ، گرة السلة</string>
-					<key>sentence</key>
-					<string>  عمر # ب#</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تلعب</string>
-					<key>sentence</key>
-					<string>مريم # بگرة السلة</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>خلف</string>
-					<key>sentence</key>
-					<string>  القطة تجري # الگرة</string>
-				</dict>
-				<string>02.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يشرب</string>
-					<key>sentence</key>
-					<string> عمر # الماء</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>الماء</string>
-					<key>sentence</key>
-					<string>ومريم تشرب # </string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>القطة</string>
-					<key>sentence</key>
-					<string> # تشرب اللبن</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>يعطي</string>
-					<key>sentence</key>
-					<string>عمر # الطعام للقطة</string>
-				</dict>
-				<string>03.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يستريحان</string>
-					<key>sentence</key>
-					<string> عمر و مريم # </string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>يقرأ ، القرآن</string>
-					<key>sentence</key>
-					<string>عمر# # علي المقعد </string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تموء</string>
-					<key>sentence</key>
-					<string>القطة #</string>
-				</dict>
-				<string>04.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يذهب</string>
-					<key>sentence</key>
-					<string> عمر # إلي غرفة النوم</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>غرفة النوم</string>
-					<key>sentence</key>
-					<string>مريم تذهب إلي #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تنام</string>
-					<key>sentence</key>
-					<string>القطة # علي المقعد</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>الدعاء</string>
-					<key>sentence</key>
-					<string>عمر و مريم يقرءان # </string>
-				</dict>
-				<string>05.png</string>
-			</array>
-		</array>
-		<key>LineGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر و مريم</string>
-					<key>picture</key>
-					<string>omarmariam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-		</array>
-		<key>LabelGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطه</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-			</array>
-		</array>
-		<key>QuizGame</key>
-		<array>
-			<dict>
-				<key>timer</key>
-				<integer>20</integer>
-				<key>question</key>
-				<string>من هذا؟</string>
-				<key>answer</key>
-				<string>هذا عمر</string>
-				<key>picture</key>
-				<string>omar</string>
-				<key>choices</key>
-				<array>
-					<string>هذه مريم</string>
-					<string>هذه عمر</string>
-				</array>
-			</dict>
-			<dict>
-				<key>timer</key>
-				<integer>25</integer>
-				<key>question</key>
-				<string>من هذه؟</string>
-				<key>answer</key>
-				<string>هذه مريم</string>
-				<key>picture</key>
-				<string>mariam</string>
-				<key>choices</key>
-				<array>
-					<string>هذه قطة</string>
-					<string>هذا عمر</string>
-				</array>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>ClozeGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يساعدان ، الأب</string>
-					<key>sentence</key>
-					<string>عمر و مريم # #  </string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>زرع ، الشجره</string>
-					<key>sentence</key>
-					<string>في #</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>الدراجة</string>
-					<key>sentence</key>
-					<string>هما يرگبان #</string>
-				</dict>
-				<dict>
-					<key>sentence</key>
-					<string>قال عمر و مريم :</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>ندوس</string>
-					<key>sentence</key>
-					<string>نحن نريد أن #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>يرگب ، مع</string>
-					<key>sentence</key>
-					<string> الأب # الدراجة # عمر و مريم  </string>
-				</dict>
-				<string>omarmariamkitten</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>انظري</string>
-					<key>sentence</key>
-					<string># يامريم</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تلك</string>
-					<key>sentence</key>
-					<string> # سيارة الإطفاء</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مگتوب</string>
-					<key>sentence</key>
-					<string> # عليها سيارة الإطفاء</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مرگز</string>
-					<key>sentence</key>
-					<string>ذلك # الإطفاء</string>
-				</dict>
-				<string>omarmariamkitten</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>الأرنب</string>
-					<key>sentence</key>
-					<string>هما يلعبان مع #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>يحبان ، ينظرا</string>
-					<key>sentence</key>
-					<string>هما # أن # إلي </string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>يقفر</string>
-					<key>sentence</key>
-					<string>الأرنب #</string>
-				</dict>
-				<string>omarmariamkitten</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>أشجار</string>
-					<key>sentence</key>
-					<string> هذه # وزهور</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>يريدان</string>
-					<key>sentence</key>
-					<string>عمر و مريم #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>الزهور</string>
-					<key>sentence</key>
-					<string>بعض #</string>
-				</dict>
-				<string>omarmariamkitten</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>الباءع</string>
-					<key>sentence</key>
-					<string>  # يحب عمر و مريم في الدگان</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>الموز</string>
-					<key>sentence</key>
-					<string>عند الباءع #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>الأصفر</string>
-					<key>sentence</key>
-					<string>هما قالا : نريد الموز #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>لوسمحت</string>
-					<key>sentence</key>
-					<string>خذ الأصفر #</string>
-				</dict>
-				<string>omarmariamkitten</string>
-			</array>
-		</array>
-		<key>LineGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر و مريم</string>
-					<key>picture</key>
-					<string>omarmariam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-		</array>
-		<key>LabelGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطه</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-			</array>
-		</array>
-		<key>QuizGame</key>
-		<array>
-			<dict>
-				<key>timer</key>
-				<integer>20</integer>
-				<key>question</key>
-				<string>من هذا؟</string>
-				<key>answer</key>
-				<string>هذا عمر</string>
-				<key>picture</key>
-				<string>omar</string>
-				<key>choices</key>
-				<array>
-					<string>هذه مريم</string>
-					<string>هذه عمر</string>
-				</array>
-			</dict>
-			<dict>
-				<key>timer</key>
-				<integer>25</integer>
-				<key>question</key>
-				<string>من هذه؟</string>
-				<key>answer</key>
-				<string>هذه مريم</string>
-				<key>picture</key>
-				<string>mariam</string>
-				<key>choices</key>
-				<array>
-					<string>هذه قطة</string>
-					<string>هذا عمر</string>
-				</array>
-			</dict>
-		</array>
-	</dict>
-	<dict>
-		<key>ClozeGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>المدرسة</string>
-					<key>sentence</key>
-					<string>  عمر و مريم يذهبان إلي #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>الحقيبة</string>
-					<key>sentence</key>
-					<string> عمر و مريم عند هما # </string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>صفراء</string>
-					<key>sentence</key>
-					<string>حقيبة عمر #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>خضراء</string>
-					<key>sentence</key>
-					<string>وحقيبه مريم #</string>
-				</dict>
-				<string>01.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يلبس</string>
-					<key>sentence</key>
-					<string> عمر# الحذاء</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تلبس ، الحذاء</string>
-					<key>sentence</key>
-					<string>مريم # #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>يلبسان</string>
-					<key>sentence</key>
-					<string>عمر و مريم # الحذاء</string>
-				</dict>
-				<string>02.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>يگتب</string>
-					<key>sentence</key>
-					<string> عمر # في المدرسه</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تگتب</string>
-					<key>sentence</key>
-					<string>مريم # في المدرسه</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>يأگلان</string>
-					<key>sentence</key>
-					<string>عمرومريم # الطعام</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>المطعم</string>
-					<key>sentence</key>
-					<string>في #</string>
-				</dict>
-				<string>03.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>الأصدقاء</string>
-					<key>sentence</key>
-					<string> عمريلعب بالگرة مع #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>الصديقات</string>
-					<key>sentence</key>
-					<string>مريم تلعب الگرة مع #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>الآن ، الملعب</string>
-					<key>sentence</key>
-					<string>هما # في #</string>
-				</dict>
-				<string>04.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>المصلي</string>
-					<key>sentence</key>
-					<string> عمر و مريم في #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>يصلي</string>
-					<key>sentence</key>
-					<string>عمر # مع الأصدقاء</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>تصلي</string>
-					<key>sentence</key>
-					<string>مريم # مع الصديقات</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>جماعة</string>
-					<key>sentence</key>
-					<string>هم يصلون #</string>
-				</dict>
-				<string>05.png</string>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>المصلي</string>
-					<key>sentence</key>
-					<string> عمر و مريم في #</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>يدعو ، تدعو</string>
-					<key>sentence</key>
-					<string>عمر # ، و مريم # </string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>الجماعة</string>
-					<key>sentence</key>
-					<string>همايدعوان مع #</string>
-				</dict>
-				<string>06.png</string>
-			</array>
-		</array>
-		<key>LineGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر و مريم</string>
-					<key>picture</key>
-					<string>omarmariam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطة</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-		</array>
-		<key>LabelGame</key>
-		<array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>مريم</string>
-					<key>picture</key>
-					<string>maryam</string>
-				</dict>
-				<dict>
-					<key>word</key>
-					<string>قطه</string>
-					<key>picture</key>
-					<string>qittah</string>
-				</dict>
-			</array>
-			<array>
-				<dict>
-					<key>word</key>
-					<string>عمر</string>
-					<key>picture</key>
-					<string>omar</string>
-				</dict>
+				<string>omarmariamqittah</string>
 			</array>
 		</array>
 		<key>QuizGame</key>
@@ -1838,6 +508,120 @@
 		</array>
 	</dict>
 	<dict>
+		<key>ClozeGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>مريم</string>
+					<key>sentence</key>
+					<string>قالت #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>البلونات</string>
+					<key>sentence</key>
+					<string>هذه بعض # لك</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>لك</string>
+					<key>sentence</key>
+					<string>هاهي. هذه # </string>
+				</dict>
+				<string>01.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يقفر</string>
+					<key>sentence</key>
+					<string> عمر باءگانه أن # </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>باءمگانها  ، تقفر</string>
+					<key>sentence</key>
+					<string>و مريم # أن # </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>هما</string>
+					<key>sentence</key>
+					<string> # يقفزان علي الأعشاب  </string>
+				</dict>
+				<string>02.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>نذهب</string>
+					<key>sentence</key>
+					<string>    قل عمر: علينا أن #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>بإمگاننا</string>
+					<key>sentence</key>
+					<string>قالت مريم : هل # أن</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>نحصل ، الگعك</string>
+					<key>sentence</key>
+					<string># علي بعض# </string>
+				</dict>
+				<string>03.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>إلي</string>
+					<key>sentence</key>
+					<string>  هيا نذب # الدگان</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>شراء</string>
+					<key>sentence</key>
+					<string> ل # بعض الگعك</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>هؤلاء</string>
+					<key>sentence</key>
+					<string> # عندهم گعك</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>نحب</string>
+					<key>sentence</key>
+					<string>  نحن # الگعك</string>
+				</dict>
+				<string>04.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>البيت</string>
+					<key>sentence</key>
+					<string> قالت مريم : نحن في # </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>مرحنا</string>
+					<key>sentence</key>
+					<string>نحن # في الحديقة</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>هيابنا ، نصل</string>
+					<key>sentence</key>
+					<string>قال عمر: # #  العصر</string>
+				</dict>
+				<string>05.png</string>
+			</array>
+		</array>
 		<key>LineGame</key>
 		<array>
 			<array>
@@ -2017,6 +801,120 @@
 		</array>
 	</dict>
 	<dict>
+		<key>ClozeGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يجلس</string>
+					<key>sentence</key>
+					<string>   عمر # علي المقعد</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تجلس ، المقعد</string>
+					<key>sentence</key>
+					<string>مريم # علي #</string>
+				</dict>
+				<string>01.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يعلب ، گرة السلة</string>
+					<key>sentence</key>
+					<string>  عمر # ب#</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تلعب</string>
+					<key>sentence</key>
+					<string>مريم # بگرة السلة</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>خلف</string>
+					<key>sentence</key>
+					<string>  القطة تجري # الگرة</string>
+				</dict>
+				<string>02.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يشرب</string>
+					<key>sentence</key>
+					<string> عمر # الماء</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الماء</string>
+					<key>sentence</key>
+					<string>ومريم تشرب # </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>القطة</string>
+					<key>sentence</key>
+					<string> # تشرب اللبن</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يعطي</string>
+					<key>sentence</key>
+					<string>عمر # الطعام للقطة</string>
+				</dict>
+				<string>03.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يستريحان</string>
+					<key>sentence</key>
+					<string> عمر و مريم # </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يقرأ ، القرآن</string>
+					<key>sentence</key>
+					<string>عمر# # علي المقعد </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تموء</string>
+					<key>sentence</key>
+					<string>القطة #</string>
+				</dict>
+				<string>04.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يذهب</string>
+					<key>sentence</key>
+					<string> عمر # إلي غرفة النوم</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>غرفة النوم</string>
+					<key>sentence</key>
+					<string>مريم تذهب إلي #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تنام</string>
+					<key>sentence</key>
+					<string>القطة # علي المقعد</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الدعاء</string>
+					<key>sentence</key>
+					<string>عمر و مريم يقرءان # </string>
+				</dict>
+				<string>05.png</string>
+			</array>
+		</array>
 		<key>LineGame</key>
 		<array>
 			<array>
@@ -2196,6 +1094,144 @@
 		</array>
 	</dict>
 	<dict>
+		<key>ClozeGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يساعدان ، الأب</string>
+					<key>sentence</key>
+					<string>عمر و مريم # #  </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>زرع ، الشجره</string>
+					<key>sentence</key>
+					<string>في #</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>الدراجة</string>
+					<key>sentence</key>
+					<string>هما يرگبان #</string>
+				</dict>
+				<dict>
+					<key>sentence</key>
+					<string>قال عمر و مريم :</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>ندوس</string>
+					<key>sentence</key>
+					<string>نحن نريد أن #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يرگب ، مع</string>
+					<key>sentence</key>
+					<string> الأب # الدراجة # عمر و مريم  </string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>انظري</string>
+					<key>sentence</key>
+					<string># يامريم</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تلك</string>
+					<key>sentence</key>
+					<string> # سيارة الإطفاء</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>مگتوب</string>
+					<key>sentence</key>
+					<string> # عليها سيارة الإطفاء</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>مرگز</string>
+					<key>sentence</key>
+					<string>ذلك # الإطفاء</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>الأرنب</string>
+					<key>sentence</key>
+					<string>هما يلعبان مع #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يحبان ، ينظرا</string>
+					<key>sentence</key>
+					<string>هما # أن # إلي </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يقفر</string>
+					<key>sentence</key>
+					<string>الأرنب #</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>أشجار</string>
+					<key>sentence</key>
+					<string> هذه # وزهور</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يريدان</string>
+					<key>sentence</key>
+					<string>عمر و مريم #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الزهور</string>
+					<key>sentence</key>
+					<string>بعض #</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>الباءع</string>
+					<key>sentence</key>
+					<string>  # يحب عمر و مريم في الدگان</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الموز</string>
+					<key>sentence</key>
+					<string>عند الباءع #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الأصفر</string>
+					<key>sentence</key>
+					<string>هما قالا : نريد الموز #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>لوسمحت</string>
+					<key>sentence</key>
+					<string>خذ الأصفر #</string>
+				</dict>
+				<string>omarmariamkitten</string>
+			</array>
+		</array>
 		<key>LineGame</key>
 		<array>
 			<array>
@@ -2293,6 +1329,153 @@
 		</array>
 	</dict>
 	<dict>
+		<key>ClozeGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>المدرسة</string>
+					<key>sentence</key>
+					<string>  عمر و مريم يذهبان إلي #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الحقيبة</string>
+					<key>sentence</key>
+					<string> عمر و مريم عند هما # </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>صفراء</string>
+					<key>sentence</key>
+					<string>حقيبة عمر #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>خضراء</string>
+					<key>sentence</key>
+					<string>وحقيبه مريم #</string>
+				</dict>
+				<string>01.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يلبس</string>
+					<key>sentence</key>
+					<string> عمر# الحذاء</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تلبس ، الحذاء</string>
+					<key>sentence</key>
+					<string>مريم # #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يلبسان</string>
+					<key>sentence</key>
+					<string>عمر و مريم # الحذاء</string>
+				</dict>
+				<string>02.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>يگتب</string>
+					<key>sentence</key>
+					<string> عمر # في المدرسه</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تگتب</string>
+					<key>sentence</key>
+					<string>مريم # في المدرسه</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يأگلان</string>
+					<key>sentence</key>
+					<string>عمرومريم # الطعام</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>المطعم</string>
+					<key>sentence</key>
+					<string>في #</string>
+				</dict>
+				<string>03.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>الأصدقاء</string>
+					<key>sentence</key>
+					<string> عمريلعب بالگرة مع #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الصديقات</string>
+					<key>sentence</key>
+					<string>مريم تلعب الگرة مع #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الآن ، الملعب</string>
+					<key>sentence</key>
+					<string>هما # في #</string>
+				</dict>
+				<string>04.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>المصلي</string>
+					<key>sentence</key>
+					<string> عمر و مريم في #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يصلي</string>
+					<key>sentence</key>
+					<string>عمر # مع الأصدقاء</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>تصلي</string>
+					<key>sentence</key>
+					<string>مريم # مع الصديقات</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>جماعة</string>
+					<key>sentence</key>
+					<string>هم يصلون #</string>
+				</dict>
+				<string>05.png</string>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>المصلي</string>
+					<key>sentence</key>
+					<string> عمر و مريم في #</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>يدعو ، تدعو</string>
+					<key>sentence</key>
+					<string>عمر # ، و مريم # </string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>الجماعة</string>
+					<key>sentence</key>
+					<string>همايدعوان مع #</string>
+				</dict>
+				<string>06.png</string>
+			</array>
+		</array>
 		<key>LineGame</key>
 		<array>
 			<array>
