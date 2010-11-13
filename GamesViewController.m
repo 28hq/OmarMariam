@@ -99,7 +99,7 @@
 - (IBAction)clozeGameButton:(id)sender 
 {
 	ClozeGameViewController *viewController;
-	viewController = [[ClozeGameViewController alloc] initWithNibName:@"ClozeGameViewController" bundle:nil];
+	viewController = [[ClozeGameViewController alloc] initWithBookNumber:self.bookNumber];
 	[self presentModalViewController:viewController animated:YES];
 }
 

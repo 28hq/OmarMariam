@@ -15,6 +15,7 @@
 	NSMutableArray * sentenceViews;
 	NSArray * theData;
 	UIImage * gameNumberImage;
+	int bookNumber;
 	int questionLeft;
 	int isAtLevel;
 	int totalLevel;
@@ -29,8 +30,9 @@
 @property (nonatomic, retain) NSArray *theData;
 @property (nonatomic, retain) NSMutableArray *labelViews;
 @property (nonatomic, retain) NSMutableArray *dropViews, *sentenceViews;
+@property (nonatomic, retain) UIImage *gameNumberImage;
 
-@property int questionLeft, isAtLevel, totalLevel;
+@property int questionLeft, isAtLevel, totalLevel, bookNumber;
 
 @property (nonatomic, retain) IBOutlet UIView *wordListView, *levelIndicator, *continueButtonView;
 @property (nonatomic, retain) IBOutlet UIView *cover, *game, *end;

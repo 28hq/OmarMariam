@@ -17,20 +17,24 @@
 @synthesize theData;
 
 @synthesize labelViews, dropViews, sentenceViews;
-@synthesize questionLeft, totalLevel, isAtLevel;
+@synthesize questionLeft, totalLevel, isAtLevel, bookNumber;
+@synthesize gameNumberImage;
 
 // IBOutlet
 @synthesize gameNumber, gameNumber2, levelIndicator, levelImageView, levelImageView2, cover, game;
 @synthesize continueButtonView, continueButton;
 @synthesize wordListView, end;//, labelView;
 
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+- (id)initWithBookNumber:(int)number 
+{
+    if ((self = [super initWithNibName:@"ClozeGameViewController" bundle:nil])) {
         // Custom initialization
-		gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"1" 
+		self.bookNumber = number;
+		
+		gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", number] 
 																				ofType:@"png"]];
 
+		
 		NSMutableArray *_labelViews = [[NSMutableArray alloc] init];
 		self.labelViews = _labelViews;
 		[_labelViews release];
@@ -57,21 +61,10 @@
 	 */
 	
 	
-	NSString * imagePath = [[NSString alloc] init];
-	imagePath = [[NSBundle mainBundle] pathForResource:@"cover" 
-												ofType:@"png" 
-										   inDirectory:@"Volume1/ClozeGames/Game1/Images"];
-	
-	UIImage * image = [[UIImage alloc] initWithContentsOfFile:imagePath];
-	levelImageView.image = image;
-	[image release];
-	
-	imagePath = nil;
-	imagePath = [[NSBundle mainBundle] pathForResource:@"1" ofType:@"png"];
-	
-	image = [[UIImage alloc] initWithContentsOfFile:imagePath];
-	gameNumber.image = image;
-	[image release];
+
+	levelImageView.image = [self getImage:@"cover"];
+
+	gameNumber.image = self.gameNumberImage;
 	
 }
 
@@ -139,10 +132,11 @@
 	AppDelegate_iPad *delegate = [[UIApplication sharedApplication] delegate];
 
 	self.isAtLevel = level;
-	self.totalLevel = [[[delegate.volume1 objectAtIndex:0] // iBook1, 2, 3 etc.
-						objectForKey:@"ClozeGame"] count];
 	
-	self.theData = [[[[delegate.volume1 objectAtIndex:0] // iBook1, 2, 3 etc.
+	self.totalLevel = [[[delegate.volume1 objectAtIndex:self.bookNumber - 1] // iBook1, 2, 3 etc.
+						objectForKey:@"ClozeGame"] count];
+
+	self.theData = [[[[delegate.volume1 objectAtIndex:self.bookNumber - 1] // iBook1, 2, 3 etc.
 						objectForKey:@"ClozeGame"] // LabelGame, ClozeGame
 						objectAtIndex:level-1] retain]; // Game No.
 											   // Level1, 2, 3 etc.
@@ -223,7 +217,7 @@
 			for (j = 0; j < count; j++) 
 			{
 				NSString * ayat = [stringArray objectAtIndex:j];
-				NSLog(@"%@", ayat);			
+				//NSLog(@"%@", ayat);			
 				
 				UILabel *sentence = [[UILabel alloc] initWithFrame:CGRectZero];
 				sentence.backgroundColor = [UIColor clearColor];
@@ -389,14 +383,17 @@
 	[labelLevel release];
 }
 
-- (UIImage *)getImage:(NSString *)imageName {
-	NSString * imagePath = [[NSString alloc] init];
-	imagePath = [[NSBundle mainBundle] pathForResource:imageName ofType:@"png"];
-	
+- (UIImage *)getImage:(NSString *)imageName 
+{
+	NSString *directory = [NSString stringWithFormat:@"Volume1/ClozeGames/Game%d/Images", self.bookNumber];
+
+	NSString *imagePath = [[NSBundle mainBundle] pathForResource:imageName
+														 ofType:@"png"
+													inDirectory:directory];
+
 	UIImage * image = [[UIImage alloc] initWithContentsOfFile:imagePath];
 
 	[image autorelease];
-	//[imagePath autorelease];
 	
 	return image;	
 }
