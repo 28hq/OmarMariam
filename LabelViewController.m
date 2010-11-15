@@ -29,11 +29,12 @@ extern float const LBMagnification;
 @synthesize imageViews, labelViews, imagesPath, dropViews;
 @synthesize wordListView, labelView;
 @synthesize _volume1, _theData;
-@synthesize questionLeft, totalLevel, isAtLevel;
+@synthesize questionLeft, totalLevel, isAtLevel, bookNumber;
 
 // IBOutlet
 @synthesize gameNumber, levelIndicator;
 @synthesize continueButtonView, continueButton;
+@synthesize wordListScrollView;
 @synthesize cover, game, end;
 
 int const LBPaddingTop = 50;
@@ -46,8 +47,8 @@ float const LBMagnification = 2.0;
 
 
 // The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+- (id)initWithBookNumber:(int)number  {
+    if ((self = [super initWithNibName:@"LabelViewController" bundle:nil])) {
         // Custom initialization
 		
 		// The instantiation of property this way is said to avoid leak.
@@ -73,6 +74,7 @@ float const LBMagnification = 2.0;
 		[_tmpVolume release];
 
 		self.isAtLevel = 1;
+		self.bookNumber = number;
     }
     return self;
 }
@@ -99,7 +101,7 @@ float const LBMagnification = 2.0;
 	
 	// set game number.
 
-	UIImage *img = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"1" 
+	UIImage *img = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", self.bookNumber]
 																						   ofType:@"png"]];
 	
 	self.gameNumber.image = img;
@@ -124,21 +126,22 @@ float const LBMagnification = 2.0;
 }
 
 - (void)continueToNextLevel {
+	self.questionLeft = 0;
 	[self levelSelector:self.isAtLevel];
 	self.continueButtonView.hidden = YES;
 }
 
 - (void)levelSelector:(int)level {
 	
-	self.totalLevel = [[[self._volume1 objectAtIndex:0] // iBook1, 2, 3 etc.
+	self.totalLevel = [[[self._volume1 objectAtIndex:self.bookNumber-1] // iBook1, 2, 3 etc.
 						objectForKey:@"LabelGame"] count];
-
-	self._theData = [[[[self._volume1 objectAtIndex:0] // iBook1, 2, 3 etc.
+	
+	self._theData = [[[[self._volume1 objectAtIndex:self.bookNumber-1] // iBook1, 2, 3 etc.
 						  objectForKey:@"LabelGame"] // LabelGame, ClozeGame
 						 objectAtIndex:level-1] retain]; // Level1, 2, 3 etc.
 
 	self.questionLeft = [self._theData count];
-	
+
 	// Clear current objects
 	if (0 != [self.labelViews count]) {
 		for (UIView * _aView in self.labelViews) {
@@ -199,8 +202,8 @@ float const LBMagnification = 2.0;
 			CGSize size = [word sizeWithFont:[UIFont boldSystemFontOfSize:40]];
 			
 			CGRect rect;
-			rect.origin.x = LBPaddingLeft;
-			rect.origin.y = LBPaddingTop + i * (size.height + 20);
+			rect.origin.x = self.wordListView.frame.size.width - size.width - 30;
+			rect.origin.y = kLBPaddingTop + i * (size.height + 20);
 			rect.size = size;
 			
 			textLabel.frame = rect;
@@ -210,77 +213,100 @@ float const LBMagnification = 2.0;
 			
 			[textLabel release];
 			[word release];
+
 			
-			//NSLog(@"",);//%@/Volume1/LabelGames/Game1/Images/%@.png);
+			self.wordListScrollView.layer.borderColor = [[UIColor blueColor] CGColor];
+			self.wordListScrollView.layer.borderWidth = 3;
+			self.wordListScrollView.layer.cornerRadius = 5;
 			
-			NSString *directory = [NSString stringWithString:@"Volume1/LabelGames/Game1/Images"];
-			NSFileManager *fileMgr = [NSFileManager defaultManager];
-			NSString *filePath = [[NSBundle mainBundle] pathForResource:[obj valueForKey:@"picture"]
-																 ofType:@"png"
-															inDirectory:directory];
-			
-			// Automatically determine the existence of image.
-			// If image does not exist in book directory, find it in root directory.
-			
-			if (![fileMgr fileExistsAtPath:filePath]) {
-				filePath = [[NSBundle mainBundle] pathForResource:[obj valueForKey:@"picture"]
-														   ofType:@"png"];
+			self.wordListScrollView.backgroundColor = [UIColor whiteColor];
+			self.wordListScrollView.clipsToBounds = YES;
+			self.wordListScrollView.contentSize = CGSizeMake(self.wordListScrollView.frame.size.width, (i+1) * (size.height + 30));
+			self.wordListScrollView.scrollEnabled = YES;
+			self.wordListScrollView.delegate = self;
+
+			self.wordListView.frame = CGRectMake(0.0, 0.0, self.wordListScrollView.frame.size.width, self.wordListScrollView.contentSize.height);
+
+			if (nil == [obj valueForKey:@"picture"]) {
+				self.questionLeft -= 1;
 			}
-			
-			// Set the location of the `picture`
-			
-			UIImage *image = [[UIImage alloc] initWithContentsOfFile:filePath];
-			
-			if (nil != image) 
+			else 
 			{
-				UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+				NSString *directory = [NSString stringWithFormat:@"Volume1/LabelGames/Game%d/Images", self.bookNumber];
+				NSFileManager *fileMgr = [NSFileManager defaultManager];
+				NSString *filePath = [[NSBundle mainBundle] pathForResource:[obj valueForKey:@"picture"]
+																	 ofType:@"png"
+																inDirectory:directory];
 				
-				CGRect imageRect;
-
-				imageRect.size.width = LBWidth;
-				imageRect.size.height = (LBWidth / image.size.width) * image.size.height;
-
-				imageView.frame = imageRect;
-				imageView.image = image;
+				// Automatically determine the existence of image.
+				// If image does not exist in book directory, find it in root directory.
 				
-				
-				CGRect frame = imageView.frame;
-				
-				
-				if (i == 2) {
-					frame.origin.x = 1024 - i * (frame.size.width + LBPaddingRight);
-					frame.origin.y = LBPaddingTop + (i-1) * (imageRect.size.height + LBGap);
-				}
-				else {
-					frame.origin.x = 1024 - frame.size.width - LBPaddingRight;
-					frame.origin.y = LBPaddingTop + i * (imageRect.size.height + LBGap);
+				if (![fileMgr fileExistsAtPath:filePath]) {
+					filePath = [[NSBundle mainBundle] pathForResource:[obj valueForKey:@"picture"]
+															   ofType:@"png"];
 				}
 				
-				imageView.frame = frame;
+				// Set the location of the `picture`
 				
-				[self.imageViews addObject:imageView];				
-				[self.view addSubview:imageView];
-				[imageView release];
+				UIImage *image = [[UIImage alloc] initWithContentsOfFile:filePath];
 				
-				
-				// Create drop placeholder.
-				CGRect dropRect = frame;
-				dropRect.size.height = 60;
-				dropRect.origin.y = frame.origin.y + frame.size.height;
-				
-				UIView *dropPlace = [[UIView alloc] initWithFrame:dropRect];
-				dropPlace.backgroundColor = [UIColor clearColor];
-				dropPlace.layer.borderColor = [[UIColor blackColor] CGColor];
-				dropPlace.layer.borderWidth = 1;
-				dropPlace.tag = i;
-								
-				[self.dropViews addObject:dropPlace];
-				[self.view addSubview:dropPlace];
-				[dropPlace release];
-				
+				if (nil != image) 
+				{
+					UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+					
+					CGRect imageRect;
+
+					imageRect.size.width = LBWidth;
+					imageRect.size.height = (LBWidth / image.size.width) * image.size.height;
+
+					imageView.frame = imageRect;
+					imageView.image = image;
+					
+					
+					CGRect frame = imageView.frame;
+					
+					
+					if (i == 2 || i == 3) {
+						frame.origin.x = 1024 - 2 * (frame.size.width + LBPaddingRight);
+						frame.origin.y = LBPaddingTop + 40 + (i-2) * (imageRect.size.height + LBGap);
+					}
+					else if (i == 4) {
+						frame.origin.x = 1024 - 3 * (frame.size.width + LBPaddingRight);
+						frame.origin.y = LBPaddingTop + 40 + (1) * (imageRect.size.height + LBGap);
+					}
+					else {
+						frame.origin.x = 1024 - frame.size.width - LBPaddingRight;
+						frame.origin.y = LBPaddingTop + 40 + i * (imageRect.size.height + LBGap);
+					}
+					
+					imageView.frame = frame;
+					
+					[self.imageViews addObject:imageView];				
+					[self.view addSubview:imageView];
+					[imageView release];
+					
+					
+					// Create drop placeholder.
+					CGRect dropRect = frame;
+					dropRect.size.height = 60;
+					dropRect.origin.y = frame.origin.y + frame.size.height;
+					
+					UIView *dropPlace = [[UIView alloc] initWithFrame:dropRect];
+					dropPlace.backgroundColor = [UIColor clearColor];
+					dropPlace.layer.borderColor = [[UIColor blackColor] CGColor];
+					dropPlace.layer.borderWidth = 1;
+					dropPlace.layer.cornerRadius = 20;
+					dropPlace.tag = i;
+									
+					[self.dropViews addObject:dropPlace];
+					[self.view addSubview:dropPlace];
+					[dropPlace release];
+					
+				}
+				[image release];
+				image = nil;
 			}
-			[image release];
-			image = nil;
+				NSLog(@"%d", self.questionLeft);
 		}
 		[obj release];
 	}
@@ -350,6 +376,15 @@ float const LBMagnification = 2.0;
 	[self levelSelector:self.isAtLevel];
 	
 	[[self.view viewWithTag:503] removeFromSuperview];
+}
+
+- (IBAction)backButton:(id)sender {
+	[self.navigationController popToRootViewControllerAnimated:YES];
+}
+
+- (void)toBookMenu 
+{
+	[[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 - (BOOL)noQuestionLeft 

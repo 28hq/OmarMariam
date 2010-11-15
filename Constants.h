@@ -11,6 +11,7 @@
 // ID
 #define kLevelIndicatorViewID	1001
 #define kUnderlineViewID		1002
+#define kButtonsView			1003
 
 // Size
 #define kVerticalGap			10.0
@@ -21,6 +22,8 @@
 #define kIndicatorWidth			100.0
 
 #define kDelay					3
+
+#define kClozeGameFontSize		45
 
 // Quiz
 #define kCorrectAnswerScore		100
@@ -34,4 +37,4 @@
 #define kLBGap				80.0
 #define kLBWidth			200.0
 #define kLBMagnification	2.0
-#define kBlankWidth			100.0
+#define kBlankWidth			150.0

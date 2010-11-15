@@ -17,13 +17,13 @@
 	UILabel *activeLabel;
 	CGPoint hitPoint;
 	
-	UIView * superView;
+	UIView * gameview;
 	NSString * pathToMusicFile;
 	AVAudioPlayer * soundPlay;
 }
 
 @property (nonatomic, retain) IBOutlet ClozeGameViewController *viewController;
-@property (nonatomic, retain) IBOutlet UIView * superView;
+@property (nonatomic, retain) IBOutlet UIView * gameview;
 
 @property (nonatomic, retain) UIImageView *activeImageView;
 @property (nonatomic, retain) UILabel *activeLabel;

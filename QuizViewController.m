@@ -22,6 +22,7 @@
 @synthesize time;
 @synthesize timer;
 @synthesize totalScore;
+@synthesize bookNumber;
 
 // IBOutlet
 @synthesize cover, game, end;
@@ -35,10 +36,11 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
+- (id)initWithBookNumber:(int)number 
+{
+    if ((self = [super initWithNibName:@"QuizViewController" bundle:nil])) {
         // Custom initialization
-		//self.theData = [[NSMutableDictionary alloc] init];
+		self.bookNumber = number;
 		self.gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"1" 
 																								  ofType:@"png"]];
     }
@@ -57,8 +59,8 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	self.currentQuestionNo = 1;
 	self.totalScore = 0;
 	self.totalCorrectAnswer = 0;
-	int gameNo = 1;
-	NSString *directory = [[NSString alloc] initWithFormat:@"Volume1/Quizzes/Quiz%d/Images", gameNo];
+
+	NSString *directory = [[NSString alloc] initWithFormat:@"Volume1/Quizzes/Quiz%d/Images", self.bookNumber];
 	
 	NSString *imagePath = [[NSString alloc] init];
 	imagePath = [[NSBundle mainBundle] pathForResource:@"cover" 
@@ -71,7 +73,7 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	
 	image = nil;
 	imagePath = nil;
-	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", gameNo] 
+	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", self.bookNumber] 
 												ofType:@"png"];
 	
 	image = [[UIImage alloc] initWithContentsOfFile:imagePath];
@@ -416,6 +418,7 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 		[self.popupView setHidden:NO];
 		
 		self.totalScore -= kWrongAnswerScore;
+
 		self.score.text = [NSString stringWithFormat:@"%d", self.totalScore];
 		[self performSelector:@selector(nextQuestion) withObject:nil afterDelay:kDelay];
 	}
@@ -441,7 +444,6 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	// timeout.
 	if (0 == self.time) 
 	{
-		[self.countdownTimer invalidate];
 		NSLog(@"timeout");
 		[self wrongAnswer];
 		self.countdownTime.text = [NSString stringWithFormat:@"0:%02d", self.time];
@@ -461,6 +463,7 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	self.continueButtonView.hidden = YES;
 	self.popupView.hidden = YES;
 	self.countdownTime.text = [NSString stringWithFormat:@"0:%d", self.time];
+
 //	self.questionImageView.image = nil;
 	
 	for (UIView *subview in [self.choicesView subviews]) 
@@ -496,6 +499,8 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 {				
 	[self cleanUp];
 	
+	self.score.text = @"0";
+	
 	if ([self.countdownTimer isValid]) 
 	{
 		[self.countdownTimer invalidate];
@@ -510,6 +515,11 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	[self loadQuestion:self.currentQuestionNo];
 	
 	[self startTimer];
+}
+
+- (void)toBookMenu 
+{
+	[[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 

@@ -23,7 +23,8 @@
 // IBOutlet
 @synthesize gameNumber, gameNumber2, levelIndicator, levelImageView, levelImageView2, cover, game;
 @synthesize continueButtonView, continueButton;
-@synthesize wordListView, end;//, labelView;
+@synthesize wordListView, end;
+@synthesize wordListScrollView;
 
 - (id)initWithBookNumber:(int)number 
 {
@@ -44,7 +45,7 @@
 		[_dropViews release];
 		
 		NSMutableArray *_sentenceViews = [[NSMutableArray alloc] init];
-		self.sentenceViews = _dropViews;
+		self.sentenceViews = _sentenceViews;
 		[_sentenceViews release];
 		
 		//imagePaths = [[NSArray alloc] initWithArray:[[NSBundle mainBundle] pathsForResourcesOfType:@"png" inDirectory:@"Volume1/ClozeGames/Game1/Images"]];
@@ -151,6 +152,9 @@
 	NSUInteger i, count = [self.theData count];
 	
 	if (0 == count) { return; }
+
+	int wordCount = 0;
+	//NSMutableArray *sizes = [[NSMutableArray alloc] init];
 	
 	for (i = 0; i < count; i++) 
 	{
@@ -158,55 +162,93 @@
 		
 		if ([obj isKindOfClass:[NSDictionary class]] && [(NSDictionary*)obj count] > 0) 
 		{
-			
+			int tag = i;
+			CGSize size;
 			// Set the location of the `word`
-			NSString * word = [[NSString alloc] initWithString:[obj valueForKey:@"word"]];
 			
-			UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
-			textLabel.text = word;
-			textLabel.backgroundColor = [UIColor clearColor];
-			textLabel.tag = i;
-			
-			textLabel.font = [UIFont boldSystemFontOfSize:40];
-			CGSize size = [word sizeWithFont:[UIFont boldSystemFontOfSize:40]];
-			
-			CGRect rect;
-			rect.origin.x = kLBPaddingLeft;
-			rect.origin.y = kLBPaddingTop + i * (size.height + 20);
-			rect.size = size;
-			
-			textLabel.frame = rect;
-			
-			[self.wordListView addSubview:textLabel];
-			[self.labelViews addObject:textLabel];
+			if ([[obj valueForKey:@"word"] isKindOfClass:[NSArray class]]) {
+				int counter = 0;
+				for (NSString *_word in [obj valueForKey:@"word"]) {
+					
+					counter += 1;
+					wordCount += 1;
+					tag = i + (10 * counter); 
+					
+					UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+					textLabel.text = _word;
+					textLabel.backgroundColor = [UIColor clearColor];
+					textLabel.tag = tag;
+					textLabel.textAlignment = UITextAlignmentRight;
+					
+					textLabel.font = [UIFont boldSystemFontOfSize:40];
+					size = [_word sizeWithFont:[UIFont boldSystemFontOfSize:40]];
+					//[sizes addObject:[NSValue valueWithCGSize:size]];
+					
+					CGRect rect;
+					rect.origin.x = self.wordListView.frame.size.width - size.width - 30;
+					rect.origin.y = kLBPaddingTop + (wordCount-1) * (size.height + 20);
+					rect.size = size;
+					
+					textLabel.frame = rect;
+					
+					
+					[self.wordListScrollView addSubview:textLabel];
+					[self.labelViews addObject:textLabel];
+					
+					
+					[textLabel release];
+					[_word release];
+				}
+			}
+			else if (nil != [obj valueForKey:@"word"]) {
+				wordCount += 1;
+				
+				NSString * word = [[NSString alloc] initWithString:[obj valueForKey:@"word"]];
+				
+				UILabel *textLabel = [[UILabel alloc] initWithFrame:CGRectZero];
+				textLabel.text = word;
+				textLabel.backgroundColor = [UIColor clearColor];
+				textLabel.tag = i;
+				textLabel.textAlignment = UITextAlignmentRight;
+				
+				textLabel.font = [UIFont boldSystemFontOfSize:40];
+				size = [word sizeWithFont:[UIFont boldSystemFontOfSize:40]];
+				//[sizes addObject:[NSValue valueWithCGSize:size]];
+				
+				CGRect rect;
+				rect.origin.x = self.wordListView.frame.size.width - size.width - 30;
+				rect.origin.y = kLBPaddingTop + (wordCount-1) * (size.height + 20);
+				rect.size = size;
+				
+				textLabel.frame = rect;
+				
+				
+				[self.wordListScrollView addSubview:textLabel];
+				[self.labelViews addObject:textLabel];
+				
+				
+				[textLabel release];
+				[word release];				
+			}
 
 			
-			[textLabel release];
-			[word release];
+			self.wordListScrollView.layer.borderColor = [[UIColor blueColor] CGColor];
+			self.wordListScrollView.layer.borderWidth = 3;
+			self.wordListScrollView.layer.cornerRadius = 5;
 			
-//			UIScrollView * scrollView = (UIScrollView *)[[self wordListView] superview];
-//			[scrollView setBackgroundColor:[UIColor redColor]];
-//			scrollView.clipsToBounds = YES;
-//			
-//			[scrollView setContentSize:CGSizeMake(502, 400)];
-//			scrollView.scrollEnabled = YES;
-//			[scrollView setNeedsDisplay];
+			self.wordListScrollView.backgroundColor = [UIColor whiteColor];
+			self.wordListScrollView.clipsToBounds = YES;
+			self.wordListScrollView.contentSize = CGSizeMake(self.wordListScrollView.frame.size.width, (wordCount) * (size.height + 20));
+			self.wordListScrollView.scrollEnabled = YES;
+			self.wordListScrollView.delegate = self;	
 			
-			
-			
-//			if (i == 2) {
-//				frame.origin.x = 1024 - i * (frame.size.width + kLBPaddingRight);
-//				frame.origin.y = kLBPaddingTop;// + (i-1) * (imageRect.size.height + LBGap);
-//			}
-//			else {
+			self.wordListView.frame = CGRectMake(0.0, 0.0, self.wordListScrollView.frame.size.width, self.wordListScrollView.contentSize.height);
 
 			
-//			}
-			//NSLog(@"%@", [[[self wordListView] superview] description]);
 			// Create sentences.
 			
 			
-			CGRect lastPosition = CGRectMake(900, 0, 0, 0);
+			CGRect lastPosition = CGRectMake(1000, 0, 0, 0);
 			
 			NSArray *stringArray = [[NSArray alloc] init];
 			stringArray = [[[[self theData] objectAtIndex:i] valueForKey:@"sentence"] componentsSeparatedByString:@"#"];
@@ -217,6 +259,7 @@
 			for (j = 0; j < count; j++) 
 			{
 				NSString * ayat = [stringArray objectAtIndex:j];
+				
 				//NSLog(@"%@", ayat);			
 				
 				UILabel *sentence = [[UILabel alloc] initWithFrame:CGRectZero];
@@ -225,17 +268,18 @@
 				CGRect frame;
 				
 				frame.origin.x = 1024 - (j * kBlankWidth) - 30;
-				frame.origin.y = 4*kLBPaddingTop + i * (30 + kLBGap);
+				frame.origin.y = 4 * kLBPaddingTop + i * (30 + kLBGap);
 				frame.size.height = 30;
 				
 				sentence.frame = frame;
 				sentence.text = ayat;
-				sentence.font = [UIFont systemFontOfSize:60];
+				sentence.font = [UIFont systemFontOfSize:kClozeGameFontSize];
 				[sentence sizeToFit];
 				//NSLog(@"%@", NSStringFromCGRect(sentence.frame));
 				
 				
-				frame.origin.x = lastPosition.origin.x - (j * kBlankWidth) - sentence.frame.size.width;
+				if (j!=0) frame.origin.x = lastPosition.origin.x - (1 * kBlankWidth) - sentence.frame.size.width;
+				else frame.origin.x = lastPosition.origin.x - sentence.frame.size.width;
 				
 				sentence.frame = frame;
 				[sentence sizeToFit];
@@ -260,11 +304,26 @@
 						dropRect.size.height = 70;
 					}
 					
-					UIView *dropPlace = [[UIView alloc] initWithFrame:dropRect];
+					UIView *dropPlace = [[UIView alloc] init];
 					dropPlace.backgroundColor = [UIColor clearColor];
-					dropPlace.tag = i;
+					
+					if (tag > 10) {
+						dropPlace.tag = i + (10 * j);
+						//dropRect.size.width = [[sizes objectAtIndex:j-1] CGSizeValue].width;
+					}
+					else {
+						dropPlace.tag = tag;
+						//dropRect.size.width = [[sizes objectAtIndex:0] CGSizeValue].width;
+					}
+					
+					dropPlace.frame = dropRect;
+
 					
 					[self.dropViews addObject:dropPlace];
+					
+					//NSLog(@"%@", NSStringFromCGRect([[self.dropViews objectAtIndex:0] frame]));
+
+					
 					[self.view addSubview:dropPlace];
 					[dropPlace release];
 					
@@ -274,7 +333,7 @@
 					underline.tag = kUnderlineViewID;
 					CGRect lineFrame = dropRect;
 					
-					lineFrame.size.height = 2.0;				
+					lineFrame.size.height = 4.0;				
 					lineFrame.origin.y += dropRect.size.height - 5.0;
 					underline.frame = lineFrame;
 					
@@ -440,6 +499,11 @@
 	[self levelSelector:self.isAtLevel];
 	
 	self.continueButtonView.hidden = YES;
+}
+
+- (void)toBookMenu 
+{
+	[[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 @end

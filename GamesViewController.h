@@ -9,28 +9,20 @@
 #import <UIKit/UIKit.h>
 
 
-@interface GamesViewController : UIViewController {
+@interface GamesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
 	int bookNumber;
+	NSArray *bookContents;
 }
 
-@property (assign) int	bookNumber;
+@property (assign) int		bookNumber;
+@property (retain) NSArray	*bookContents;
 
 // IBOutlets
-@property (retain) IBOutlet UIImageView	*bookCoverImage;
-@property (retain) IBOutlet UIButton	*bookButton;
+@property (retain) IBOutlet UIImageView				*bookCoverImage;
+@property (retain) IBOutlet UIButton				*bookButton;
 
-//@property (retain) IBOutlet UIButton	*labelGameButton;
-//@property (retain) IBOutlet UIButton	*lineGameButton;
-//@property (retain) IBOutlet UIButton	*clozeGameButton;
-//@property (retain) IBOutlet UIButton	*quizGameButton;
 
 // IBActions
-
-- (IBAction)bookGame:(id)sender;
-- (IBAction)labelGameButton:(id)sender;
-- (IBAction)lineGameButton:(id)sender;
-- (IBAction)clozeGameButton:(id)sender;
-- (IBAction)quizGameButton:(id)sender;
 - (IBAction)exitToMenu:(id)sender;
 
 @end

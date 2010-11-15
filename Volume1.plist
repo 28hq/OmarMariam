@@ -16,7 +16,7 @@
 					<key>word</key>
 					<string>مريم</string>
 					<key>picture</key>
-					<string>maryam</string>
+					<string>mariam</string>
 				</dict>
 				<dict>
 					<key>word</key>
@@ -30,7 +30,7 @@
 					<key>word</key>
 					<string>مريم</string>
 					<key>picture</key>
-					<string>maryam</string>
+					<string>mariam</string>
 				</dict>
 				<dict>
 					<key>word</key>
@@ -91,7 +91,7 @@
 					<key>word</key>
 					<string>مريم</string>
 					<key>picture</key>
-					<string>maryam</string>
+					<string>mariam</string>
 				</dict>
 				<dict>
 					<key>word</key>
@@ -103,9 +103,41 @@
 			<array>
 				<dict>
 					<key>word</key>
-					<string>عمر</string>
+					<string>هذا عمر</string>
 					<key>picture</key>
 					<string>omar</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>هذه مريم</string>
+					<key>picture</key>
+					<string>mariam</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>هذه قطة</string>
+					<key>picture</key>
+					<string>qittah</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>عمر و مريم</string>
+					<key>picture</key>
+					<string>omarwamariam</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>عمر و قطة</string>
+					<key>picture</key>
+					<string>omarwaqittah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>مريم و قطة</string>
+					<key>picture</key>
+					<string>mariamwaqittah</string>
 				</dict>
 			</array>
 		</array>
@@ -116,7 +148,7 @@
 					<key>word</key>
 					<string>هذا</string>
 					<key>sentence</key>
-					<string># غمر.</string>
+					<string># عمر.</string>
 				</dict>
 				<dict>
 					<key>word</key>
@@ -128,14 +160,14 @@
 					<key>word</key>
 					<string>انا</string>
 				</dict>
-				<string>omarmariam</string>
+				<string>01</string>
 			</array>
 			<array>
 				<dict>
 					<key>word</key>
 					<string>هذا</string>
 					<key>sentence</key>
-					<string># غمر.</string>
+					<string># عمر.</string>
 				</dict>
 				<dict>
 					<key>word</key>
@@ -149,7 +181,7 @@
 					<key>sentence</key>
 					<string> # قطة.</string>
 				</dict>
-				<string>omarmariamqittah</string>
+				<string>02</string>
 			</array>
 			<array>
 				<dict>
@@ -166,11 +198,11 @@
 				</dict>
 				<dict>
 					<key>word</key>
-					<string>آحب</string>
+					<string>أحب</string>
 					<key>sentence</key>
-					<string>آنا # القطة.</string>
+					<string>أنا # القطة.</string>
 				</dict>
-				<string>omarmariamqittah</string>
+				<string>02</string>
 			</array>
 		</array>
 		<key>QuizGame</key>
@@ -359,6 +391,133 @@
 				</dict>
 			</array>
 		</array>
+		<key>LabelGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>حلوى</string>
+					<key>picture</key>
+					<string>halwaa</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کرة</string>
+					<key>picture</key>
+					<string>kurah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دکان</string>
+					<key>picture</key>
+					<string>dukkan</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قفص</string>
+					<key>picture</key>
+					<string>qafas</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>حلوى</string>
+					<key>picture</key>
+					<string>halwaa</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کرة</string>
+					<key>picture</key>
+					<string>kurah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دکان</string>
+					<key>picture</key>
+					<string>dukkan</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قفص</string>
+					<key>picture</key>
+					<string>qafas</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قطة</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>حلوى</string>
+					<key>picture</key>
+					<string>halwaa</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دکان</string>
+					<key>picture</key>
+					<string>dukkan</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قفص</string>
+					<key>picture</key>
+					<string>qafas</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>عمر</string>
+					<key>picture</key>
+					<string>omar</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>مريم</string>
+					<key>picture</key>
+					<string>mariam</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>حلوى</string>
+					<key>picture</key>
+					<string>halwaa</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قطة</string>
+					<key>picture</key>
+					<string>qittah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>عمر</string>
+					<key>picture</key>
+					<string>omar</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>مريم</string>
+					<key>picture</key>
+					<string>mariam</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کرة </string>
+					<key>picture</key>
+					<string>kurah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قفص</string>
+				</dict>
+			</array>
+		</array>
 	</dict>
 	<dict>
 		<key>LineGame</key>
@@ -503,6 +662,133 @@
 					<string>کره</string>
 					<key>picture</key>
 					<string>kurah</string>
+				</dict>
+			</array>
+		</array>
+		<key>LabelGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>کتکوت</string>
+					<key>picture</key>
+					<string>katkut</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کرة</string>
+					<key>picture</key>
+					<string>kurah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>أعشاب</string>
+					<key>picture</key>
+					<string>aeshab</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>حديقة</string>
+					<key>picture</key>
+					<string>hadiqah</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>کتکوت</string>
+					<key>picture</key>
+					<string>katkut</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کرة</string>
+					<key>picture</key>
+					<string>kurah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>أعشاب</string>
+					<key>picture</key>
+					<string>aeshab</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>حديقة</string>
+					<key>picture</key>
+					<string>hadiqah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قطة</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>مريم</string>
+					<key>picture</key>
+					<string>mariam</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دکان</string>
+					<key>picture</key>
+					<string>dukkan</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>أعشاب</string>
+					<key>picture</key>
+					<string>aeshab</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>حديقة</string>
+					<key>picture</key>
+					<string>hadiqah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قفص</string>
+					<key>picture</key>
+					<string>qafas</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>عمر</string>
+					<key>picture</key>
+					<string>omar</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>حلوى</string>
+					<key>picture</key>
+					<string>halwaa</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کتکوت</string>
+					<key>picture</key>
+					<string>katkut</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قطة</string>
+					<key>picture</key>
+					<string>qittah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کرة</string>
+					<key>picture</key>
+					<string>kurah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>أعشاب</string>
 				</dict>
 			</array>
 		</array>
@@ -799,6 +1085,173 @@
 				</dict>
 			</array>
 		</array>
+		<key>LabelGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>بلو نات</string>
+					<key>picture</key>
+					<string>balunat</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کعك</string>
+					<key>picture</key>
+					<string>kaek</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دائره</string>
+					<key>picture</key>
+					<string>dairah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>بيت</string>
+					<key>picture</key>
+					<string>beit</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>بلو نات</string>
+					<key>picture</key>
+					<string>balunat</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کعك</string>
+					<key>picture</key>
+					<string>kaek</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دائره</string>
+					<key>picture</key>
+					<string>dairah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>بيت</string>
+					<key>picture</key>
+					<string>beit</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>حديقة</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>بلو نات</string>
+					<key>picture</key>
+					<string>balunat</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کعك</string>
+					<key>picture</key>
+					<string>kaek</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دائره</string>
+					<key>picture</key>
+					<string>dairah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>آعشاب</string>
+					<key>picture</key>
+					<string>aeshab</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کرة</string>
+					<key>picture</key>
+					<string>kurah</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>کعك</string>
+					<key>picture</key>
+					<string>kaek</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>بيت</string>
+					<key>picture</key>
+					<string>beit</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>حديقة</string>
+					<key>picture</key>
+					<string>hadiqah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قفص</string>
+					<key>picture</key>
+					<string>qafas</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دکان</string>
+					<key>picture</key>
+					<string>dukkan</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کرة</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>دائره</string>
+					<key>picture</key>
+					<string>dairah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قطة</string>
+					<key>picture</key>
+					<string>qittah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کتکوت</string>
+					<key>picture</key>
+					<string>katkut</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>بلو نات</string>
+					<key>picture</key>
+					<string>balunat</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>حلوى</string>
+					<key>picture</key>
+					<string>halwaa</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>آعشاب</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دکان</string>
+				</dict>
+			</array>
+		</array>
 	</dict>
 	<dict>
 		<key>ClozeGame</key>
@@ -1092,6 +1545,173 @@
 				</dict>
 			</array>
 		</array>
+		<key>LabelGame</key>
+		<array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>مقعد</string>
+					<key>picture</key>
+					<string>maqead</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>ماء</string>
+					<key>picture</key>
+					<string>maa</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>سلة</string>
+					<key>picture</key>
+					<string>sallah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>غرفة النوم </string>
+					<key>picture</key>
+					<string>ghurfatunnaum</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>مقعد</string>
+					<key>picture</key>
+					<string>maqead</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>ماء</string>
+					<key>picture</key>
+					<string>maa</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>سلة</string>
+					<key>picture</key>
+					<string>sallah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>غرفة النوم </string>
+					<key>picture</key>
+					<string>ghurfatunnaum</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>حديقة</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>غرفة النوم </string>
+					<key>picture</key>
+					<string>ghurfatunnaum</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>ماء</string>
+					<key>picture</key>
+					<string>maa</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کتکوت</string>
+					<key>picture</key>
+					<string>katkut</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کعك</string>
+					<key>picture</key>
+					<string>kaek</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کرة السلة</string>
+					<key>picture</key>
+					<string>kurahsallah</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>حلوى</string>
+					<key>picture</key>
+					<string>halwaa</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>آعشاب</string>
+					<key>picture</key>
+					<string>aeshab</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>بلو نات</string>
+					<key>picture</key>
+					<string>balunat</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>مقعد</string>
+					<key>picture</key>
+					<string>maqead</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>بيت</string>
+					<key>picture</key>
+					<string>beit</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دکان</string>
+				</dict>
+			</array>
+			<array>
+				<dict>
+					<key>word</key>
+					<string>دائره</string>
+					<key>picture</key>
+					<string>dairah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>حديقة</string>
+					<key>picture</key>
+					<string>hadiqah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قطة</string>
+					<key>picture</key>
+					<string>qittah</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>دکان</string>
+					<key>picture</key>
+					<string>dukkan</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>قفص</string>
+					<key>picture</key>
+					<string>qafas</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>کتکوت</string>
+				</dict>
+				<dict>
+					<key>word</key>
+					<string>بيت</string>
+				</dict>
+			</array>
+		</array>
 	</dict>
 	<dict>
 		<key>ClozeGame</key>
@@ -1099,15 +1719,21 @@
 			<array>
 				<dict>
 					<key>word</key>
-					<string>يساعدان ، الأب</string>
+					<array>
+						<string>يساعدان </string>
+						<string>الأب</string>
+					</array>
 					<key>sentence</key>
 					<string>عمر و مريم # #  </string>
 				</dict>
 				<dict>
 					<key>word</key>
-					<string>زرع ، الشجره</string>
+					<array>
+						<string>زرع </string>
+						<string>الشجره</string>
+					</array>
 					<key>sentence</key>
-					<string>في #</string>
+					<string>في # #  </string>
 				</dict>
 			</array>
 			<array>
@@ -1336,13 +1962,13 @@
 					<key>word</key>
 					<string>المدرسة</string>
 					<key>sentence</key>
-					<string>  عمر و مريم يذهبان إلي #</string>
+					<string>عمر و مريم يذهبان إلي #</string>
 				</dict>
 				<dict>
 					<key>word</key>
 					<string>الحقيبة</string>
 					<key>sentence</key>
-					<string> عمر و مريم عند هما # </string>
+					<string>عمر و مريم عند هما # </string>
 				</dict>
 				<dict>
 					<key>word</key>

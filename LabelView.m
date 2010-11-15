@@ -25,7 +25,18 @@
 	self.pathToMusicFile = [[NSString alloc] initWithString:
 							[[NSBundle mainBundle] pathForResource:@"correct"
 															ofType:@"mp3"]];
+	
+	/*
+	 * Success sound
+	 */
+	
 	self.soundPlay = [[AVAudioPlayer alloc] init];
+	
+	self.soundPlay = [soundPlay initWithContentsOfURL:[NSURL fileURLWithPath:self.pathToMusicFile] 
+												error:NULL];
+	self.soundPlay.delegate = self;
+	
+	[self.soundPlay prepareToPlay];
 }
 
 /*
@@ -119,18 +130,13 @@
 				_matchedWord.font = activeLabel.font;
 				
 				[dropView addSubview:_matchedWord];
-				
-				/*
-				 * Success sound
-				 */
-				self.soundPlay = [soundPlay initWithContentsOfURL:[NSURL fileURLWithPath:self.pathToMusicFile] 
-															error:NULL];
-				soundPlay.delegate = self;
+
 				[soundPlay play];
 				
 				/*
 				 * Check question and move to next level if completed.
 				 */
+				NSLog(@"%d", viewController.questionLeft);
 				viewController.questionLeft = viewController.questionLeft - 1;
 				if ([viewController noQuestionLeft]) 
 				{

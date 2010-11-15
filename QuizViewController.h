@@ -10,7 +10,7 @@
 
 
 @interface QuizViewController : UIViewController {
-
+	int bookNumber;
 	int countQuestions;
 	int currentQuestionNo;
 	int totalScore;
@@ -32,6 +32,7 @@
 	UIImageView *levelImageView, *gameNumber, *gameNumber2, *questionImageView;
 }
 
+@property (assign) int bookNumber;
 @property (assign) int countQuestions;
 @property (assign) int currentQuestionNo;
 @property (assign) int totalScore;
@@ -72,6 +73,7 @@
 - (void)startTimer:(int)initialTime;
 - (void)nextQuestion;
 - (void)cleanUp;
+- (void)toBookMenu;
 
 // IBAction
 - (IBAction)startGame:(id)sender;

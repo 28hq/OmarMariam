@@ -14,31 +14,21 @@
 #import "ClozeGameViewController.h"
 #import "QuizViewController.h"
 
+#import "Constants.h"
+
 @implementation GamesViewController
 
 @synthesize bookNumber;
+@synthesize bookContents;
 
 @synthesize bookCoverImage;
 @synthesize bookButton;
-//@synthesize lineGameButton;
-//@synthesize labelGameButton;
-//@synthesize clozeGameButton;
-//@synthesize quizGameButton;
-
-/*
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [super viewDidLoad];
+	
+	[self.navigationController setNavigationBarHidden:YES];
 	
 	NSString *imagePath = [[NSString alloc] init];
 	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"BP%d01", self.bookNumber] 
@@ -46,6 +36,15 @@
 	UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
 	self.bookCoverImage.image = image;
 	[self.bookButton setBackgroundImage:image forState:UIControlStateNormal];
+	
+	self.bookContents = [[NSArray alloc] initWithObjects:
+						 [NSDictionary dictionaryWithObjectsAndKeys:@"Book", @"title", @"BookViewController", @"class", nil],
+						 [NSDictionary dictionaryWithObjectsAndKeys:@"Line Game", @"title", @"LineGameViewController", @"class", nil],
+						 [NSDictionary dictionaryWithObjectsAndKeys:@"Label Game", @"title", @"LabelViewController", @"class", nil],
+						 [NSDictionary dictionaryWithObjectsAndKeys:@"Cloze Passage Game", @"title", @"ClozeGameViewController", @"class", nil],
+						 [NSDictionary dictionaryWithObjectsAndKeys:@"Quiz Game", @"title", @"QuizViewController", @"class", nil],
+						 nil];
+
 }
 
 
@@ -67,47 +66,77 @@
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
+	
+	CATransition *transition = [CATransition animation];
+	transition.duration = .3;
+	transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+	
+	//NSString *transitionTypes[4] = { kCATransitionPush, kCATransitionMoveIn, kCATransitionReveal, kCATransitionFade };
+	transition.type = kCATransitionMoveIn;
+	
+	//NSString *transitionSubtypes[4] = { kCATransitionFromRight, kCATransitionFromLeft, kCATransitionFromTop, kCATransitionFromBottom };
+	transition.subtype = kCATransitionFromBottom;
+	
+	// create buttons.
+	UIButton *backToLibraryButton = [UIButton buttonWithType:UIButtonTypeCustom];
+	backToLibraryButton.tag = kButtonsView;
+	backToLibraryButton.frame = CGRectMake(5.0, 5.0, 150.0, 30.0);
+	backToLibraryButton.backgroundColor = [UIColor brownColor];
+	backToLibraryButton.alpha = 0.8;
+
+	backToLibraryButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+	[backToLibraryButton setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+	[backToLibraryButton setTitle:@"Library" forState:UIControlStateNormal];
+	
+	backToLibraryButton.layer.borderColor = [[UIColor blackColor] CGColor];
+	backToLibraryButton.layer.borderWidth = 1;
+	backToLibraryButton.layer.cornerRadius = 5;
+	
+
+	[backToLibraryButton addTarget:self
+							action:@selector(exitToMenu:) 
+				  forControlEvents:UIControlEventTouchUpInside];
+	
+	
+	[backToLibraryButton.layer addAnimation:transition forKey:nil];
+	[self.view addSubview:backToLibraryButton];
+	
 }
 
 
 - (void)dealloc {
     [super dealloc];
-}
-
-- (IBAction)bookGame:(id)sender 
-{
-	UIViewController *viewController;
-	viewController = [[[BookViewController alloc] initWithBookNumber:self.bookNumber] autorelease];
 	
-	[self presentModalViewController:viewController animated:YES];
+	[self.bookContents release];
 }
 
-- (IBAction)labelGameButton:(id)sender 
-{
-	LabelViewController *viewController; 
-	viewController = [[LabelViewController alloc] initWithNibName:@"LabelViewController" bundle:nil];
-	[self presentModalViewController:viewController animated:YES];
+#pragma mark TableViewDataSource
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+	return [self.bookContents count];
 }
 
-- (IBAction)lineGameButton:(id)sender
-{
-	UIViewController *viewController;
-	viewController = [[LineGameViewController alloc] initWithBookNumber:self.bookNumber];
-	[self presentModalViewController:viewController animated:YES];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	
+	NSString *theTitle = @"cell";
+	
+	UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:theTitle];
+	if (cell == nil) {
+		cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:theTitle] autorelease];
+	}
+	cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	cell.textLabel.text = [[self.bookContents objectAtIndex:indexPath.row] valueForKey:@"title"];
+	return cell;
 }
 
-- (IBAction)clozeGameButton:(id)sender 
-{
-	ClozeGameViewController *viewController;
-	viewController = [[ClozeGameViewController alloc] initWithBookNumber:self.bookNumber];
-	[self presentModalViewController:viewController animated:YES];
-}
-
-- (IBAction)quizGameButton:(id)sender 
-{
-	QuizViewController *viewController;
-	viewController = [[QuizViewController alloc] initWithNibName:@"QuizViewController" bundle:nil];
-	[self presentModalViewController:viewController animated:YES];
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	Class myClass = NSClassFromString([[self.bookContents objectAtIndex:indexPath.row] valueForKey:@"class"]);
+	
+	id klass = [[myClass alloc] initWithBookNumber:self.bookNumber];
+	[self.navigationController pushViewController:klass animated:YES];
+	[klass release];
+	
+	[tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
 
 - (IBAction)exitToMenu:(id)sender

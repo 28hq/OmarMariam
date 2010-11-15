@@ -33,5 +33,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>MarkerFelt.ttc</string>
+	</array>
 </dict>
 </plist>

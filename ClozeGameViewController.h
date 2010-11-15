@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface ClozeGameViewController : UIViewController {
+@interface ClozeGameViewController : UIViewController <UIScrollViewDelegate> {
 	NSMutableArray * labelViews;
 	NSMutableArray * dropViews;
 	NSMutableArray * sentenceViews;
@@ -24,6 +24,7 @@
 	UIView * cover, * game, *end;
 	UIView * wordListView, * levelIndicator, * continueButtonView;
 	UIButton * continueButton;
+	UIScrollView *wordListScrollView;
 	UIImageView *levelImageView, *levelImageView2, *gameNumber, *gameNumber2;
 }
 
@@ -38,6 +39,7 @@
 @property (nonatomic, retain) IBOutlet UIView *cover, *game, *end;
 @property (nonatomic, retain) IBOutlet UIButton *continueButton;
 @property (nonatomic, retain) IBOutlet UIImageView *levelImageView, *levelImageView2, *gameNumber, *gameNumber2;
+@property (nonatomic, retain) IBOutlet UIScrollView *wordListScrollView;
 
 - (void)startGame:(id)sender;
 - (UIImage *)getImage:(NSString *)imageName;
@@ -45,6 +47,8 @@
 - (void)nextLevel;
 - (void)levelSelector:(int)level;
 - (void)createLevelIndicator;
+- (void)toBookMenu;
+
 - (IBAction)playAgainButton:(id)sender;
 
 @end

@@ -25,26 +25,6 @@
 @synthesize gameNumber, gameNumber2, levelImageView, levelImageView2;
 @synthesize continueButton, levelIndicator;
 
- // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-//- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-//    if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-//        // Custom initialization
-//		
-//		NSArray *_tmpData = [[NSArray alloc] init];
-//		self.theData = _tmpData;
-//		[_tmpData release];
-//
-//		NSMutableArray *_wordViews = [[NSMutableArray alloc] init];
-//		self.wordViews = _wordViews;
-//		[_wordViews release];
-//		
-//		NSMutableArray *_pictureViews = [[NSMutableArray alloc] init];
-//		self.pictureViews = _pictureViews;
-//		[_pictureViews release];
-//		
-//    }
-//    return self;
-//}
 
 - (id)initWithBookNumber:(int)number 
 {
@@ -128,6 +108,11 @@
     [super dealloc];
 }
 
+- (void)toBookMenu 
+{
+	[[self navigationController] popToRootViewControllerAnimated:YES];
+}
+
 - (void)startGame:(id)sender 
 {
 	
@@ -209,7 +194,6 @@
 			wordLabel.center = center;
 			
 			// adding to view.
-			//[self.wordView addSubview:wordLabel];
 			[wordLabels addObject:wordLabel];
 						
 			[wordLabel release];

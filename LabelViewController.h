@@ -10,7 +10,7 @@
 
 @class LabelView;
 
-@interface LabelViewController : UIViewController {
+@interface LabelViewController : UIViewController <UIScrollViewDelegate> {
 	NSMutableArray * imageViews;
 	NSMutableArray * labelViews;
 	NSMutableArray * dropViews;
@@ -22,11 +22,13 @@
 	int questionLeft;
 	int isAtLevel;
 	int totalLevel;
+	int bookNumber;
 	
 	// IBOutlet
 	UIView * wordListView, * levelIndicator, * continueButtonView;
 	UIButton * continueButton;
 	UIImageView * gameNumber;
+	UIScrollView *wordListScrollView;
 }
 
 @property (nonatomic, retain) NSMutableArray *imageViews;
@@ -35,7 +37,7 @@
 
 @property (nonatomic, retain) NSArray *imagesPath;
 @property (nonatomic, retain) NSArray *_volume1, *_theData;
-@property int questionLeft, isAtLevel, totalLevel;
+@property int questionLeft, isAtLevel, totalLevel, bookNumber;
 
 @property (nonatomic, retain) LabelView *labelView;
 
@@ -43,6 +45,7 @@
 @property (nonatomic, retain) IBOutlet UIView *continueButtonView;
 @property (nonatomic, retain) IBOutlet UIButton *continueButton;
 @property (nonatomic, retain) IBOutlet UIImageView *gameNumber;
+@property (nonatomic, retain) IBOutlet UIScrollView *wordListScrollView;
 
 @property (nonatomic, retain) IBOutlet UIView *cover;
 @property (nonatomic, retain) IBOutlet UIView *game;
@@ -52,7 +55,10 @@
 - (BOOL)noQuestionLeft;
 - (void)nextLevel;
 - (void)createLevelIndicator;
+- (void)toBookMenu;
+
 - (IBAction)startGameAtLevel:(id)sender;
 - (IBAction)playAgain:(id)sender;
+- (IBAction)backButton:(id)sender;
 
 @end

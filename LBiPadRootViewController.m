@@ -108,7 +108,9 @@
 	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
 	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	gameController.bookNumber = 1;
-	[self presentModalViewController:gameController animated:YES];
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
+	[self presentModalViewController:navController animated:YES];
 }
 
 - (IBAction)openBook2:(id)sender
@@ -118,7 +120,9 @@
 	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
 	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	gameController.bookNumber = 2;
-	[self presentModalViewController:gameController animated:YES];
+
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
+	[self presentModalViewController:navController animated:YES];
 }
 
 - (IBAction)openBook3:(id)sender
@@ -128,7 +132,9 @@
 	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
 	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	gameController.bookNumber = 3;
-	[self presentModalViewController:gameController animated:YES];
+
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
+	[self presentModalViewController:navController animated:YES];
 }
 
 - (IBAction)openBook4:(id)sender
@@ -138,7 +144,9 @@
 	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
 	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	gameController.bookNumber = 4;
-	[self presentModalViewController:gameController animated:YES];
+
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
+	[self presentModalViewController:navController animated:YES];
 }
 
 - (IBAction)openBook5:(id)sender
@@ -148,7 +156,9 @@
 	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
 	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	gameController.bookNumber = 5;
-	[self presentModalViewController:gameController animated:YES];
+	
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
+	[self presentModalViewController:navController animated:YES];
 }
 
 - (IBAction)openBook6:(id)sender
@@ -158,7 +168,9 @@
 	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
 	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	gameController.bookNumber = 6;
-	[self presentModalViewController:gameController animated:YES];
+
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
+	[self presentModalViewController:navController animated:YES];
 }
 
 - (IBAction)openBook7:(id)sender
@@ -168,7 +180,9 @@
 	gameController = [[GamesViewController alloc] initWithNibName:@"GamesViewController" bundle:nil];
 	gameController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
 	gameController.bookNumber = 7;
-	[self presentModalViewController:gameController animated:YES];
+
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
+	[self presentModalViewController:navController animated:YES];
 }
 
 @end
