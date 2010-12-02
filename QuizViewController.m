@@ -41,7 +41,7 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
     if ((self = [super initWithNibName:@"QuizViewController" bundle:nil])) {
         // Custom initialization
 		self.bookNumber = number;
-		self.gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"1" 
+		self.gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", number] 
 																								  ofType:@"png"]];
     }
     return self;
@@ -406,6 +406,7 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 		}
 		
 		UITextView *textView = [[UITextView alloc] initWithFrame:self.popupView.frame];
+		textView.editable = NO;
 		textView.text = [NSString stringWithFormat:@"Incorrect!\nThe correct answer is:\n%@", self.rightAnswer];
 		textView.font = [UIFont systemFontOfSize:30];
 		textView.textAlignment = UITextAlignmentCenter;
