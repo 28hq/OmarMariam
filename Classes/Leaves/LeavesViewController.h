@@ -13,5 +13,7 @@
 	LeavesView *leavesView;
 }
 
+@property (retain) IBOutlet LeavesView *leavesView;
+
 @end
 
