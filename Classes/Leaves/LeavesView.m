@@ -423,6 +423,10 @@ CGFloat distance(CGPoint a, CGPoint b);
 	if (interactionLocked)
 		return;
 	
+	if ([[touches anyObject] tapCount] == 1) {
+		[self performSelector:@selector(oneTap) withObject:nil afterDelay:.5];
+	}  
+	
 	UITouch *touch = [event.allTouches anyObject];
 	touchBeganPoint = [touch locationInView:self];
 	

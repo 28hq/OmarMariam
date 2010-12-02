@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
+#import "LBView.h"
+
 
 typedef enum {
     LeavesViewModeSinglePage,
@@ -22,7 +24,7 @@ typedef enum {
 @protocol LeavesViewDataSource;
 @protocol LeavesViewDelegate;
 
-@interface LeavesView : UIView {
+@interface LeavesView : LBView {
 	CALayer *topPage;
 	CALayer *topPageOverlay;
 	CAGradientLayer *topPageShadow;
