@@ -34,6 +34,42 @@
     [super dealloc];
 }
 
+- (void)createButton {
+	
+	CATransition *transition = [CATransition animation];
+	transition.duration = .3;
+	transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
+	
+	//NSString *transitionTypes[4] = { kCATransitionPush, kCATransitionMoveIn, kCATransitionReveal, kCATransitionFade };
+	transition.type = kCATransitionMoveIn;
+	
+	//NSString *transitionSubtypes[4] = { kCATransitionFromRight, kCATransitionFromLeft, kCATransitionFromTop, kCATransitionFromBottom };
+	transition.subtype = kCATransitionFromBottom;
+	
+	// main library.
+	UIButton *toBookMenu = [UIButton buttonWithType:UIButtonTypeCustom];
+	toBookMenu.tag = kButtonsView;
+	toBookMenu.frame = CGRectMake(5.0, 5.0, 150.0, 30.0);
+	toBookMenu.backgroundColor = [UIColor brownColor];
+	toBookMenu.alpha = 0.8;
+	
+	toBookMenu.titleLabel.font = [UIFont boldSystemFontOfSize:18];
+	[toBookMenu setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+	[toBookMenu setTitle:@"Book Menu" forState:UIControlStateNormal];
+	
+	toBookMenu.layer.borderColor = [[UIColor blackColor] CGColor];
+	toBookMenu.layer.borderWidth = 1;
+	toBookMenu.layer.cornerRadius = 5;
+	
+	[toBookMenu addTarget:self.viewController 
+				   action:@selector(toBookMenu) 
+		 forControlEvents:UIControlEventTouchUpInside];
+	
+	[toBookMenu.layer addAnimation:transition forKey:nil];
+	
+	[self addSubview:toBookMenu];
+}
+
 - (void)oneTap 
 {	
 	// create uiview for buttons.
@@ -45,66 +81,14 @@
 	
 	else 
 	{
-		CATransition *transition = [CATransition animation];
-		transition.duration = .3;
-		transition.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut];
-		
-		//NSString *transitionTypes[4] = { kCATransitionPush, kCATransitionMoveIn, kCATransitionReveal, kCATransitionFade };
-		transition.type = kCATransitionMoveIn;
-		
-		//NSString *transitionSubtypes[4] = { kCATransitionFromRight, kCATransitionFromLeft, kCATransitionFromTop, kCATransitionFromBottom };
-		transition.subtype = kCATransitionFromBottom;
-
-		// create buttons.
-//		UIButton *backToLibraryButton = [UIButton buttonWithType:UIButtonTypeCustom];
-//		backToLibraryButton.tag = kButtonsView;
-//		backToLibraryButton.frame = CGRectMake(5.0, 5.0, 150.0, 30.0);
-//		backToLibraryButton.backgroundColor = [UIColor brownColor];
-//		backToLibraryButton.alpha = 0.8;
-//
-//		backToLibraryButton.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-//		[backToLibraryButton setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
-//		[backToLibraryButton setTitle:@"Library" forState:UIControlStateNormal];
-//		
-//		backToLibraryButton.layer.borderColor = [[UIColor blackColor] CGColor];
-//		backToLibraryButton.layer.borderWidth = 1;
-//		backToLibraryButton.layer.cornerRadius = 5;
-//		
-//
-//		[backToLibraryButton addTarget:
-//								action:@selector(toBookMenu) 
-//					  forControlEvents:UIControlEventTouchUpInside];
-		
-		
-//		[backToLibraryButton.layer addAnimation:transition forKey:nil];
-		
-		// main library.
-		UIButton *toBookMenu = [UIButton buttonWithType:UIButtonTypeCustom];
-		toBookMenu.tag = kButtonsView;
-		toBookMenu.frame = CGRectMake(5.0, 5.0, 150.0, 30.0);
-		toBookMenu.backgroundColor = [UIColor brownColor];
-		toBookMenu.alpha = 0.8;
-		
-		toBookMenu.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-		[toBookMenu setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
-		[toBookMenu setTitle:@"Book Menu" forState:UIControlStateNormal];
-		
-		toBookMenu.layer.borderColor = [[UIColor blackColor] CGColor];
-		toBookMenu.layer.borderWidth = 1;
-		toBookMenu.layer.cornerRadius = 5;
-		
-		[toBookMenu addTarget:self.viewController 
-					   action:@selector(toBookMenu) 
-			 forControlEvents:UIControlEventTouchUpInside];
-		
-		[toBookMenu.layer addAnimation:transition forKey:nil];
-		
-		[self addSubview:toBookMenu];
+		//-- create buttons.
+		[self createButton];		
 	}
 }
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
 {
+	NSLog(@"touch began");
 	// Detect touch anywhere
 	UITouch *touch = [touches anyObject];
 	

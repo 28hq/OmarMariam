@@ -27,9 +27,14 @@
 	//self.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	
 	NSString *bookPath = [NSString stringWithFormat:@"Volume1/iBooks/iBook%d", number];
-    
+//    		(LeavesViewController*)self.viewController = self;
+
 	if (self = [super init]) 
 	{
+		//		(LeavesViewController*) = self;
+		//leavesView.viewController = self;
+		[self leavesView].viewController = self;
+		
 		NSBundle* myBundle = [NSBundle mainBundle];
 		
 		NSArray *imagesPath = [myBundle pathsForResourcesOfType:@"jpg"
@@ -67,6 +72,11 @@
 
 - (void)exitBook {
 	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)toBookMenu 
+{
+	[[self navigationController] popToRootViewControllerAnimated:YES];
 }
 
 #pragma mark  LeavesViewDelegate methods
