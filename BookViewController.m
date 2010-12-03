@@ -85,7 +85,7 @@
 
 	[soundPlay stop];	
 	
-	pathToMusicFile = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"BP%d0%d", bookNumber, pageIndex] 
+	pathToMusicFile = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"BP%d0%d", bookNumber, pageIndex-2] 
 													  ofType:@"mp3" 
 												 inDirectory:[NSString stringWithFormat:@"Volume1/iBooks/iBook%d", bookNumber]];
 	
