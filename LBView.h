@@ -10,6 +10,7 @@
 
 
 @interface LBView : UIView {
+
 	UIViewController			*viewController;
 }
 

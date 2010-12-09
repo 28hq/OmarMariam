@@ -9,9 +9,9 @@
 #import <UIKit/UIKit.h>
 
 #import "LineGameViewController.h"
+#import "LBView.h"
 
-
-@interface LineView : UIView {
+@interface LineView : LBView {
 	CGPoint currentTouchPoint, startTouchPoint;
 	NSInteger objectTagged;
 	NSString *objectTouched;
@@ -20,7 +20,7 @@
 	
 	BOOL correct, start, incorrect, dragged, touchEnded;
 	
-	LineGameViewController *viewController;
+	LineGameViewController *aLineGameViewController;
 }
 
 @property (assign) CGPoint currentTouchPoint, startTouchPoint;
@@ -29,7 +29,7 @@
 @property (nonatomic, retain) NSString *objectTouched;
 @property (nonatomic, retain) NSMutableArray *lines;
 
-@property (nonatomic, retain) IBOutlet LineGameViewController *viewController;
+@property (nonatomic, retain) IBOutlet LineGameViewController *aLineGameViewController;
 
 - (void)drawLine:(CGRect)rect;
 - (void)cleanUp;

@@ -7,13 +7,13 @@
 //
 
 #import "LineView.h"
-
+#import "LBView.h"
 
 CGFloat distance(CGPoint a, CGPoint b);
 
 @implementation LineView
 
-@synthesize viewController, correct, start, redrawToPrevious, dragged, touchEnded;
+@synthesize aLineGameViewController, correct, start, redrawToPrevious, dragged, touchEnded;
 @synthesize	objectTouched, objectTagged, lines;
 @synthesize currentTouchPoint, startTouchPoint;
 
@@ -93,13 +93,13 @@ CGFloat distance(CGPoint a, CGPoint b);
 	self.startTouchPoint = [touch locationInView:self];
 
 	self.correct = NO;
-	self.dragged = NO;
+	dragged = NO;
 	touchEnded = NO;
 	
 	for (UITouch *touch in touches) 
 	{
 		// check if touch in wordView.
-		for (UILabel *word in [self.viewController wordViews]) 
+		for (UILabel *word in [self.aLineGameViewController wordViews]) 
 		{
 			CGRect wordRect = [word.superview convertRect:word.frame toView:self];
 			if (CGRectContainsPoint(wordRect, [touch locationInView:self])) 
@@ -113,7 +113,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 		}
 		
 		// check if touch in pictureView.
-		for (UILabel *picture in [self.viewController pictureViews]) 
+		for (UILabel *picture in [self.aLineGameViewController pictureViews]) 
 		{
 			CGRect pictureRect = [picture.superview convertRect:picture.frame toView:self];
 			if (CGRectContainsPoint(pictureRect, [touch locationInView:self])) 
@@ -155,10 +155,10 @@ CGFloat distance(CGPoint a, CGPoint b);
 	
 	CGPoint touchPoint = [touch locationInView:self];
 	dragged = distance(touchPoint, startTouchPoint);
-	
+
 	if (self.objectTouched == @"picture" && dragged) 
 	{
-		for (UILabel *word in [self.viewController wordViews])
+		for (UILabel *word in [self.aLineGameViewController wordViews])
 		{
 			CGRect wordRect = [word.superview convertRect:word.frame toView:self];
 			if (CGRectContainsPoint(wordRect, self.currentTouchPoint) 
@@ -177,9 +177,9 @@ CGFloat distance(CGPoint a, CGPoint b);
 				/*
 				 * Check question and move to next level if completed.
 				 */
-				self.viewController.questionLeft = self.viewController.questionLeft - 1;
+				self.aLineGameViewController.questionLeft = self.aLineGameViewController.questionLeft - 1;
 				
-				[self.viewController checkLevelCompletion];
+				[self.aLineGameViewController checkLevelCompletion];
 
 				break;
 			}
@@ -187,7 +187,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 	}
 	else if (self.objectTouched == @"word" && dragged) 
 	{
-		for (UIImageView *picture in [self.viewController pictureViews])
+		for (UIImageView *picture in [self.aLineGameViewController pictureViews])
 		{
 			CGRect pictureRect = [picture.superview convertRect:picture.frame toView:self];
 			if (CGRectContainsPoint(pictureRect, self.currentTouchPoint)
@@ -206,13 +206,16 @@ CGFloat distance(CGPoint a, CGPoint b);
 				/*
 				 * Check question and move to next level if completed.
 				 */
-				self.viewController.questionLeft = self.viewController.questionLeft - 1;
+				self.aLineGameViewController.questionLeft = self.aLineGameViewController.questionLeft - 1;
 				
-				[self.viewController checkLevelCompletion];
+				[self.aLineGameViewController checkLevelCompletion];
 				
 				break;
 			}
 		}
+	}
+	else if (!dragged && [touch tapCount] == 1) {
+		[self performSelector:@selector(oneTap) withObject:nil afterDelay:.5];
 	}
 	
 	[self setNeedsDisplay];
