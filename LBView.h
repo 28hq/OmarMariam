@@ -16,5 +16,6 @@
 @property (retain) IBOutlet UIViewController			*viewController;
 
 - (void)createButton;
+- (void)removeButton;
 
 @end

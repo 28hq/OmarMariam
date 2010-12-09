@@ -18,14 +18,14 @@
 	
 	NSMutableArray *lines;
 	
-	BOOL correct, start;
+	BOOL correct, start, incorrect, dragged, touchEnded;
 	
 	LineGameViewController *viewController;
 }
 
 @property (assign) CGPoint currentTouchPoint, startTouchPoint;
 @property (assign) NSInteger objectTagged;
-@property (assign) BOOL correct, start;
+@property (assign) BOOL correct, start, redrawToPrevious, dragged, touchEnded;
 @property (nonatomic, retain) NSString *objectTouched;
 @property (nonatomic, retain) NSMutableArray *lines;
 

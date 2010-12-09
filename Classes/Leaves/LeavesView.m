@@ -423,13 +423,9 @@ CGFloat distance(CGPoint a, CGPoint b);
 	if (interactionLocked)
 		return;
 	
-	if ([[touches anyObject] tapCount] == 1) {
-		[self performSelector:@selector(oneTap) withObject:nil afterDelay:.5];
-	}  
-	
 	UITouch *touch = [event.allTouches anyObject];
 	touchBeganPoint = [touch locationInView:self];
-	
+
 	if ([self touchedPrevPage] && [self hasPrevPage]) {		
 		[CATransaction begin];
 		[CATransaction setValue:(id)kCFBooleanTrue
@@ -462,11 +458,21 @@ CGFloat distance(CGPoint a, CGPoint b);
 
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event {
+	
+	UITouch *touch = [event.allTouches anyObject];
+	
+	if ([touch tapCount] == 1 && !touchIsActive) 
+	{
+		[self performSelector:@selector(oneTap) withObject:nil afterDelay:.5];
+	}  
+	
 	if (!touchIsActive)
 		return;
 	touchIsActive = NO;
 	
-	UITouch *touch = [event.allTouches anyObject];
+	// Remove `back to library's button`
+	[self removeButton];
+	
 	CGPoint touchPoint = [touch locationInView:self];
 	BOOL dragged = distance(touchPoint, touchBeganPoint) > [self dragThreshold];
 	

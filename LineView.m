@@ -9,9 +9,11 @@
 #import "LineView.h"
 
 
+CGFloat distance(CGPoint a, CGPoint b);
+
 @implementation LineView
 
-@synthesize viewController, correct, start;
+@synthesize viewController, correct, start, redrawToPrevious, dragged, touchEnded;
 @synthesize	objectTouched, objectTagged, lines;
 @synthesize currentTouchPoint, startTouchPoint;
 
@@ -20,16 +22,16 @@
 	// Initialization code
 	self.objectTouched = [[NSString alloc] init];
 	self.lines = [[NSMutableArray alloc] init];
+	self.redrawToPrevious = NO;
+	self.dragged = NO;
+	self.touchEnded = NO;
 }
 
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-	//if (self.start || self.correct) {
-		[self drawLine:rect];
-	//}
-
+	[self drawLine:rect];
 }
 
 - (void)dealloc {
@@ -48,13 +50,12 @@
 	CGFloat gray[4] = {0.0f, 0.0f, 0.0f, 1.0f};
 	CGContextSetStrokeColor(context, gray);
 	
-//	NSLog(@"%@", [self.lines description]);
-	
 	if ([self.lines count]) 
 	{
 		for (NSArray *arr in self.lines) 
 		{
 			CGPoint point = CGPointFromString([arr valueForKey:@"startTouchPoint"]);
+			//NSLog(@"%@", NSStringFromCGPoint(point));
 			CGContextMoveToPoint(context, point.x, point.y);
 			
 			point = CGPointFromString([arr valueForKey:@"currentTouchPoint"]);
@@ -63,8 +64,11 @@
 		}
 	}
 	
-	CGContextMoveToPoint(context, self.startTouchPoint.x, self.startTouchPoint.y);
-	CGContextAddLineToPoint(context, self.currentTouchPoint.x, self.currentTouchPoint.y);
+	if (!correct && !touchEnded) {
+		CGContextMoveToPoint(context, self.startTouchPoint.x, self.startTouchPoint.y);
+		CGContextAddLineToPoint(context, self.currentTouchPoint.x, self.currentTouchPoint.y);
+	}
+
 	CGContextStrokePath(context);
 	
 }
@@ -85,10 +89,12 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	
-	//self.startTouchPoint = [[[touches allObjects] objectAtIndex:0] locationInView:self];
-	self.start = YES;
+	UITouch *touch = [event.allTouches anyObject];
+	self.startTouchPoint = [touch locationInView:self];
+
 	self.correct = NO;
+	self.dragged = NO;
+	touchEnded = NO;
 	
 	for (UITouch *touch in touches) 
 	{
@@ -101,6 +107,7 @@
 				self.startTouchPoint = [touch locationInView:self];
 				self.objectTouched = @"word";
 				self.objectTagged = word.tag;
+				self.start = YES;
 				break;
 			}
 		}
@@ -114,6 +121,7 @@
 				self.startTouchPoint = [touch locationInView:self];
 				self.objectTouched = @"picture";
 				self.objectTagged = picture.tag;
+				self.start = YES;
 				break;
 			}
 		}
@@ -124,6 +132,7 @@
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
+	dragged = YES;
 	if ([[touches allObjects] count] > 0)  
 	{
 		self.currentTouchPoint = [[[touches allObjects] objectAtIndex:0] locationInView:self];
@@ -140,8 +149,14 @@
 {
 	self.start = NO;
 	self.correct = NO;
+	touchEnded = YES;
 	
-	if (self.objectTouched == @"picture") 
+	UITouch *touch = [event.allTouches anyObject];
+	
+	CGPoint touchPoint = [touch locationInView:self];
+	dragged = distance(touchPoint, startTouchPoint);
+	
+	if (self.objectTouched == @"picture" && dragged) 
 	{
 		for (UILabel *word in [self.viewController wordViews])
 		{
@@ -154,8 +169,6 @@
 
 				[line setValue:NSStringFromCGPoint(self.startTouchPoint) forKey:@"startTouchPoint"];
 				[line setValue:NSStringFromCGPoint(self.currentTouchPoint) forKey:@"currentTouchPoint"];
-				//[line addObject:NSStringFromCGPoint(self.startTouchPoint)];
-				//[line addObject:NSStringFromCGPoint(self.currentTouchPoint)];
 				
 				[self.lines addObject:line];
 				
@@ -172,7 +185,7 @@
 			}
 		}
 	}
-	else if (self.objectTouched == @"word") 
+	else if (self.objectTouched == @"word" && dragged) 
 	{
 		for (UIImageView *picture in [self.viewController pictureViews])
 		{
@@ -185,9 +198,6 @@
 				
 				[line setValue:NSStringFromCGPoint(self.startTouchPoint) forKey:@"startTouchPoint"];
 				[line setValue:NSStringFromCGPoint(self.currentTouchPoint) forKey:@"currentTouchPoint"];
-				
-//				[line addObject:NSStringFromCGPoint(self.startTouchPoint)];
-//				[line addObject:NSStringFromCGPoint(self.currentTouchPoint)];
 
 				[self.lines addObject:line];
 
@@ -203,9 +213,10 @@
 				break;
 			}
 		}
-		
 	}
+	
 	[self setNeedsDisplay];
+	
 }
 
 @end

@@ -49,17 +49,17 @@
 	// main library.
 	UIButton *toBookMenu = [UIButton buttonWithType:UIButtonTypeCustom];
 	toBookMenu.tag = kButtonsView;
-	toBookMenu.frame = CGRectMake(5.0, 5.0, 150.0, 30.0);
-	toBookMenu.backgroundColor = [UIColor brownColor];
+	toBookMenu.frame = CGRectMake(5.0, 5.0, 150.0, 35.0);
 	toBookMenu.alpha = 0.8;
+	toBookMenu.backgroundColor = [UIColor clearColor];
+	toBookMenu.layer.borderColor = [[UIColor blackColor] CGColor];
+	toBookMenu.layer.borderWidth = 1.0f;
+	toBookMenu.layer.cornerRadius = 8.0f;
 	
 	toBookMenu.titleLabel.font = [UIFont boldSystemFontOfSize:18];
-	[toBookMenu setTitleColor:[UIColor yellowColor] forState:UIControlStateNormal];
+
+	[toBookMenu setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 	[toBookMenu setTitle:@"Book Menu" forState:UIControlStateNormal];
-	
-	toBookMenu.layer.borderColor = [[UIColor blackColor] CGColor];
-	toBookMenu.layer.borderWidth = 1;
-	toBookMenu.layer.cornerRadius = 5;
 	
 	[toBookMenu addTarget:self.viewController 
 				   action:@selector(toBookMenu) 
@@ -70,10 +70,14 @@
 	[self addSubview:toBookMenu];
 }
 
+- (void)removeButton {
+	[[self viewWithTag:kButtonsView] removeFromSuperview];
+}
+
 - (void)oneTap 
 {	
 	// create uiview for buttons.
-	
+	NSLog(@"One Tap");
 	if ([self viewWithTag:kButtonsView]) 
 	{
 		[[self viewWithTag:kButtonsView] removeFromSuperview];
@@ -86,16 +90,19 @@
 	}
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event 
 {
 	NSLog(@"touch began");
 	// Detect touch anywhere
 	UITouch *touch = [touches anyObject];
-	
+
 	switch ([touch tapCount]) 
 	{
 		case 1:
-			[self performSelector:@selector(oneTap) withObject:nil afterDelay:.5];
+			if ([touch phase] == UITouchPhaseEnded) 
+			{
+				[self performSelector:@selector(oneTap) withObject:nil afterDelay:.5];
+			}
 			break;
 			
 //		case 2:
