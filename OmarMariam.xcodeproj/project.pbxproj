@@ -118,7 +118,8 @@
 		3A96F9C2126E36B800991FE1 /* LabelViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96F9C0126E36B800991FE1 /* LabelViewController.m */; };
 		3A96F9C3126E36B800991FE1 /* LabelViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A96F9C1126E36B800991FE1 /* LabelViewController.xib */; };
 		3A96F9C8126E377A00991FE1 /* LabelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A96F9C7126E377A00991FE1 /* LabelView.m */; };
-		3AA88B6112B078EE00B8D932 /* playBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA88B6012B078EE00B8D932 /* playBlack.png */; };
+		3AA88BD212B07FA400B8D932 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA88BD012B07FA400B8D932 /* play.png */; };
+		3AA88BD312B07FA400B8D932 /* playBlack.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AA88BD112B07FA400B8D932 /* playBlack.png */; };
 		3AB7348A129079F400D51DB2 /* mariamwaqittah.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB73489129079F400D51DB2 /* mariamwaqittah.png */; };
 		3AB7348C12907A0B00D51DB2 /* mariam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7348B12907A0B00D51DB2 /* mariam.mp3 */; };
 		3AB735781290C0A800D51DB2 /* MarkerFelt.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 3AB735771290C0A800D51DB2 /* MarkerFelt.ttc */; };
@@ -148,7 +149,6 @@
 		3ADF9847128E93E2004C4943 /* Volume1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3ADF9846128E93E2004C4943 /* Volume1.plist */; };
 		3ADF9A6B128F35D6004C4943 /* LBView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ADF9A6A128F35D6004C4943 /* LBView.m */; };
 		4434D92112486C3D00295B33 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4434D92012486C3D00295B33 /* AVFoundation.framework */; };
-		7A61729012375F8300C7A5F4 /* play.png in Resources */ = {isa = PBXBuildFile; fileRef = 7A61728F12375F8300C7A5F4 /* play.png */; };
 		7A853EE11234689000695260 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A853EE01234689000695260 /* QuartzCore.framework */; };
 		7AA557A9123794CA00D775EA /* bookShelf.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AA557A8123794CA00D775EA /* bookShelf.png */; };
 		7AA557D0123799F700D775EA /* bookShelfSmall.png in Resources */ = {isa = PBXBuildFile; fileRef = 7AA557CF123799F700D775EA /* bookShelfSmall.png */; };
@@ -284,7 +284,8 @@
 		3A96F9C1126E36B800991FE1 /* LabelViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LabelViewController.xib; sourceTree = "<group>"; };
 		3A96F9C6126E377A00991FE1 /* LabelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LabelView.h; sourceTree = "<group>"; };
 		3A96F9C7126E377A00991FE1 /* LabelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LabelView.m; sourceTree = "<group>"; };
-		3AA88B6012B078EE00B8D932 /* playBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBlack.png; sourceTree = "<group>"; };
+		3AA88BD012B07FA400B8D932 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
+		3AA88BD112B07FA400B8D932 /* playBlack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = playBlack.png; sourceTree = "<group>"; };
 		3AB73489129079F400D51DB2 /* mariamwaqittah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mariamwaqittah.png; sourceTree = "<group>"; };
 		3AB7348B12907A0B00D51DB2 /* mariam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mariam.mp3; sourceTree = "<group>"; };
 		3AB735771290C0A800D51DB2 /* MarkerFelt.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; path = MarkerFelt.ttc; sourceTree = "<group>"; };
@@ -317,7 +318,6 @@
 		3ADF9A69128F35D6004C4943 /* LBView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBView.h; sourceTree = "<group>"; };
 		3ADF9A6A128F35D6004C4943 /* LBView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBView.m; sourceTree = "<group>"; };
 		4434D92012486C3D00295B33 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		7A61728F12375F8300C7A5F4 /* play.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = play.png; sourceTree = "<group>"; };
 		7A853EE01234689000695260 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		7AA557A8123794CA00D775EA /* bookShelf.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bookShelf.png; sourceTree = "<group>"; };
 		7AA557CF123799F700D775EA /* bookShelfSmall.png */ = {isa = PBXFileReference; explicitFileType = image.png; path = bookShelfSmall.png; sourceTree = "<group>"; };
@@ -578,8 +578,8 @@
 				3A63436312566CD900EE14DA /* blank.jpg */,
 				7AA557CF123799F700D775EA /* bookShelfSmall.png */,
 				7AA557A8123794CA00D775EA /* bookShelf.png */,
-				7A61728F12375F8300C7A5F4 /* play.png */,
-				3AA88B6012B078EE00B8D932 /* playBlack.png */,
+				3AA88BD012B07FA400B8D932 /* play.png */,
+				3AA88BD112B07FA400B8D932 /* playBlack.png */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -703,7 +703,6 @@
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow_iPad.xib in Resources */,
 				2860E38B111B897F00E27156 /* MainWindow_iPhone.xib in Resources */,
-				7A61729012375F8300C7A5F4 /* play.png in Resources */,
 				7AA557A9123794CA00D775EA /* bookShelf.png in Resources */,
 				7AA557D0123799F700D775EA /* bookShelfSmall.png in Resources */,
 				3A63436412566CD900EE14DA /* blank.jpg in Resources */,
@@ -823,7 +822,8 @@
 				3AB7357C1290C0E600D51DB2 /* Bauhaus 93 in Resources */,
 				3AB7357E1290C10900D51DB2 /* Brush Script.ttf in Resources */,
 				3AB735801290C1C700D51DB2 /* ARNORG__.TTF in Resources */,
-				3AA88B6112B078EE00B8D932 /* playBlack.png in Resources */,
+				3AA88BD212B07FA400B8D932 /* play.png in Resources */,
+				3AA88BD312B07FA400B8D932 /* playBlack.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
