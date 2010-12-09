@@ -19,6 +19,7 @@
 	
 	BOOL playBtnPositionIsRight, showSound;
 	UIButton *btnPlay;
+	UIButton *leftPlayButton;
 	
 	AVAudioPlayer* soundPlay;
 	NSString *pathToMusicFile;
@@ -30,6 +31,7 @@
 @property int bookNumber;
 @property BOOL playBtnPositionIsRight, showSound;
 @property (nonatomic, retain) UIButton *btnPlay;
+@property (nonatomic, retain) UIButton *leftPlayButton;
 @property (nonatomic) UIViewControllerAnimationTransition transitionType;
 
 - (id)initWithBookNumber:(int)bookNumber ;

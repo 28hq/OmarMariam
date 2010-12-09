@@ -19,6 +19,7 @@
 @synthesize bookNumber;
 @synthesize playBtnPositionIsRight, showSound;
 @synthesize btnPlay;
+@synthesize leftPlayButton;
 @synthesize transitionType;
 
 - (id)initWithBookNumber:(int)number 
@@ -55,12 +56,26 @@
 		}		
 		
 		btnPlay = [UIButton buttonWithType:UIButtonTypeCustom];
-		[btnPlay setImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateNormal];
-		btnPlay.frame = (playBtnPositionIsRight) ? CGRectMake(SOUND_POS_X, SOUND_POS_Y, SOUND_WIDTH, SOUND_HEIGHT) : CGRectMake(930, 30, 44,44);
+
+		[btnPlay setImage:[UIImage imageNamed:@"playBlack.png"] forState:UIControlStateNormal];
+		[btnPlay setImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateSelected];
+//		[btnPlay setBackgroundImage:[UIImage imageNamed:@"playBlack.png"] forState:UIControlStateNormal];
+//		[btnPlay setBackgroundImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateHighlighted];
+		btnPlay.frame = CGRectMake(930, 30, 44,44);
 		btnPlay.showsTouchWhenHighlighted = NO;
-		btnPlay.adjustsImageWhenHighlighted = NO;
+		btnPlay.adjustsImageWhenHighlighted = YES;
 		btnPlay.hidden = YES;
 		[self.view addSubview:btnPlay];
+		
+//		leftPlayButton = [UIButton buttonWithType:UIButtonTypeCustom];
+//		[leftPlayButton setImage:[UIImage imageNamed:@"playBlack.png"] forState:UIControlStateNormal];
+//		[leftPlayButton setImage:[UIImage imageNamed:@"play.png"] forState:UIControlStateHighlighted];
+//		leftPlayButton.frame = CGRectMake(SOUND_POS_X, SOUND_POS_Y, SOUND_WIDTH, SOUND_HEIGHT);
+//		leftPlayButton.showsTouchWhenHighlighted = NO;
+//		leftPlayButton.adjustsImageWhenHighlighted = NO;
+//		leftPlayButton.hidden = YES;
+//		[self.view addSubview:leftPlayButton];
+		
     }
     return self;
 }
@@ -85,7 +100,8 @@
 
 	[soundPlay stop];	
 	
-	pathToMusicFile = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"BP%d0%d", bookNumber, pageIndex-2] 
+//	NSLog(@"%@", [NSString stringWithFormat:@"BP%d%02d", bookNumber, pageIndex-2]);
+	pathToMusicFile = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"BP%d%02d", bookNumber, pageIndex-2] 
 													  ofType:@"mp3" 
 												 inDirectory:[NSString stringWithFormat:@"Volume1/iBooks/iBook%d", bookNumber]];
 	
@@ -112,6 +128,7 @@
 		
 		soundPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathToMusicFile] error:NULL];
 		soundPlay.delegate = self;
+		[soundPlay prepareToPlay];
 	}
 	
 	// last page.
@@ -143,7 +160,25 @@
 - (void)playSound:(id)sender
 {
 	NSLog(@"playing sound");
+	btnPlay.layer.backgroundColor = [[UIColor brownColor] CGColor];
+	btnPlay.layer.borderColor = [[UIColor brownColor] CGColor];
+	btnPlay.layer.borderWidth = 1.0f;
+	btnPlay.layer.cornerRadius = 10.0f;
+	btnPlay.selected = YES;
 	[soundPlay play];
+}
+
+#pragma mark Audio Player delegates
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+	if (flag) {
+		btnPlay.layer.backgroundColor = [[UIColor clearColor] CGColor];
+		btnPlay.layer.borderColor = [[UIColor clearColor] CGColor];
+		btnPlay.layer.borderWidth = 0.0f;
+		btnPlay.layer.cornerRadius = 0.0f;
+		btnPlay.selected = NO;
+	}
 }
 
 @end

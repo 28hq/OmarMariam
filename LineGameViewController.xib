@@ -576,14 +576,6 @@
 				</object>
 				<object class="IBConnectionRecord">
 					<object class="IBCocoaTouchOutletConnection" key="connection">
-						<string key="label">viewController</string>
-						<reference key="source" ref="766721923"/>
-						<reference key="destination" ref="841351856"/>
-					</object>
-					<int key="connectionID">52</int>
-				</object>
-				<object class="IBConnectionRecord">
-					<object class="IBCocoaTouchOutletConnection" key="connection">
 						<string key="label">continueButton</string>
 						<reference key="source" ref="841351856"/>
 						<reference key="destination" ref="712596594"/>
@@ -614,6 +606,22 @@
 						<reference key="destination" ref="841351856"/>
 					</object>
 					<int key="connectionID">64</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">aLineGameViewController</string>
+						<reference key="source" ref="766721923"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">65</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchOutletConnection" key="connection">
+						<string key="label">viewController</string>
+						<reference key="source" ref="766721923"/>
+						<reference key="destination" ref="841351856"/>
+					</object>
+					<int key="connectionID">66</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -930,7 +938,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">64</int>
+			<int key="maxID">66</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -1091,15 +1099,15 @@
 				</object>
 				<object class="IBPartialClassDescription">
 					<string key="className">LineView</string>
-					<string key="superclassName">UIView</string>
+					<string key="superclassName">LBView</string>
 					<object class="NSMutableDictionary" key="outlets">
-						<string key="NS.key.0">viewController</string>
+						<string key="NS.key.0">aLineGameViewController</string>
 						<string key="NS.object.0">LineGameViewController</string>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
-						<string key="NS.key.0">viewController</string>
+						<string key="NS.key.0">aLineGameViewController</string>
 						<object class="IBToOneOutletInfo" key="NS.object.0">
-							<string key="name">viewController</string>
+							<string key="name">aLineGameViewController</string>
 							<string key="candidateClassName">LineGameViewController</string>
 						</object>
 					</object>
