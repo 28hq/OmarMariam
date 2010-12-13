@@ -26,13 +26,13 @@
 @synthesize wordListView, end;
 @synthesize wordListScrollView;
 
-- (id)initWithBookNumber:(int)number 
+- (id)initWithBook:(int)bookNumber ofVolume:(int)bookVolume
 {
     if ((self = [super initWithNibName:@"ClozeGameViewController" bundle:nil])) {
         // Custom initialization
-		self.bookNumber = number;
+		self.bookNumber = bookVolume;
 		
-		gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", number] 
+		gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", bookVolume] 
 																				ofType:@"png"]];
 
 		

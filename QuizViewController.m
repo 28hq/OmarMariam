@@ -36,12 +36,12 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithBookNumber:(int)number 
+- (id)initWithBook:(int)bookNumber ofVolume:(int)bookVolume
 {
     if ((self = [super initWithNibName:@"QuizViewController" bundle:nil])) {
         // Custom initialization
-		self.bookNumber = number;
-		self.gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", number] 
+		self.bookNumber = bookVolume;
+		self.gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", bookVolume] 
 																								  ofType:@"png"]];
     }
     return self;

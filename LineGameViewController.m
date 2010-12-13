@@ -26,11 +26,11 @@
 @synthesize continueButton, levelIndicator;
 
 
-- (id)initWithBookNumber:(int)number 
+- (id)initWithBook:(int)bookNumber ofVolume:(int)bookVolume
 {
 	if (self = [super init]) 
 	{
-		self.bookNumber = number;
+		self.bookNumber = bookVolume;
 		
 		NSArray *_tmpData = [[NSArray alloc] init];
 		self.theData = _tmpData;
@@ -61,7 +61,6 @@
 	 */
 	
 	int gameNo = 1;
-	
 	NSString *imagePath = [[NSString alloc] init];
 	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"cover%d", self.bookNumber] 
 												ofType:@"png"];

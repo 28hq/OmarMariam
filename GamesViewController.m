@@ -19,6 +19,7 @@
 @implementation GamesViewController
 
 @synthesize bookNumber;
+@synthesize bookVolume;
 @synthesize bookContents;
 
 @synthesize bookCoverImage;
@@ -31,7 +32,7 @@
 	[self.navigationController setNavigationBarHidden:YES];
 	
 	NSString *imagePath = [[NSString alloc] init];
-	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"BP%d01", self.bookNumber] 
+	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"v%db%dcp", bookVolume, bookNumber] 
 												ofType:@"jpg"];
 	UIImage *image = [UIImage imageWithContentsOfFile:imagePath];
 	self.bookCoverImage.image = image;
@@ -132,7 +133,7 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	Class myClass = NSClassFromString([[self.bookContents objectAtIndex:indexPath.row] valueForKey:@"class"]);
 	
-	id klass = [[myClass alloc] initWithBookNumber:self.bookNumber];
+	id klass = [[myClass alloc] initWithBook:bookNumber ofVolume:bookVolume];
 	[self.navigationController pushViewController:klass animated:YES];
 	[klass release];
 	

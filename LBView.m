@@ -47,14 +47,14 @@
 	transition.subtype = kCATransitionFromBottom;
 	
 	// main library.
-	UIButton *toBookMenu = [UIButton buttonWithType:UIButtonTypeCustom];
+	UIButton *toBookMenu = [UIButton buttonWithType:UIButtonTypeRoundedRect];
 	toBookMenu.tag = kButtonsView;
 	toBookMenu.frame = CGRectMake(5.0, 5.0, 150.0, 35.0);
 	toBookMenu.alpha = 0.8;
 	toBookMenu.backgroundColor = [UIColor clearColor];
-	toBookMenu.layer.borderColor = [[UIColor blackColor] CGColor];
-	toBookMenu.layer.borderWidth = 1.0f;
-	toBookMenu.layer.cornerRadius = 8.0f;
+//	toBookMenu.layer.borderColor = [[UIColor blackColor] CGColor];
+//	toBookMenu.layer.borderWidth = 1.0f;
+//	toBookMenu.layer.cornerRadius = 8.0f;
 	
 	toBookMenu.titleLabel.font = [UIFont boldSystemFontOfSize:18];
 

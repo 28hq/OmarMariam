@@ -10,11 +10,13 @@
 
 
 @interface GamesViewController : UIViewController <UITableViewDelegate, UITableViewDataSource> {
+	int bookVolume;
 	int bookNumber;
 	NSArray *bookContents;
 }
 
 @property (assign) int		bookNumber;
+@property (assign) int		bookVolume;
 @property (retain) NSArray	*bookContents;
 
 // IBOutlets
