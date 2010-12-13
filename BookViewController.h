@@ -14,12 +14,13 @@
 
 @interface BookViewController : LeavesViewController <AVAudioPlayerDelegate> {
 	
-	int bookNumber;
+	int bookNumber, bookVolume;
 	NSMutableArray *images;
 	
 	BOOL playBtnPositionIsRight, showSound;
 	UIButton *btnPlay;
 	UIButton *leftPlayButton;
+	UIButton *activeButtonPlayed;
 	
 	AVAudioPlayer* soundPlay;
 	NSString *pathToMusicFile;
@@ -29,13 +30,16 @@
 }
 
 @property int bookNumber;
+@property int bookVolume;
 @property BOOL playBtnPositionIsRight, showSound;
 @property (nonatomic, retain) UIButton *btnPlay;
 @property (nonatomic, retain) UIButton *leftPlayButton;
+@property (nonatomic, retain) UIButton *activeButtonPlayed;
 @property (nonatomic) UIViewControllerAnimationTransition transitionType;
 
-- (id)initWithBookNumber:(int)bookNumber ;
+- (id)initWithBook:(int)bookNumber ofVolume:(int)bookVolume;
 - (void)playSound:(id)sender;
 - (void)exitBook;
+- (void)clearPlayButtonAttributesForButton:(UIButton *)aButton;
 
 @end
