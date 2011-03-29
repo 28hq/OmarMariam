@@ -24,7 +24,8 @@ typedef enum {
 @protocol LeavesViewDataSource;
 @protocol LeavesViewDelegate;
 
-@interface LeavesView : LBView {
+@interface LeavesView : LBView
+{
 	CALayer *topPage;
 	CALayer *topPageOverlay;
 	CAGradientLayer *topPageShadow;
@@ -61,7 +62,7 @@ typedef enum {
 	
 	CGPoint touchBeganPoint;
 	BOOL touchIsActive;
-	CGRect nextPageRect, prevPageRect;
+	CGRect rightPageRect, leftPageRect;
 	BOOL interactionLocked;
 }
 

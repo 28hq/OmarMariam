@@ -45,9 +45,9 @@
 		 
 		 Thus, the code below added a blank page to the array if condition true.
 		 */
-
+        
 		
-		if (0 != imagesPath.count) 
+		if (imagesPath.count != 0)
 		{
 			images = [[NSMutableArray alloc] init];
 			
@@ -85,10 +85,6 @@
 				[images addObject:[myBundle pathForResource:@"blank" ofType:@"jpg"]];
 			}			
 		}
-		
-//		for (NSString * image in images) {
-//			NSLog(@"image: %@", image);
-//		}
 		
 		btnPlay = [UIButton buttonWithType:UIButtonTypeCustom];
 

@@ -182,7 +182,8 @@ CGFloat distance(CGPoint a, CGPoint b);
 #pragma mark -
 #pragma mark Image loading
 
-- (void) reloadData {
+- (void) reloadData
+{
 	[pageCache flush];
 	numberOfPages = [pageCache.dataSource numberOfPagesInLeavesView:self];
 	self.currentPageIndex = 0;
@@ -247,24 +248,91 @@ CGFloat distance(CGPoint a, CGPoint b);
 
 #pragma mark -
 #pragma mark Layout
+// This method is called everytime touches moved
+//- (void) setLayerFrames 
+//{
+//    CGRect rightPageBoundsRect = self.layer.bounds;
+//    CGRect leftHalf, rightHalf;
+//    
+//    CGRectDivide(rightPageBoundsRect, &leftHalf, &rightHalf, CGRectGetWidth(rightPageBoundsRect) / 2.0f, CGRectMinXEdge);
+//    
+//    if (self.mode == LeavesViewModeFacingPages)
+//    {
+//        rightPageBoundsRect = rightHalf;
+//    }
+//    
+//	topPage.frame = CGRectMake(rightPageBoundsRect.origin.x, 
+//							   rightPageBoundsRect.origin.y, 
+//							   leafEdge * rightPageBoundsRect.size.width, 
+//							   rightPageBoundsRect.size.height);
+//	topPageReverse.frame = CGRectMake(rightPageBoundsRect.origin.x + (2*leafEdge-1) * rightPageBoundsRect.size.width, 
+//									  rightPageBoundsRect.origin.y, 
+//									  (1-leafEdge) * rightPageBoundsRect.size.width, 
+//									  rightPageBoundsRect.size.height);
+//	bottomPage.frame = rightPageBoundsRect;
+//	topPageShadow.frame = CGRectMake(topPageReverse.frame.origin.x - 40, 
+//									 0, 
+//									 40, 
+//									 bottomPage.bounds.size.height);
+//	topPageReverseImage.frame = topPageReverse.bounds;
+//	topPageReverseOverlay.frame = topPageReverse.bounds;
+//	topPageReverseShading.frame = CGRectMake(topPageReverse.bounds.size.width - 50, 
+//											 0, 
+//											 50 + 1, 
+//											 topPageReverse.bounds.size.height);
+//	bottomPageShadow.frame = CGRectMake(leafEdge * rightPageBoundsRect.size.width, 
+//										0, 
+//										40, 
+//										bottomPage.bounds.size.height);
+//	topPageOverlay.frame = topPage.bounds;
+//    
+//    
+//    
+//    if (self.mode == LeavesViewModeSinglePage) 
+//    {
+//        leftPage.hidden = YES;
+//        leftPageOverlay.hidden = leftPage.hidden;
+//    }
+//    else
+//    {
+//        leftPage.hidden = NO;
+//        leftPageOverlay.hidden = leftPage.hidden;
+//        leftPage.frame = CGRectMake(leftHalf.origin.x, 
+//									leftHalf.origin.y, 
+//									leftHalf.size.width, 
+//									leftHalf.size.height);
+//        leftPageOverlay.frame = leftPage.bounds;
+//    }
+//}
 
-- (void) setLayerFrames {
+- (void) setLayerFrames 
+{
+    // initially, there's only 1 page, even for 2pg mode, the 'rightpage'.
     CGRect rightPageBoundsRect = self.layer.bounds;
     CGRect leftHalf, rightHalf;
+    
+    // divide the 'rightpage' into two equal parts
     CGRectDivide(rightPageBoundsRect, &leftHalf, &rightHalf, CGRectGetWidth(rightPageBoundsRect) / 2.0f, CGRectMinXEdge);
-    if (self.mode == LeavesViewModeFacingPages) {
+    
+    // if 2pg mode, set the 'rightpage' to the righthalf
+    if (self.mode == LeavesViewModeFacingPages)
+    {
         rightPageBoundsRect = rightHalf;
     }
-    
+
+    // The topPage. x = 512 (center of page), width = 512 (until edge of page). Width reduce gradually to 0 when dragged
 	topPage.frame = CGRectMake(rightPageBoundsRect.origin.x, 
 							   rightPageBoundsRect.origin.y, 
 							   leafEdge * rightPageBoundsRect.size.width, 
 							   rightPageBoundsRect.size.height);
-	topPageReverse.frame = CGRectMake(rightPageBoundsRect.origin.x + (2*leafEdge-1) * rightPageBoundsRect.size.width, 
-									  rightPageBoundsRect.origin.y, 
-									  (1-leafEdge) * rightPageBoundsRect.size.width, 
-									  rightPageBoundsRect.size.height);
+
+    // Below the topPage. x = 1024 (edge of page), width = 0. Width increase to 1024 gradually when dragged.
+	topPageReverse.frame = CGRectMake(rightPageBoundsRect.origin.x + (2*leafEdge-1) * rightPageBoundsRect.size.width,rightPageBoundsRect.origin.y,(1-leafEdge) * rightPageBoundsRect.size.width,rightPageBoundsRect.size.height);
+
+    // The bottomPage. set to equals the right page
 	bottomPage.frame = rightPageBoundsRect;
+    NSLog(@"x = %.2f, y = %.2f, width = %.2f, height = %.2f",bottomPage.frame.origin.x,bottomPage.frame.origin.y,bottomPage.frame.size.width, bottomPage.frame.size.height);
+
 	topPageShadow.frame = CGRectMake(topPageReverse.frame.origin.x - 40, 
 									 0, 
 									 40, 
@@ -283,10 +351,13 @@ CGFloat distance(CGPoint a, CGPoint b);
     
     
     
-    if (self.mode == LeavesViewModeSinglePage) {
+    if (self.mode == LeavesViewModeSinglePage) 
+    {
         leftPage.hidden = YES;
         leftPageOverlay.hidden = leftPage.hidden;
-    } else {
+    }
+    else
+    {
         leftPage.hidden = NO;
         leftPageOverlay.hidden = leftPage.hidden;
         leftPage.frame = CGRectMake(leftHalf.origin.x, 
@@ -294,9 +365,9 @@ CGFloat distance(CGPoint a, CGPoint b);
 									leftHalf.size.width, 
 									leftHalf.size.height);
         leftPageOverlay.frame = leftPage.bounds;
-        
     }
 }
+
 
 - (void) willTurnToPageAtIndex:(NSUInteger)index {
 	if ([delegate respondsToSelector:@selector(leavesView:willTurnToPageAtIndex:)])
@@ -332,13 +403,26 @@ CGFloat distance(CGPoint a, CGPoint b);
     }
 }
 
-- (BOOL) touchedNextPage {
-	return CGRectContainsPoint(nextPageRect, touchBeganPoint);
+//- (BOOL) touchedNextPage
+//{
+//	return CGRectContainsPoint(rightPageRect, touchBeganPoint);
+//}
+//
+//- (BOOL) touchedPrevPage
+//{
+//	return CGRectContainsPoint(leftPageRect, touchBeganPoint);
+//}
+
+- (BOOL) touchedNextPage
+{
+	return CGRectContainsPoint(leftPageRect, touchBeganPoint);
 }
 
-- (BOOL) touchedPrevPage {
-	return CGRectContainsPoint(prevPageRect, touchBeganPoint);
+- (BOOL) touchedPrevPage
+{
+	return CGRectContainsPoint(rightPageRect, touchBeganPoint);
 }
+
 
 - (CGFloat) dragThreshold {
 	// Magic empirical number
@@ -419,14 +503,17 @@ CGFloat distance(CGPoint a, CGPoint b);
 #pragma mark -
 #pragma mark UIView methods
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
 	if (interactionLocked)
 		return;
 	
 	UITouch *touch = [event.allTouches anyObject];
 	touchBeganPoint = [touch locationInView:self];
 
-	if ([self touchedPrevPage] && [self hasPrevPage]) {		
+	if ([self touchedPrevPage] && [self hasPrevPage])
+    {
+		touchIsActive = YES;
 		[CATransaction begin];
 		[CATransaction setValue:(id)kCFBooleanTrue
 						 forKey:kCATransactionDisableActions];
@@ -434,11 +521,11 @@ CGFloat distance(CGPoint a, CGPoint b);
         self.currentPageIndex = self.currentPageIndex - numberOfVisiblePages;
         self.leafEdge = 0.0;
 		[CATransaction commit];
-		touchIsActive = YES;		
 	} 
 	else if ([self touchedNextPage] && [self hasNextPage])
+    {
 		touchIsActive = YES;
-	
+    }
 	else 
 		touchIsActive = NO;
 }
@@ -452,7 +539,9 @@ CGFloat distance(CGPoint a, CGPoint b);
 	[CATransaction begin];
 	[CATransaction setValue:[NSNumber numberWithFloat:0.07]
 					 forKey:kCATransactionAnimationDuration];
-	self.leafEdge = touchPoint.x / self.bounds.size.width;
+	self.leafEdge = 1 - (touchPoint.x / self.bounds.size.width);
+    NSLog(@"leafEdge = %.2f",leafEdge);
+    NSLog(@"self.leafEdge = %.2f",self.leafEdge);
 	[CATransaction commit];
 }
 
@@ -473,12 +562,41 @@ CGFloat distance(CGPoint a, CGPoint b);
 	// Remove `back to library's button`
 	[self removeButton];
 	
+    // FAHAMI INI!!
 	CGPoint touchPoint = [touch locationInView:self];
 	BOOL dragged = distance(touchPoint, touchBeganPoint) > [self dragThreshold];
 	
 	[CATransaction begin];
 	float duration;
-	if ((dragged && self.leafEdge < 0.5) || (!dragged && [self touchedNextPage])) {
+//	if ((dragged && self.leafEdge < 0.5) || (!dragged && [self touchedNextPage]))
+//    {
+//        [self willTurnToPageAtIndex:currentPageIndex + numberOfVisiblePages];
+//		self.leafEdge = 0;
+//		duration = leafEdge;
+//		interactionLocked = YES;
+//		if (currentPageIndex+2 < numberOfPages && backgroundRendering)
+//			[pageCache precacheImageForPageIndex:currentPageIndex+2];
+//		[self performSelector:@selector(didTurnPageForward)
+//				   withObject:nil 
+//				   afterDelay:duration + 0.25];
+//	}
+//	else 
+//    {
+//		[self willTurnToPageAtIndex:currentPageIndex];
+//		self.leafEdge = 1.0;
+//		duration = 1 - leafEdge;
+//		interactionLocked = YES;
+//		[self performSelector:@selector(didTurnPageBackward)
+//				   withObject:nil 
+//				   afterDelay:duration + 0.25];
+//	}
+    
+    // if dragging and leafedge is more than 1/2 page 
+    // OR
+    // if not dragging and only touch next page
+    // turn page automatically
+	if ((dragged && self.leafEdge < 0.5) || (!dragged && [self touchedNextPage]))
+    {
         [self willTurnToPageAtIndex:currentPageIndex + numberOfVisiblePages];
 		self.leafEdge = 0;
 		duration = leafEdge;
@@ -489,7 +607,9 @@ CGFloat distance(CGPoint a, CGPoint b);
 				   withObject:nil 
 				   afterDelay:duration + 0.25];
 	}
-	else {
+    // if not, return back to current page
+	else 
+    {
 		[self willTurnToPageAtIndex:currentPageIndex];
 		self.leafEdge = 1.0;
 		duration = 1 - leafEdge;
@@ -498,6 +618,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 				   withObject:nil 
 				   afterDelay:duration + 0.25];
 	}
+
 	[CATransaction setValue:[NSNumber numberWithFloat:duration]
 					 forKey:kCATransactionAnimationDuration];
 	[CATransaction commit];
@@ -524,11 +645,11 @@ CGFloat distance(CGPoint a, CGPoint b);
 		[self getImages];
 		
 		CGFloat touchRectsWidth = self.bounds.size.width / 7;
-		nextPageRect = CGRectMake(self.bounds.size.width - touchRectsWidth,
+		rightPageRect = CGRectMake(self.bounds.size.width - touchRectsWidth,
 								  0,
 								  touchRectsWidth,
 								  self.bounds.size.height);
-		prevPageRect = CGRectMake(0,
+		leftPageRect = CGRectMake(0,
 								  0,
 								  touchRectsWidth,
 								  self.bounds.size.height);
