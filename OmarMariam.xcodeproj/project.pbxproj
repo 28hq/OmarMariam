@@ -40,7 +40,7 @@
 		3A2E981D12B1FD0B002AD697 /* v1b5cp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E981612B1FD0B002AD697 /* v1b5cp.jpg */; };
 		3A2E981E12B1FD0B002AD697 /* v1b6cp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E981712B1FD0B002AD697 /* v1b6cp.jpg */; };
 		3A2E981F12B1FD0B002AD697 /* v1b7cp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E981812B1FD0B002AD697 /* v1b7cp.jpg */; };
-		3A2E984012B3434C002AD697 /* umarwamaryam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E983F12B3434C002AD697 /* umarwamaryam.mp3 */; };
+		3A2E984012B3434C002AD697 /* umarwamariam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A2E983F12B3434C002AD697 /* umarwamariam.mp3 */; };
 		3A3E8562125835AE00FAB522 /* Volume1 in Resources */ = {isa = PBXBuildFile; fileRef = 3A3E83C5125835AE00FAB522 /* Volume1 */; };
 		3A6342A51256658600EE14DA /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6342A41256658600EE14DA /* BookViewController.m */; };
 		3A63436412566CD900EE14DA /* blank.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A63436312566CD900EE14DA /* blank.jpg */; };
@@ -77,7 +77,7 @@
 		3A9446531280E10400590EFA /* asdiqa.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446521280E10400590EFA /* asdiqa.png */; };
 		3A9446551280E11C00590EFA /* hiza.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446541280E11C00590EFA /* hiza.png */; };
 		3A94465F1280E18E00590EFA /* qittah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A94465E1280E18E00590EFA /* qittah.mp3 */; };
-		3A9446611280E19C00590EFA /* omarwamaryam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446601280E19C00590EFA /* omarwamaryam.mp3 */; };
+		3A9446611280E19C00590EFA /* omarwamariam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446601280E19C00590EFA /* omarwamariam.mp3 */; };
 		3A9446631280E1A800590EFA /* omar.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446621280E1A800590EFA /* omar.mp3 */; };
 		3A9446651280E45800590EFA /* haqibah.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446641280E45800590EFA /* haqibah.png */; };
 		3A9446671280E4A800590EFA /* kitab.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446661280E4A800590EFA /* kitab.png */; };
@@ -212,7 +212,7 @@
 		3A2E981612B1FD0B002AD697 /* v1b5cp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = v1b5cp.jpg; sourceTree = "<group>"; };
 		3A2E981712B1FD0B002AD697 /* v1b6cp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = v1b6cp.jpg; sourceTree = "<group>"; };
 		3A2E981812B1FD0B002AD697 /* v1b7cp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = v1b7cp.jpg; sourceTree = "<group>"; };
-		3A2E983F12B3434C002AD697 /* umarwamaryam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = umarwamaryam.mp3; sourceTree = "<group>"; };
+		3A2E983F12B3434C002AD697 /* umarwamariam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = umarwamariam.mp3; sourceTree = "<group>"; };
 		3A3E83C5125835AE00FAB522 /* Volume1 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Volume1; sourceTree = "<group>"; };
 		3A6342A31256658600EE14DA /* BookViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BookViewController.h; sourceTree = "<group>"; };
 		3A6342A41256658600EE14DA /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		3A9446521280E10400590EFA /* asdiqa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = asdiqa.png; sourceTree = "<group>"; };
 		3A9446541280E11C00590EFA /* hiza.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hiza.png; sourceTree = "<group>"; };
 		3A94465E1280E18E00590EFA /* qittah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = qittah.mp3; sourceTree = "<group>"; };
-		3A9446601280E19C00590EFA /* omarwamaryam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = omarwamaryam.mp3; sourceTree = "<group>"; };
+		3A9446601280E19C00590EFA /* omarwamariam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = omarwamariam.mp3; sourceTree = "<group>"; };
 		3A9446621280E1A800590EFA /* omar.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = omar.mp3; sourceTree = "<group>"; };
 		3A9446641280E45800590EFA /* haqibah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = haqibah.png; sourceTree = "<group>"; };
 		3A9446661280E4A800590EFA /* kitab.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = kitab.png; sourceTree = "<group>"; };
@@ -529,7 +529,7 @@
 		3A9446561280E15300590EFA /* Game Audios */ = {
 			isa = PBXGroup;
 			children = (
-				3A2E983F12B3434C002AD697 /* umarwamaryam.mp3 */,
+				3A2E983F12B3434C002AD697 /* umarwamariam.mp3 */,
 				3A94466A1280E5CD00590EFA /* ab.mp3 */,
 				3A94466B1280E5CD00590EFA /* aeshab.mp3 */,
 				3A94466C1280E5CD00590EFA /* arnab.mp3 */,
@@ -559,7 +559,7 @@
 				3A9446831280E5CD00590EFA /* sayyaratulitfa.mp3 */,
 				3A9446841280E5CD00590EFA /* syajarah.mp3 */,
 				3A9446851280E5CD00590EFA /* zuhur.mp3 */,
-				3A9446601280E19C00590EFA /* omarwamaryam.mp3 */,
+				3A9446601280E19C00590EFA /* omarwamariam.mp3 */,
 				3A94465E1280E18E00590EFA /* qittah.mp3 */,
 				3A9446621280E1A800590EFA /* omar.mp3 */,
 			);
@@ -801,7 +801,7 @@
 				3A9446531280E10400590EFA /* asdiqa.png in Resources */,
 				3A9446551280E11C00590EFA /* hiza.png in Resources */,
 				3A94465F1280E18E00590EFA /* qittah.mp3 in Resources */,
-				3A9446611280E19C00590EFA /* omarwamaryam.mp3 in Resources */,
+				3A9446611280E19C00590EFA /* omarwamariam.mp3 in Resources */,
 				3A9446631280E1A800590EFA /* omar.mp3 in Resources */,
 				3A9446651280E45800590EFA /* haqibah.png in Resources */,
 				3A9446671280E4A800590EFA /* kitab.png in Resources */,
@@ -868,7 +868,7 @@
 				3A2E981D12B1FD0B002AD697 /* v1b5cp.jpg in Resources */,
 				3A2E981E12B1FD0B002AD697 /* v1b6cp.jpg in Resources */,
 				3A2E981F12B1FD0B002AD697 /* v1b7cp.jpg in Resources */,
-				3A2E984012B3434C002AD697 /* umarwamaryam.mp3 in Resources */,
+				3A2E984012B3434C002AD697 /* umarwamariam.mp3 in Resources */,
 				3AB53EB212B67ABF0047F85B /* Icon.png in Resources */,
 				3A7E5DC01342D22800ADD973 /* correct.mp3 in Resources */,
 			);

@@ -134,6 +134,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 				self.objectTouched = @"word";
 				self.objectTagged = word.tag;
 				self.start = YES;
+				
 				break;
 			}
 		}
@@ -148,6 +149,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 				self.objectTouched = @"picture";
 				self.objectTagged = picture.tag;
 				self.start = YES;
+				
 				break;
 			}
 		}
@@ -173,7 +175,22 @@ CGFloat distance(CGPoint a, CGPoint b);
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	self.start = NO;
+	if (self.start && [self.objectTouched isEqual:@"word"] && !dragged) 
+	{
+		// Play sound for the TOUCHED word.
+		if (self.aLineGameViewController.isAtLevel <= 1) {
+			[self.aLineGameViewController playSoundFor:@"picture" withTag:self.objectTagged];
+		}		
+	}
+	
+	if (self.start && [self.objectTouched isEqual:@"picture"] && !dragged) 
+	{
+		// Play sound for the TOUCHED picture.
+		if (self.aLineGameViewController.isAtLevel <= 2) {
+			[self.aLineGameViewController playSoundFor:@"picture" withTag:self.objectTagged];
+		}
+	}
+	
 	self.correct = NO;
 	touchEnded = YES;
 	
@@ -250,7 +267,8 @@ CGFloat distance(CGPoint a, CGPoint b);
 	 * Play Correct/Incorrect Sound.
 	 */
 	
-	if (dragged) {
+	if (dragged && start) 
+	{
 		if (self.correct) {
 			[correctSound play];
 		}
@@ -259,7 +277,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 		}	
 	}
 	
-	
+	self.start = NO;
 	[self setNeedsDisplay];
 	
 }

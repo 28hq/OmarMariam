@@ -32,9 +32,9 @@
 	{
 		self.bookNumber = bookVolume;
 		
-		NSArray *_tmpData = [[NSArray alloc] init];
-		self.theData = _tmpData;
-		[_tmpData release];
+//		NSArray *_tmpData = [[NSArray alloc] init];
+//		self.theData = _tmpData;
+//		[_tmpData release];
 		
 		NSMutableArray *_wordViews = [[NSMutableArray alloc] init];
 		self.wordViews = _wordViews;
@@ -105,6 +105,11 @@
 
 - (void)dealloc {
     [super dealloc];
+	
+	if (self.theData != nil) {
+		[theData release];
+		theData = nil;
+	}
 }
 
 - (void)toBookMenu 
@@ -296,8 +301,8 @@
 	[wordLabels release];
 	[pictureImageViews release];
 	
-	[self.theData release];
-	self.theData = nil;
+//	[self.theData release];
+//	self.theData = nil;
  
 }
 
@@ -445,6 +450,26 @@
 	
 }
 
+- (void) playSoundFor:(NSString *)objectType withTag:(int)tag 
+{
+	NSObject * obj = [[self.theData objectAtIndex:tag] retain];
+	
+	if ([obj isKindOfClass:[NSDictionary class]])
+	{
+		NSString *audioName = [obj valueForKey:objectType];
+		
+		NSString *pathToAudio = [[NSBundle mainBundle] pathForResource:audioName ofType:@"mp3"];//nDirectory:[NSString stringWithFormat:@"Volume%d/iBooks/iBook%d", bookVolume, bookNumber]];
+		
+		BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:pathToAudio];
+
+		if (fileExists) {
+			
+			AVAudioPlayer *audio = [[AVAudioPlayer alloc] initWithContentsOfURL:
+										[NSURL fileURLWithPath:pathToAudio] error:NULL];
+			[audio play];
+		}
+	}
+}
 
 #pragma mark Audio Player delegates
 

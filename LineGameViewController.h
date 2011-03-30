@@ -47,6 +47,7 @@
 - (IBAction)startGame:(id)sender;
 - (IBAction)playAgain:(id)sender;
 - (void)levelSelector:(int)level;
+- (void) playSoundFor:(NSString *)objectType withTag:(int)tag;
 - (void)createLevelIndicator;
 - (void)checkLevelCompletion;
 - (void)continueToNextLevel;
