@@ -25,6 +25,30 @@ CGFloat distance(CGPoint a, CGPoint b);
 	self.redrawToPrevious = NO;
 	self.dragged = NO;
 	self.touchEnded = NO;
+	
+	[self initSounds];
+}
+
+- (void)initSounds {
+	
+	NSString *pathToSound = [[NSBundle mainBundle] pathForResource:@"correct" ofType:@"mp3"];
+	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:pathToSound];
+	
+	if (fileExists) {
+		correctSound = [[AVAudioPlayer alloc] initWithContentsOfURL:
+						[NSURL fileURLWithPath:pathToSound] error:NULL];
+		correctSound.delegate = self;
+		[correctSound prepareToPlay];
+	}
+	
+	pathToSound = [[NSBundle mainBundle] pathForResource:@"incorrect" ofType:@"mp3"];
+	fileExists = [[NSFileManager defaultManager] fileExistsAtPath:pathToSound];
+	
+	if (fileExists) {
+		incorrectSound = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathToSound] error:NULL];
+		incorrectSound.delegate = self;
+		[incorrectSound prepareToPlay];
+	}
 }
 
 // Only override drawRect: if you perform custom drawing.
@@ -37,6 +61,8 @@ CGFloat distance(CGPoint a, CGPoint b);
 - (void)dealloc {
 	[self.objectTouched release];
 	[self.lines release];
+	[correctSound release];
+	[incorrectSound release];
 	
     [super dealloc];
 }
@@ -203,6 +229,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 
 				[line release];
 				
+				
 				/*
 				 * Check question and move to next level if completed.
 				 */
@@ -212,11 +239,26 @@ CGFloat distance(CGPoint a, CGPoint b);
 				
 				break;
 			}
-		}
+		}		
 	}
 	else if (!dragged && [touch tapCount] == 1) {
 		[self performSelector:@selector(oneTap) withObject:nil afterDelay:.5];
 	}
+	
+	
+	/*
+	 * Play Correct/Incorrect Sound.
+	 */
+	
+	if (dragged) {
+		if (self.correct) {
+			[correctSound play];
+		}
+		else {
+			[incorrectSound play];
+		}	
+	}
+	
 	
 	[self setNeedsDisplay];
 	

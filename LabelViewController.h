@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 @class LabelView;
 
@@ -56,6 +57,7 @@
 - (void)nextLevel;
 - (void)createLevelIndicator;
 - (void)toBookMenu;
+- (void)playCompletedLevel;
 
 - (IBAction)startGameAtLevel:(id)sender;
 - (IBAction)playAgain:(id)sender;

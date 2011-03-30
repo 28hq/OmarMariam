@@ -111,12 +111,7 @@ float const LBMagnification = 2.0;
 }
 
 - (void)nextLevel {
-
-	// is at the end of the game. encounter last question.
-	if (self.isAtLevel == self.totalLevel) {
-		[self.view addSubview:self.end];
-		return;
-	}
+	
 	self.isAtLevel = self.isAtLevel + 1;
 	self.continueButtonView.hidden = NO;
 	[self.view bringSubviewToFront:self.continueButtonView];
@@ -124,12 +119,42 @@ float const LBMagnification = 2.0;
 	[self.continueButton addTarget:self 
 							action:@selector(continueToNextLevel) 
 				  forControlEvents:UIControlEventTouchUpInside];
+	
+	[self playCompletedLevel];
+	
+}
+
+- (void)playCompletedLevel {
+	
+	NSString *pathToMusicFile = [[NSBundle mainBundle] pathForResource:@"cheer" ofType:@"mp3"];//nDirectory:[NSString stringWithFormat:@"Volume%d/iBooks/iBook%d", bookVolume, bookNumber]];
+	
+	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:pathToMusicFile];
+	
+	if (fileExists) {
+		
+		AVAudioPlayer *soundPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathToMusicFile] error:NULL];
+		[soundPlay play];
+	}
 }
 
 - (void)continueToNextLevel {
-	self.questionLeft = 0;
-	[self levelSelector:self.isAtLevel];
+	
+	NSLog(@"question left: %d, totalLevel: %d, atLevel: %d", questionLeft, totalLevel, isAtLevel);
+	
 	self.continueButtonView.hidden = YES;
+	
+	// is at the end of the game. encounter last question.
+	if (self.isAtLevel-1 == self.totalLevel) 
+	{
+		[self.view addSubview:self.end];
+
+		return;
+	}
+	else
+	{
+		self.questionLeft = 0;
+		[self levelSelector:self.isAtLevel];
+	}
 }
 
 - (void)levelSelector:(int)level {

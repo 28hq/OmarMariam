@@ -11,12 +11,14 @@
 #import "LineGameViewController.h"
 #import "LBView.h"
 
-@interface LineView : LBView {
+@interface LineView : LBView <AVAudioPlayerDelegate> {
 	CGPoint currentTouchPoint, startTouchPoint;
 	NSInteger objectTagged;
 	NSString *objectTouched;
 	
 	NSMutableArray *lines;
+	AVAudioPlayer *correctSound;
+	AVAudioPlayer *incorrectSound;
 	
 	BOOL correct, start, incorrect, dragged, touchEnded;
 	
@@ -33,5 +35,6 @@
 
 - (void)drawLine:(CGRect)rect;
 - (void)cleanUp;
+- (void)initSounds;
 
 @end

@@ -355,17 +355,6 @@
 {
 	if (0 == self.questionLeft) 
 	{
-		if (self.isAtLevel >= self.totalLevel) 
-		{
-			[(LineView*)self.game cleanUp];
-			
-			[self cleanUp];
-			
-			[self.view addSubview:self.end];
-			self.end.backgroundColor = [UIColor clearColor];
-			
-			return;
-		}
 		self.isAtLevel = self.isAtLevel + 1;
 		
 		[self.continueButton superview].hidden = NO;
@@ -375,20 +364,47 @@
 		[self.continueButton addTarget:self 
 								action:@selector(continueToNextLevel) 
 					  forControlEvents:UIControlEventTouchUpInside];
+
+		[self playCompletedLevel];
+	}
+}
+
+- (void)playCompletedLevel {
+	
+	NSString *pathToMusicFile = [[NSBundle mainBundle] pathForResource:@"cheer" ofType:@"mp3"];//nDirectory:[NSString stringWithFormat:@"Volume%d/iBooks/iBook%d", bookVolume, bookNumber]];
+	
+	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:pathToMusicFile];
+	
+	if (fileExists) {
+		
+		soundPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathToMusicFile] error:NULL];
+		soundPlay.delegate = self;
+		[soundPlay play];
 	}
 }
 
 - (void)continueToNextLevel {
+	
 	
 	// clean-up LineView controller.
 	[(LineView*)self.game cleanUp];
 	
 	// clean-up here.
 	[self cleanUp];
-	
-	[self levelSelector:self.isAtLevel];
-	
+
 	[self.continueButton superview].hidden = YES;
+	
+	if (0 == self.questionLeft && self.isAtLevel-1 == self.totalLevel) 
+	{		
+		[self.view addSubview:self.end];
+		self.end.backgroundColor = [UIColor clearColor];
+		
+		return;
+	}
+	else 
+	{
+		[self levelSelector:self.isAtLevel];
+	}
 }
 
 - (void)cleanUp {
@@ -427,6 +443,16 @@
 		[self.pictureViews removeAllObjects];
 	}
 	
+}
+
+
+#pragma mark Audio Player delegates
+
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag
+{
+//	if (flag) {
+//		[self clearPlayButtonAttributesForButton:activeButtonPlayed];
+//	}
 }
 
 @end

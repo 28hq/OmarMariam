@@ -7,12 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
-
-@interface LineGameViewController : UIViewController {
+@interface LineGameViewController : UIViewController <AVAudioPlayerDelegate> {
 	NSMutableArray *wordViews;
 	NSMutableArray *pictureViews;
 
+	AVAudioPlayer *soundPlay;
 	NSArray * theData;
 	UIImage * gameNumberImage;
 	int questionLeft;
@@ -50,5 +51,6 @@
 - (void)checkLevelCompletion;
 - (void)continueToNextLevel;
 - (void)cleanUp;
+- (void)playCompletedLevel;
 
 @end
