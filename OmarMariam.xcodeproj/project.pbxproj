@@ -45,6 +45,7 @@
 		3A6342A51256658600EE14DA /* BookViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A6342A41256658600EE14DA /* BookViewController.m */; };
 		3A63436412566CD900EE14DA /* blank.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3A63436312566CD900EE14DA /* blank.jpg */; };
 		3A7E5DC01342D22800ADD973 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E5DBF1342D22800ADD973 /* correct.mp3 */; };
+		3A7E6228134439C500ADD973 /* flip.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A7E6227134439C500ADD973 /* flip.mp3 */; };
 		3A89B406127E7705008F313D /* LBiPadRootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A89B404127E7705008F313D /* LBiPadRootViewController.m */; };
 		3A89B407127E7705008F313D /* LBiPadRootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3A89B405127E7705008F313D /* LBiPadRootViewController.xib */; };
 		3A9445571280679000590EFA /* ab.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A94453B1280678F00590EFA /* ab.png */; };
@@ -218,6 +219,7 @@
 		3A6342A41256658600EE14DA /* BookViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BookViewController.m; sourceTree = "<group>"; };
 		3A63436312566CD900EE14DA /* blank.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = blank.jpg; path = ../blank.jpg; sourceTree = "<group>"; };
 		3A7E5DBF1342D22800ADD973 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		3A7E6227134439C500ADD973 /* flip.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flip.mp3; sourceTree = "<group>"; };
 		3A89B403127E7705008F313D /* LBiPadRootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LBiPadRootViewController.h; sourceTree = "<group>"; };
 		3A89B404127E7705008F313D /* LBiPadRootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LBiPadRootViewController.m; sourceTree = "<group>"; };
 		3A89B405127E7705008F313D /* LBiPadRootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LBiPadRootViewController.xib; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 				3A199C52127D8AE500C022B1 /* ohno.mp3 */,
 				3ABFCEED127498BA004B4725 /* Number */,
 				3ABFCFA6127542F8004B4725 /* irsyad.png */,
+				3A7E6227134439C500ADD973 /* flip.mp3 */,
 				3ABFCEBE127496CE004B4725 /* cheer.mp3 */,
 				3A7E5DBF1342D22800ADD973 /* correct.mp3 */,
 				3ABFCEC0127496CE004B4725 /* incorrect.mp3 */,
@@ -871,6 +874,7 @@
 				3A2E984012B3434C002AD697 /* umarwamariam.mp3 in Resources */,
 				3AB53EB212B67ABF0047F85B /* Icon.png in Resources */,
 				3A7E5DC01342D22800ADD973 /* correct.mp3 in Resources */,
+				3A7E6228134439C500ADD973 /* flip.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
