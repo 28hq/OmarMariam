@@ -52,8 +52,8 @@ CGFloat distance(CGPoint a, CGPoint b);
 							(id)[[[UIColor blackColor] colorWithAlphaComponent:0.6] CGColor],
 							(id)[[UIColor clearColor] CGColor],
 							nil];
-	topPageShadow.startPoint = CGPointMake(1,0.5);
-	topPageShadow.endPoint = CGPointMake(0,0.5);
+	topPageShadow.startPoint = CGPointMake(0,0.5);
+	topPageShadow.endPoint = CGPointMake(1,0.5);
 	
 	topPageReverse = [[CALayer alloc] init];
 	topPageReverse.backgroundColor = [[UIColor whiteColor] CGColor];
@@ -268,7 +268,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 									  (1-leafEdge) * leftPageBoundsRect.size.width, 
 									  leftPageBoundsRect.size.height);
 	bottomPage.frame = leftPageBoundsRect;
-	topPageShadow.frame = CGRectMake(topPageReverse.frame.origin.x - 40, 
+	topPageShadow.frame = CGRectMake(topPageReverse.frame.origin.x + topPageReverse.bounds.size.width, 
 									 0, 
 									 40, 
 									 bottomPage.bounds.size.height);
@@ -299,14 +299,6 @@ CGFloat distance(CGPoint a, CGPoint b);
         rightPageOverlay.frame = rightPage.bounds;
         
     }
-	//topPageReverse.hidden = YES;
-	//bottomPage.hidden = YES;
-	//topPageReverseImage.hidden = YES;
-	//topPageReverseOverlay.hidden = YES;
-	
-	topPageReverseShading.hidden = YES;
-	//topPageShadow.hidden = YES;
-	bottomPageShadow.hidden = YES;
 }
 
 - (void) willTurnToPageAtIndex:(NSUInteger)index {
