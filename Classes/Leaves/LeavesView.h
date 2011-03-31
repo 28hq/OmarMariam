@@ -39,8 +39,9 @@ typedef enum {
 	
     // The left page in two-page mode.
     // Animation is always done on the right page
-    CALayer *leftPage;
-	CALayer *leftPageOverlay;
+	
+	CALayer *rightPage;
+	CALayer *rightPageOverlay;
     
     // Single page or facing pages?
     LeavesViewMode mode;

@@ -41,7 +41,7 @@ CGFloat distance(CGPoint a, CGPoint b);
     
 	topPage = [[CALayer alloc] init];
 	topPage.masksToBounds = YES;
-	topPage.contentsGravity = kCAGravityLeft;
+	topPage.contentsGravity = kCAGravityRight;
 	topPage.backgroundColor = [[UIColor whiteColor] CGColor];
 	
 	topPageOverlay = [[CALayer alloc] init];
@@ -52,8 +52,8 @@ CGFloat distance(CGPoint a, CGPoint b);
 							(id)[[[UIColor blackColor] colorWithAlphaComponent:0.6] CGColor],
 							(id)[[UIColor clearColor] CGColor],
 							nil];
-	topPageShadow.startPoint = CGPointMake(1,0.5);
-	topPageShadow.endPoint = CGPointMake(0,0.5);
+	topPageShadow.startPoint = CGPointMake(0,0.5);
+	topPageShadow.endPoint = CGPointMake(1,0.5);
 	
 	topPageReverse = [[CALayer alloc] init];
 	topPageReverse.backgroundColor = [[UIColor whiteColor] CGColor];
@@ -69,8 +69,8 @@ CGFloat distance(CGPoint a, CGPoint b);
 									(id)[[[UIColor blackColor] colorWithAlphaComponent:0.6] CGColor],
 									(id)[[UIColor clearColor] CGColor],
 									nil];
-	topPageReverseShading.startPoint = CGPointMake(1,0.5);
-	topPageReverseShading.endPoint = CGPointMake(0,0.5);
+	topPageReverseShading.startPoint = CGPointMake(0,0.5);
+	topPageReverseShading.endPoint = CGPointMake(1,0.5);
 	
 	bottomPage = [[CALayer alloc] init];
 	bottomPage.backgroundColor = [[UIColor whiteColor] CGColor];
@@ -81,8 +81,8 @@ CGFloat distance(CGPoint a, CGPoint b);
 							   (id)[[[UIColor blackColor] colorWithAlphaComponent:0.6] CGColor],
 							   (id)[[UIColor clearColor] CGColor],
 							   nil];
-	bottomPageShadow.startPoint = CGPointMake(0,0.5);
-	bottomPageShadow.endPoint = CGPointMake(1,0.5);
+	bottomPageShadow.startPoint = CGPointMake(1,0.5);
+	bottomPageShadow.endPoint = CGPointMake(0,0.5);
 	
 	[topPage addSublayer:topPageOverlay];
 	[topPageReverse addSublayer:topPageReverseImage];
@@ -91,17 +91,17 @@ CGFloat distance(CGPoint a, CGPoint b);
 	[bottomPage addSublayer:bottomPageShadow];
 	
     // Setup for the left page in two-page mode
-    leftPage = [[CALayer alloc] init];
-	leftPage.masksToBounds = YES;
-	leftPage.contentsGravity = kCAGravityLeft;
-	leftPage.backgroundColor = [[UIColor whiteColor] CGColor];
+	rightPage = [[CALayer alloc] init];
+	rightPage.masksToBounds = YES;
+	rightPage.contentsGravity = kCAGravityLeft;
+	rightPage.backgroundColor = [[UIColor whiteColor] CGColor];
 	
-	leftPageOverlay = [[CALayer alloc] init];
-	leftPageOverlay.backgroundColor = [[[UIColor blackColor] colorWithAlphaComponent:0.2] CGColor];
+	rightPageOverlay = [[CALayer alloc] init];
+	rightPageOverlay.backgroundColor = [[[UIColor blackColor] colorWithAlphaComponent:0.2] CGColor];
 	
-	[leftPage addSublayer:leftPageOverlay];
+	[rightPage addSublayer:rightPageOverlay];
     
-	[self.layer addSublayer:leftPage];
+	[self.layer addSublayer:rightPage];
 	[self.layer addSublayer:bottomPage];
 	[self.layer addSublayer:topPage];
 	[self.layer addSublayer:topPageReverse];
@@ -115,11 +115,11 @@ CGFloat distance(CGPoint a, CGPoint b);
 
 - (void)setUpLayersForViewingMode {
     if (self.mode == LeavesViewModeSinglePage) {
-        topPageReverseImage.contentsGravity = kCAGravityRight;
+        topPageReverseImage.contentsGravity = kCAGravityLeft;
         topPageReverseOverlay.backgroundColor = [[[UIColor whiteColor] colorWithAlphaComponent:0.8] CGColor];
         topPageReverseImage.transform = CATransform3DMakeScale(-1, 1, 1);
     } else {
-        topPageReverseImage.contentsGravity = kCAGravityLeft;
+        topPageReverseImage.contentsGravity = kCAGravityRight;
         topPageReverseOverlay.backgroundColor = [[[UIColor whiteColor] colorWithAlphaComponent:0.0] CGColor];
         topPageReverseImage.transform = CATransform3DMakeScale(1, 1, 1);
     }
@@ -169,8 +169,8 @@ CGFloat distance(CGPoint a, CGPoint b);
 	[topPageReverseShading release];
 	[bottomPage release];
 	[bottomPageShadow release];
-    [leftPage release];
-	[leftPageOverlay release];
+    [rightPage release];
+	[rightPageOverlay release];
     
 	[pageCache release];
 	
@@ -197,7 +197,7 @@ CGFloat distance(CGPoint a, CGPoint b);
                 [pageCache precacheImageForPageIndex:currentPageIndex-1];
             }
             topPage.contents = (id)[pageCache cachedImageForPageIndex:currentPageIndex];
-            leftPage.contents = (id)[pageCache cachedImageForPageIndex:currentPageIndex];
+            rightPage.contents = (id)[pageCache cachedImageForPageIndex:currentPageIndex];
             if (currentPageIndex < numberOfPages - 1) {
                 topPageReverseImage.contents = (id)[pageCache cachedImageForPageIndex:currentPageIndex];
                 bottomPage.contents = (id)[pageCache cachedImageForPageIndex:currentPageIndex + 1];
@@ -208,7 +208,7 @@ CGFloat distance(CGPoint a, CGPoint b);
             topPageReverseImage.contents = nil;
             bottomPage.contents = nil;
             
-            leftPage.contents = nil;
+            rightPage.contents = nil;
         }
     }
     else
@@ -223,9 +223,9 @@ CGFloat distance(CGPoint a, CGPoint b);
             
             topPage.contents = (id)[pageCache cachedImageForPageIndex:currentPageIndex];
             if (currentPageIndex > 0) {
-                leftPage.contents = (id)[pageCache cachedImageForPageIndex:currentPageIndex-1];
+                rightPage.contents = (id)[pageCache cachedImageForPageIndex:currentPageIndex-1];
             } else {
-                leftPage.contents = nil;
+                rightPage.contents = nil;
             }
             
             if (currentPageIndex < numberOfPages - 1) {
@@ -238,7 +238,7 @@ CGFloat distance(CGPoint a, CGPoint b);
             topPageReverseImage.contents = nil;
             bottomPage.contents = nil;
             
-            leftPage.contents = nil;
+            rightPage.contents = nil;
         }
     }
 }
@@ -250,32 +250,35 @@ CGFloat distance(CGPoint a, CGPoint b);
 
 - (void) setLayerFrames {
     CGRect rightPageBoundsRect = self.layer.bounds;
+	CGRect leftPageBoundsRect;
     CGRect leftHalf, rightHalf;
     CGRectDivide(rightPageBoundsRect, &leftHalf, &rightHalf, CGRectGetWidth(rightPageBoundsRect) / 2.0f, CGRectMinXEdge);
     if (self.mode == LeavesViewModeFacingPages) {
         rightPageBoundsRect = rightHalf;
+		leftPageBoundsRect = leftHalf;
     }
     
-	topPage.frame = CGRectMake(rightPageBoundsRect.origin.x, 
-							   rightPageBoundsRect.origin.y, 
-							   leafEdge * rightPageBoundsRect.size.width, 
-							   rightPageBoundsRect.size.height);
-	topPageReverse.frame = CGRectMake(rightPageBoundsRect.origin.x + (2*leafEdge-1) * rightPageBoundsRect.size.width, 
-									  rightPageBoundsRect.origin.y, 
-									  (1-leafEdge) * rightPageBoundsRect.size.width, 
-									  rightPageBoundsRect.size.height);
-	bottomPage.frame = rightPageBoundsRect;
-	topPageShadow.frame = CGRectMake(topPageReverse.frame.origin.x - 40, 
+	topPage.frame = CGRectMake((1-leafEdge) * leftPageBoundsRect.size.width, 
+							   leftPageBoundsRect.origin.y, 
+							   leafEdge * leftPageBoundsRect.size.width, 
+							   leftPageBoundsRect.size.height);
+
+	topPageReverse.frame = CGRectMake(topPage.frame.size.width - (2*leafEdge-1) * rightPageBoundsRect.size.width, 
+									  leftPageBoundsRect.origin.y, 
+									  (1-leafEdge) * leftPageBoundsRect.size.width, 
+									  leftPageBoundsRect.size.height);
+	bottomPage.frame = leftPageBoundsRect;
+	topPageShadow.frame = CGRectMake(topPageReverse.frame.origin.x + topPageReverse.bounds.size.width, 
 									 0, 
 									 40, 
 									 bottomPage.bounds.size.height);
 	topPageReverseImage.frame = topPageReverse.bounds;
 	topPageReverseOverlay.frame = topPageReverse.bounds;
-	topPageReverseShading.frame = CGRectMake(topPageReverse.bounds.size.width - 50, 
+	topPageReverseShading.frame = CGRectMake(topPageReverse.bounds.origin.x, 
 											 0, 
-											 50 + 1, 
+											 50, 
 											 topPageReverse.bounds.size.height);
-	bottomPageShadow.frame = CGRectMake(leafEdge * rightPageBoundsRect.size.width, 
+	bottomPageShadow.frame = CGRectMake((1-leafEdge) * leftPageBoundsRect.size.width - 40, 
 										0, 
 										40, 
 										bottomPage.bounds.size.height);
@@ -284,16 +287,16 @@ CGFloat distance(CGPoint a, CGPoint b);
     
     
     if (self.mode == LeavesViewModeSinglePage) {
-        leftPage.hidden = YES;
-        leftPageOverlay.hidden = leftPage.hidden;
+        rightPage.hidden = YES;
+        rightPageOverlay.hidden = rightPage.hidden;
     } else {
-        leftPage.hidden = NO;
-        leftPageOverlay.hidden = leftPage.hidden;
-        leftPage.frame = CGRectMake(leftHalf.origin.x, 
-									leftHalf.origin.y, 
-									leftHalf.size.width, 
-									leftHalf.size.height);
-        leftPageOverlay.frame = leftPage.bounds;
+        rightPage.hidden = NO;
+        rightPageOverlay.hidden = rightPage.hidden;
+        rightPage.frame = CGRectMake(rightHalf.origin.x, 
+									rightHalf.origin.y, 
+									rightHalf.size.width, 
+									rightHalf.size.height);
+        rightPageOverlay.frame = rightPage.bounds;
         
     }
 }
@@ -369,7 +372,7 @@ CGFloat distance(CGPoint a, CGPoint b);
     topPageShadow.opacity        = pageOpacity;
 	bottomPageShadow.opacity     = pageOpacity;
 	topPageOverlay.opacity       = pageOpacity;
-	leftPageOverlay.opacity   = pageOpacity;
+	rightPageOverlay.opacity	 = pageOpacity;
 	
     [self setLayerFrames];
 }
@@ -452,7 +455,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 	[CATransaction begin];
 	[CATransaction setValue:[NSNumber numberWithFloat:0.07]
 					 forKey:kCATransactionAnimationDuration];
-	self.leafEdge = touchPoint.x / self.bounds.size.width;
+	self.leafEdge = 1 - touchPoint.x / self.bounds.size.width;
 	[CATransaction commit];
 }
 
@@ -524,11 +527,11 @@ CGFloat distance(CGPoint a, CGPoint b);
 		[self getImages];
 		
 		CGFloat touchRectsWidth = self.bounds.size.width / 7;
-		nextPageRect = CGRectMake(self.bounds.size.width - touchRectsWidth,
+		nextPageRect = CGRectMake(0,
 								  0,
 								  touchRectsWidth,
 								  self.bounds.size.height);
-		prevPageRect = CGRectMake(0,
+		prevPageRect = CGRectMake(self.bounds.size.width - touchRectsWidth,
 								  0,
 								  touchRectsWidth,
 								  self.bounds.size.height);
