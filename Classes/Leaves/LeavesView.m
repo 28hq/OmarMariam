@@ -304,9 +304,9 @@ CGFloat distance(CGPoint a, CGPoint b);
 	//topPageReverseImage.hidden = YES;
 	//topPageReverseOverlay.hidden = YES;
 	
-	//topPageReverseShading.hidden = YES;
+	topPageReverseShading.hidden = YES;
 	//topPageShadow.hidden = YES;
-	//bottomPageShadow.hidden = YES;
+	bottomPageShadow.hidden = YES;
 }
 
 - (void) willTurnToPageAtIndex:(NSUInteger)index {
