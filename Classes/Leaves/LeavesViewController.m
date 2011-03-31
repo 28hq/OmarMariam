@@ -18,11 +18,27 @@
 
         leavesView.mode = UIInterfaceOrientationIsPortrait(self.interfaceOrientation) ? LeavesViewModeSinglePage : LeavesViewModeFacingPages;
     }
+	
+	NSString *pathToAudio = [[NSBundle mainBundle] pathForResource:@"flip" ofType:@"mp3"];
+	
+	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:pathToAudio];
+	
+	if (fileExists) {
+		
+		audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathToAudio] error:NULL];
+		[audioPlayer prepareToPlay];
+	}
+	
     return self;
 }
 
 - (void)dealloc {
 	[leavesView release];
+	
+	if (audioPlayer != nil) {
+		[audioPlayer release];
+		audioPlayer = nil;
+	}
     [super dealloc];
 }
 
@@ -35,6 +51,19 @@
 
 - (void) renderPageAtIndex:(NSUInteger)index inContext:(CGContextRef)ctx {
 	
+}
+
+#pragma mark -
+#pragma mark LeavesViewDelegate
+
+- (void) leavesView:(LeavesView *)leavesView didTurnToPageAtIndex:(NSUInteger)pageIndex
+{
+	if ([audioPlayer isPlaying]) 
+	{
+		[audioPlayer stop];
+	}
+	
+	[audioPlayer play];	
 }
 
 #pragma mark -

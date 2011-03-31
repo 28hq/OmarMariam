@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import "LeavesView.h"
 
 @interface LeavesViewController : UIViewController <LeavesViewDataSource, LeavesViewDelegate> {
 	LeavesView *leavesView;
+	AVAudioPlayer *audioPlayer;
 }
 
 @property (retain) IBOutlet LeavesView *leavesView;
