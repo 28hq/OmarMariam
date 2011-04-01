@@ -80,13 +80,6 @@ float const LBMagnification = 2.0;
     return self;
 }
 
-
-/*
- // Implement loadView to create a view hierarchy programmatically, without using a nib.
- - (void)loadView {
- }
- */
-
 /*
  
  NOTES
@@ -424,7 +417,10 @@ float const LBMagnification = 2.0;
 
 // Override to allow orientations other than the default portrait orientation.
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    return YES;
+    // Override to allow orientations other than the default portrait orientation.
+	NSLog(@"ShouldAutorotate: %@", [self class]);
+	return ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || 
+			(interfaceOrientation == UIInterfaceOrientationLandscapeRight));
 }
 
 - (void)didReceiveMemoryWarning {

@@ -116,6 +116,13 @@
     return self;
 }
 
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+    // Override to allow orientations other than the default portrait orientation.
+	NSLog(@"ShouldAutorotate: %@", [self class]);
+	return ((interfaceOrientation == UIInterfaceOrientationLandscapeLeft) || 
+			(interfaceOrientation == UIInterfaceOrientationLandscapeRight));
+}
+
 - (void)dealloc {
 	[images release];
     [super dealloc];
