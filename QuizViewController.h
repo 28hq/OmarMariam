@@ -12,6 +12,7 @@
 
 @interface QuizViewController : UIViewController {
 	int bookNumber;
+	int bookVolume;
 	int countQuestions;
 	int currentQuestionNo;
 	int totalScore;
@@ -37,6 +38,7 @@
 }
 
 @property (assign) int bookNumber;
+@property (assign) int bookVolume;
 @property (assign) int countQuestions;
 @property (assign) int currentQuestionNo;
 @property (assign) int totalScore;

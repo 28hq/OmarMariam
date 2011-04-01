@@ -23,6 +23,7 @@
 @synthesize timer;
 @synthesize totalScore;
 @synthesize bookNumber;
+@synthesize bookVolume;
 
 // IBOutlet
 @synthesize cover, game, end;
@@ -36,12 +37,15 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
-- (id)initWithBook:(int)bookNumber ofVolume:(int)bookVolume
+- (id)initWithBook:(int)aBookNumber ofVolume:(int)aBookVolume
 {
     if ((self = [super initWithNibName:@"QuizViewController" bundle:nil])) {
         // Custom initialization
-		self.bookNumber = bookVolume;
-		self.gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", bookVolume] 
+		self.bookNumber = aBookNumber;
+		self.bookVolume = aBookVolume;
+		self.rightAnswer = [[NSString alloc] init];
+		
+		self.gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", bookNumber] 
 																								  ofType:@"png"]];
     }
 	[self initSounds];
@@ -164,6 +168,7 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
     [super dealloc];
 	
 	//[self.theData release];
+	[rightAnswer release];
 	[self.gameNumberImage release];
 }
 
@@ -225,23 +230,30 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	
 	AppDelegate_iPad *delegate = [[UIApplication sharedApplication] delegate];
 	
-	self.countQuestions = [[[delegate.volume1 objectAtIndex:0] // iBook1, 2, 3 etc.
+	self.countQuestions = [[[delegate.volume1 objectAtIndex:self.bookNumber - 1] // iBook1, 2, 3 etc.
 						objectForKey:@"QuizGame"] count];
+	
+	if (countQuestions == 0) {
+		NSLog(@"Count is %d", countQuestions);
+		return;
+	}
 	
 	NSMutableDictionary *questions = [[NSMutableDictionary alloc] init];
 
-	questions = [[[delegate.volume1 objectAtIndex:0] // iBook1, 2, 3 etc.
+	questions = [[[delegate.volume1 objectAtIndex:self.bookNumber - 1] // iBook1, 2, 3 etc.
 					  objectForKey:@"QuizGame"] // LabelGame, ClozeGame
 					 objectAtIndex:no-1]; // Q No.
 													 //self.questionLeft = 0;
-
-	//NSLog(@"%@", [self.theData description]);
+	[questions retain];
+	
+	//NSLog(@"%@", [[delegate.volume1 objectAtIndex:self.bookNumber - 1] objectForKey:@"QuizGame"]);
+	//NSLog(@"%@", [questions description]);
 	/*
 	 * Populating the Questions and Choices.
 	 */
 	
 	self.timer = [(NSNumber *)[questions valueForKey:@"timer"] integerValue];
-	self.questionLabel.text = [questions valueForKey:@"question"];
+	self.questionLabel.text = (NSString *)[questions valueForKey:@"question"];
 	
 	//NSLog(@"%@", [questions valueForKey:@"question"]);
 	
@@ -249,35 +261,32 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	
 	// Create question's picture.
 	
-	NSString *directory = [NSString stringWithString:@"Volume1/Quizzes/Quiz1/Images"];
+	NSString *directory = [NSString stringWithFormat:@"Volume1/Quizzes/Quiz%d/Images", self.bookNumber];
 	NSFileManager *fileMgr = [NSFileManager defaultManager];
-	imagePath = [[NSBundle mainBundle] pathForResource:[questions valueForKey:@"picture"]
+	imagePath = [[NSBundle mainBundle] pathForResource:(NSString *)[questions valueForKey:@"picture"]
 												ofType:@"jpg"
 										   inDirectory:directory];
-	[directory release];
+	
 	// Automatically determine the existence of image.
 	// If image does not exist in book directory, find it in root directory.
 	
 	if (![fileMgr fileExistsAtPath:imagePath]) 
 	{
-		[imagePath release];
+		imagePath = nil;
 		imagePath = [[NSBundle mainBundle] pathForResource:[questions valueForKey:@"picture"]
 												   ofType:@"png"];
 	}
+
 	
-	UIImage *image = [[UIImage alloc] initWithContentsOfFile:imagePath];
+	[self.questionImageView setImage:[UIImage imageWithContentsOfFile:imagePath]];
 	
-	self.questionImageView.image = image;
-	
-	// cannot release image here. will cause a problem.
-	//[image release];
 	
 	// Get total of questions
-	int nQuestion = [[questions valueForKey:@"choices"] count];
+	int nQuestion = [(NSArray *)[questions valueForKey:@"choices"] count];
 	
 	// Answer field exists;
 	if (nil != [questions valueForKey:@"answer"]) {
-		self.rightAnswer = [questions valueForKey:@"answer"];
+		self.rightAnswer = (NSString *)[questions valueForKey:@"answer"];
 		nQuestion += 1;
 	}
 	
@@ -286,73 +295,76 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	//[choicesList addObjectsFromArray:[self.theData valueForKey:@"choices"]];
 	
 	// Populate all the incorrect answers.
+
 	NSArray *choices = [NSArray arrayWithArray:[questions valueForKey:@"choices"]];
-	for (id obj in choices) 
+	
+	for (int i = 0; i < [(NSArray *)[questions valueForKey:@"choices"] count]; i++)
 	{
 		UIButton *btn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-		[btn setTitle:obj forState:UIControlStateNormal];
+		[btn setTitle:[choices objectAtIndex:i] forState:UIControlStateNormal];
 		[btn setFrame:CGRectMake(0, 0, 50.0, 50.0)];
 		[btn addTarget:self action:@selector(wrongAnswer) forControlEvents:UIControlEventTouchUpInside];
-		
+		//[btn retain];
 		[choicesList addObject:btn];
 	}
 	NSLog(@"end load question");
 	// Add the correct answer.
 	UIButton *answerBtn = [UIButton buttonWithType:UIButtonTypeRoundedRect];
-	[answerBtn setTitle:[questions valueForKey:@"answer"] forState:UIControlStateNormal];
+	[answerBtn setTitle:(NSString *)[questions valueForKey:@"answer"] forState:UIControlStateNormal];
 	[answerBtn setFrame:CGRectMake(0.0, 0.0, 50.0, 50.0)];
 	[answerBtn addTarget:self action:@selector(correctAnswer) forControlEvents:UIControlEventTouchUpInside];
-	
+	//[answerBtn retain];
 	[choicesList addObject:answerBtn];
 	
 	// Create tmp_array for randomizer.
-	NSMutableArray *tmp_array = [[NSMutableArray alloc] initWithArray:choicesList];
-	int count = [tmp_array count];
+	
+	NSMutableArray *tmpArray = [NSMutableArray arrayWithArray:choicesList];
+	int count = [tmpArray count];
 	
 	while(count--) 
 	{
 		int key = arc4random() % (count+1);
-		
-		CGRect choiceFrame = [[tmp_array objectAtIndex:key] frame];
+//		NSLog(@"tmpArray: %@", [tmpArray description]);
+		CGRect choiceFrame = [(UIButton *)[tmpArray objectAtIndex:key] frame];
 		float btnXOrigin = self.choicesView.frame.size.width - choiceFrame.size.width;
 		
 		// Add label
 		UILabel *answerLabel = [[UILabel alloc] init];
 
 		answerLabel.font = [UIFont systemFontOfSize:40];
-		answerLabel.text = [[tmp_array objectAtIndex:key] titleLabel].text;
+		answerLabel.text = [(UIButton *)[tmpArray objectAtIndex:key] titleLabel].text;
 		
-		//NSLog(@"%d", nQuestion - count);
+//		//NSLog(@"%d", nQuestion - count);
 		switch (nQuestion - count) {
 			case 1:
 				choiceFrame.origin.x += btnXOrigin;
 				
-				[[tmp_array objectAtIndex:key] setTitle:@"A" forState:UIControlStateNormal];
+				[(UIButton *)[tmpArray objectAtIndex:key] setTitle:@"A" forState:UIControlStateNormal];
 				break;
 			case 2:
 				choiceFrame.origin.x += btnXOrigin;
 				choiceFrame.origin.y += choiceFrame.size.height + 20;
 				
-				[[tmp_array objectAtIndex:key] setTitle:@"B" forState:UIControlStateNormal];
+				[(UIButton *)[tmpArray objectAtIndex:key] setTitle:@"B" forState:UIControlStateNormal];
 				break;
 			case 3:
 				choiceFrame.origin.x += self.choicesView.frame.size.width/2 - choiceFrame.size.width;
 				
-				[[tmp_array objectAtIndex:key] setTitle:@"C" forState:UIControlStateNormal];
+				[(UIButton *)[tmpArray objectAtIndex:key] setTitle:@"C" forState:UIControlStateNormal];
 				break;
 			case 4:
 				choiceFrame.origin.x += self.choicesView.frame.size.width/2 - choiceFrame.size.width;
 				choiceFrame.origin.y += choiceFrame.size.height + 20;
 				
-				[[tmp_array objectAtIndex:key] setTitle:@"D" forState:UIControlStateNormal];
+				[(UIButton *)[tmpArray objectAtIndex:key] setTitle:@"D" forState:UIControlStateNormal];
 				break;
 			default:
 				break;
 		}
 		
-		[[tmp_array objectAtIndex:key] setFrame:choiceFrame];
+		[(UIButton *)[tmpArray objectAtIndex:key] setFrame:choiceFrame];
 		
-		[self.choicesView addSubview:[tmp_array objectAtIndex:key]];
+		[self.choicesView addSubview:(UIButton *)[tmpArray objectAtIndex:key]];
 		
 		// Add label		
 		choiceFrame.origin.x -= 10;
@@ -370,16 +382,11 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 		[self.choicesView addSubview:answerLabel];
 		[answerLabel release];
 		
-		[tmp_array removeObjectAtIndex:key];	
+		[tmpArray removeObjectAtIndex:key];	
 	}
 	
-	[tmp_array release];
 	[choicesList release];
-	[image release];
-
-	
-	// tak release sbb klu release ad EXEC_BAD_EXCESS
-	//[questions release];
+	[questions release];
 
 }
 
@@ -541,6 +548,7 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	
 	self.currentQuestionNo = 1;
 	self.totalScore = 0;
+	self.totalCorrectAnswer = 0;
 	
 	[[self.view viewWithTag:503] removeFromSuperview];
 	
