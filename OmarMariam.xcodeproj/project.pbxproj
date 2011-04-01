@@ -130,7 +130,6 @@
 		3AA88C3C12B098E400B8D932 /* v2b5cp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AA88C3512B098E400B8D932 /* v2b5cp.jpg */; };
 		3AA88C3D12B098E400B8D932 /* v2b6cp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AA88C3612B098E400B8D932 /* v2b6cp.jpg */; };
 		3AA88C3E12B098E400B8D932 /* v2b7cp.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3AA88C3712B098E400B8D932 /* v2b7cp.jpg */; };
-		3AA88EA712B09AFD00B8D932 /* Volume2 in Resources */ = {isa = PBXBuildFile; fileRef = 3AA88C4912B09AFD00B8D932 /* Volume2 */; };
 		3AB53EB212B67ABF0047F85B /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB53EB112B67ABF0047F85B /* Icon.png */; };
 		3AB7348A129079F400D51DB2 /* mariamwaqittah.png in Resources */ = {isa = PBXBuildFile; fileRef = 3AB73489129079F400D51DB2 /* mariamwaqittah.png */; };
 		3AB7348C12907A0B00D51DB2 /* mariam.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3AB7348B12907A0B00D51DB2 /* mariam.mp3 */; };
@@ -307,7 +306,6 @@
 		3AA88C3512B098E400B8D932 /* v2b5cp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = v2b5cp.jpg; sourceTree = "<group>"; };
 		3AA88C3612B098E400B8D932 /* v2b6cp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = v2b6cp.jpg; sourceTree = "<group>"; };
 		3AA88C3712B098E400B8D932 /* v2b7cp.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = v2b7cp.jpg; sourceTree = "<group>"; };
-		3AA88C4912B09AFD00B8D932 /* Volume2 */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Volume2; sourceTree = "<group>"; };
 		3AB53EB112B67ABF0047F85B /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		3AB73489129079F400D51DB2 /* mariamwaqittah.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mariamwaqittah.png; sourceTree = "<group>"; };
 		3AB7348B12907A0B00D51DB2 /* mariam.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = mariam.mp3; sourceTree = "<group>"; };
@@ -651,7 +649,6 @@
 			isa = PBXGroup;
 			children = (
 				3A3E83C5125835AE00FAB522 /* Volume1 */,
-				3AA88C4912B09AFD00B8D932 /* Volume2 */,
 				7A61728E12375F8300C7A5F4 /* Common */,
 			);
 			path = Resources;
@@ -863,7 +860,6 @@
 				3AA88C3C12B098E400B8D932 /* v2b5cp.jpg in Resources */,
 				3AA88C3D12B098E400B8D932 /* v2b6cp.jpg in Resources */,
 				3AA88C3E12B098E400B8D932 /* v2b7cp.jpg in Resources */,
-				3AA88EA712B09AFD00B8D932 /* Volume2 in Resources */,
 				3A2E981912B1FD0B002AD697 /* v1b1cp.jpg in Resources */,
 				3A2E981A12B1FD0B002AD697 /* v1b2cp.jpg in Resources */,
 				3A2E981B12B1FD0B002AD697 /* v1b3cp.jpg in Resources */,
@@ -942,7 +938,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mohd Zahiruddin (W59B5Y3ZS3)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
