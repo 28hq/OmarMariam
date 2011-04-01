@@ -47,7 +47,7 @@ float const LBMagnification = 2.0;
 
 
 // The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithBook:(int)bookNumber ofVolume:(int)bookVolume
+- (id)initWithBook:(int)aBookNumber ofVolume:(int)bookVolume
 {
     if ((self = [super initWithNibName:@"LabelViewController" bundle:nil])) {
         // Custom initialization
@@ -75,7 +75,7 @@ float const LBMagnification = 2.0;
 		[_tmpVolume release];
 
 		self.isAtLevel = 1;
-		self.bookNumber = bookVolume;
+		self.bookNumber = aBookNumber;
     }
     return self;
 }

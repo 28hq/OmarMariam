@@ -20,6 +20,7 @@
 	int isAtLevel;
 	int totalLevel;
 	int bookNumber;
+	int bookVolume;
 	
 	// IBOutlet
 	UIView *cover, *game, *end;
@@ -34,7 +35,7 @@
 @property (nonatomic, retain) NSMutableArray	*pictureViews;
 @property (nonatomic, retain) UIImage			*gameNumberImage;
 @property (nonatomic, retain) NSArray			*theData;
-@property int questionLeft, isAtLevel, totalLevel, bookNumber;
+@property int questionLeft, isAtLevel, totalLevel, bookNumber, bookVolume;
 
 // IBOutlet
 @property (nonatomic, retain) IBOutlet UIView		*cover, *game, *end;

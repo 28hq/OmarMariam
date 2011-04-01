@@ -17,7 +17,7 @@
 @synthesize theData;
 
 @synthesize labelViews, dropViews, sentenceViews;
-@synthesize questionLeft, totalLevel, isAtLevel, bookNumber;
+@synthesize questionLeft, totalLevel, isAtLevel, bookNumber, bookVolume;
 @synthesize gameNumberImage;
 
 // IBOutlet
@@ -26,13 +26,14 @@
 @synthesize wordListView, end;
 @synthesize wordListScrollView;
 
-- (id)initWithBook:(int)bookNumber ofVolume:(int)bookVolume
+- (id)initWithBook:(int)aBookNumber ofVolume:(int)aBookVolume
 {
     if ((self = [super initWithNibName:@"ClozeGameViewController" bundle:nil])) {
         // Custom initialization
-		self.bookNumber = bookVolume;
+		self.bookNumber = aBookNumber;
+		self.bookVolume = aBookVolume;
 		
-		gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", bookVolume] 
+		gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", bookNumber] 
 																				ofType:@"png"]];
 
 		

@@ -17,6 +17,7 @@
 @synthesize theData;
 @synthesize questionLeft, totalLevel, isAtLevel;
 @synthesize bookNumber;
+@synthesize bookVolume;
 
 @synthesize cover, game, end;
 @synthesize wordViews, pictureViews; // for array storing the views
@@ -26,11 +27,12 @@
 @synthesize continueButton, levelIndicator;
 
 
-- (id)initWithBook:(int)bookNumber ofVolume:(int)bookVolume
+- (id)initWithBook:(int)aBookNumber ofVolume:(int)aBookVolume
 {
 	if (self = [super init]) 
 	{
-		self.bookNumber = bookVolume;
+		self.bookNumber = aBookNumber;
+		self.bookVolume = aBookVolume;
 		
 //		NSArray *_tmpData = [[NSArray alloc] init];
 //		self.theData = _tmpData;
@@ -60,7 +62,6 @@
 	 * Set cover image based on the game number.
 	 */
 	
-	int gameNo = 1;
 	NSString *imagePath = [[NSString alloc] init];
 	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"cover%d", self.bookNumber] 
 												ofType:@"png"];
@@ -70,7 +71,7 @@
 	[image release];
 	
 	imagePath = nil;
-	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", gameNo] 
+	imagePath = [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", bookNumber] 
 												ofType:@"png"];
 	
 	image = [[UIImage alloc] initWithContentsOfFile:imagePath];
