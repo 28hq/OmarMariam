@@ -114,6 +114,9 @@
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
+	
+	[navController release];
+	[gameController release];
 }
 
 - (IBAction)openBook2:(id)sender
@@ -127,6 +130,9 @@
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
+	
+	[navController release];
+	[gameController release];
 }
 
 - (IBAction)openBook3:(id)sender
@@ -140,6 +146,8 @@
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
+	
+	[gameController release];
 }
 
 - (IBAction)openBook4:(id)sender
@@ -153,6 +161,9 @@
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
+	
+	[navController release];
+	[gameController release];
 }
 
 - (IBAction)openBook5:(id)sender
@@ -166,6 +177,8 @@
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
+	
+	[gameController release];
 }
 
 - (IBAction)openBook6:(id)sender
@@ -179,6 +192,9 @@
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
+	
+	[navController release];
+	[gameController release];
 }
 
 - (IBAction)openBook7:(id)sender
@@ -192,6 +208,9 @@
 	
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
+	
+	[navController release];
+	[gameController release];
 }
 
 @end
