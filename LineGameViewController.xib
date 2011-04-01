@@ -3,16 +3,16 @@
 	<data>
 		<int key="IBDocument.SystemTarget">800</int>
 		<string key="IBDocument.SystemVersion">10F569</string>
-		<string key="IBDocument.InterfaceBuilderVersion">788</string>
+		<string key="IBDocument.InterfaceBuilderVersion">823</string>
 		<string key="IBDocument.AppKitVersion">1038.29</string>
 		<string key="IBDocument.HIToolboxVersion">461.00</string>
 		<object class="NSMutableDictionary" key="IBDocument.PluginVersions">
 			<string key="NS.key.0">com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
-			<string key="NS.object.0">117</string>
+			<string key="NS.object.0">132</string>
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
-			<integer value="2"/>
+			<integer value="7"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -38,7 +38,7 @@
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUIView" id="321767186">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">292</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -47,6 +47,7 @@
 						<int key="NSvFlags">274</int>
 						<string key="NSFrame">{{-10, -16}, {1024, 800}}</string>
 						<reference key="NSSuperview" ref="321767186"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 						<object class="NSCustomResource" key="IBUIImage">
@@ -56,6 +57,8 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{1004, 768}</string>
+				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<object class="NSColor" key="IBUIBackgroundColor">
 					<int key="NSColorSpace">3</int>
 					<bytes key="NSWhite">MQA</bytes>
@@ -268,6 +271,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{392, 12}, {240, 65}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -281,6 +285,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{620, 104}, {384, 471}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
 						<object class="NSColor" key="IBUIBackgroundColor" id="1010976544">
 							<int key="NSColorSpace">3</int>
 							<bytes key="NSWhite">MQA</bytes>
@@ -293,6 +298,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 104}, {384, 471}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
 						<reference key="IBUIBackgroundColor" ref="1010976544"/>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
@@ -301,6 +307,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{481, 666}, {523, 62}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
 						<reference key="IBUIBackgroundColor" ref="1010976544"/>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 					</object>
@@ -309,6 +316,7 @@
 						<int key="NSvFlags">292</int>
 						<string key="NSFrame">{{20, 666}, {66, 62}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIUserInteractionEnabled">NO</bool>
 						<string key="targetRuntimeIdentifier">IBIPadFramework</string>
@@ -323,6 +331,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{56, 11}, {171, 21}}</string>
 								<reference key="NSSuperview" ref="118229649"/>
+								<reference key="NSWindow"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<bool key="IBUIClipsSubviews">YES</bool>
 								<int key="IBUIContentMode">7</int>
@@ -339,6 +348,7 @@
 								<int key="NSvFlags">292</int>
 								<string key="NSFrame">{{81, 34}, {120, 35}}</string>
 								<reference key="NSSuperview" ref="118229649"/>
+								<reference key="NSWindow"/>
 								<bool key="IBUIOpaque">NO</bool>
 								<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 								<int key="IBUIContentHorizontalAlignment">0</int>
@@ -356,6 +366,7 @@
 						</object>
 						<string key="NSFrame">{{370, 499}, {283, 76}}</string>
 						<reference key="NSSuperview" ref="766721923"/>
+						<reference key="NSWindow"/>
 						<object class="NSColor" key="IBUIBackgroundColor">
 							<int key="NSColorSpace">2</int>
 							<bytes key="NSRGB">MC45NzY0NzA2NDkyIDEgMC4yMzkyMTU3MDE4AA</bytes>
@@ -365,6 +376,7 @@
 				</object>
 				<string key="NSFrameSize">{1024, 748}</string>
 				<reference key="NSSuperview"/>
+				<reference key="NSWindow"/>
 				<reference key="IBUIBackgroundColor" ref="1010976544"/>
 				<int key="IBUITag">502</int>
 				<object class="IBUISimulatedStatusBarMetrics" key="IBUISimulatedStatusBarMetrics">
@@ -376,7 +388,7 @@
 				<string key="targetRuntimeIdentifier">IBIPadFramework</string>
 			</object>
 			<object class="IBUIView" id="268895855">
-				<nil key="NSNextResponder"/>
+				<reference key="NSNextResponder"/>
 				<int key="NSvFlags">-2147483356</int>
 				<object class="NSMutableArray" key="NSSubviews">
 					<bool key="EncodedWithXMLCoder">YES</bool>
@@ -464,7 +476,7 @@
 						<int key="IBUIContentVerticalAlignment">0</int>
 						<reference key="IBUIFont" ref="880334110"/>
 						<int key="IBUIButtonType">1</int>
-						<string key="IBUINormalTitle">Continue</string>
+						<string key="IBUINormalTitle">PLAY AGAIN</string>
 						<reference key="IBUIHighlightedTitleColor" ref="517206040"/>
 						<object class="NSColor" key="IBUINormalTitleColor">
 							<int key="NSColorSpace">1</int>
@@ -474,6 +486,7 @@
 					</object>
 				</object>
 				<string key="NSFrameSize">{1024, 768}</string>
+				<reference key="NSSuperview"/>
 				<reference key="IBUIBackgroundColor" ref="1070227396"/>
 				<int key="IBUITag">503</int>
 				<object class="IBUISimulatedOrientationMetrics" key="IBUISimulatedOrientationMetrics">
@@ -918,7 +931,7 @@
 					<string>{{55, 0}, {1039, 756}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>LBView</string>
-					<string>{{55, 0}, {1019, 756}}</string>
+					<string>{{55, 0}, {1039, 756}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 				</object>
 			</object>
@@ -1390,6 +1403,6 @@
 				<string>{288, 96}</string>
 			</object>
 		</object>
-		<string key="IBCocoaTouchPluginVersion">117</string>
+		<string key="IBCocoaTouchPluginVersion">132</string>
 	</data>
 </archive>
