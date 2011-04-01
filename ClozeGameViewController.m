@@ -492,6 +492,21 @@
 	[self.continueButton addTarget:self 
 							action:@selector(continueToNextLevel) 
 				  forControlEvents:UIControlEventTouchUpInside];
+
+	[self playCompletedLevel];
+}
+
+- (void)playCompletedLevel {
+	
+	NSString *pathToMusicFile = [[NSBundle mainBundle] pathForResource:@"cheer" ofType:@"mp3"];//nDirectory:[NSString stringWithFormat:@"Volume%d/iBooks/iBook%d", bookVolume, bookNumber]];
+	
+	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:pathToMusicFile];
+	
+	if (fileExists) {
+		
+		AVAudioPlayer *soundPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathToMusicFile] error:NULL];
+		[soundPlay play];
+	}
 }
 
 - (void)continueToNextLevel {
@@ -500,6 +515,8 @@
 	
 	self.continueButtonView.hidden = YES;
 }
+
+
 
 - (void)toBookMenu 
 {

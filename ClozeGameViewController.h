@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface ClozeGameViewController : UIViewController <UIScrollViewDelegate> {
@@ -48,6 +49,7 @@
 - (void)levelSelector:(int)level;
 - (void)createLevelIndicator;
 - (void)toBookMenu;
+- (void)playCompletedLevel;
 
 - (IBAction)playAgainButton:(id)sender;
 
