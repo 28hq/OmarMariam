@@ -197,7 +197,8 @@ CGFloat distance(CGPoint a, CGPoint b);
 	UITouch *touch = [event.allTouches anyObject];
 	
 	CGPoint touchPoint = [touch locationInView:self];
-	dragged = distance(touchPoint, startTouchPoint);
+	// 10 is drag threshold.
+	dragged = distance(touchPoint, startTouchPoint) > 100;
 
 	if (self.objectTouched == @"picture" && dragged) 
 	{
@@ -269,6 +270,7 @@ CGFloat distance(CGPoint a, CGPoint b);
 	
 	if (dragged && start) 
 	{
+		NSLog(@"Dragged");
 		if (self.correct) {
 			[correctSound play];
 		}
