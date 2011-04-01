@@ -94,7 +94,7 @@
 		3A94468E1280E5CD00590EFA /* dukkan.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446721280E5CD00590EFA /* dukkan.mp3 */; };
 		3A94468F1280E5CD00590EFA /* ghurfatunnaum.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446731280E5CD00590EFA /* ghurfatunnaum.mp3 */; };
 		3A9446901280E5CD00590EFA /* hadiqah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446741280E5CD00590EFA /* hadiqah.mp3 */; };
-		3A9446911280E5CD00590EFA /* halwa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446751280E5CD00590EFA /* halwa.mp3 */; };
+		3A9446911280E5CD00590EFA /* halwaa.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446751280E5CD00590EFA /* halwaa.mp3 */; };
 		3A9446921280E5CD00590EFA /* haqibah.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446761280E5CD00590EFA /* haqibah.mp3 */; };
 		3A9446931280E5CD00590EFA /* hiza.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446771280E5CD00590EFA /* hiza.mp3 */; };
 		3A9446941280E5CD00590EFA /* kaek.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 3A9446781280E5CD00590EFA /* kaek.mp3 */; };
@@ -268,7 +268,7 @@
 		3A9446721280E5CD00590EFA /* dukkan.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = dukkan.mp3; sourceTree = "<group>"; };
 		3A9446731280E5CD00590EFA /* ghurfatunnaum.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = ghurfatunnaum.mp3; sourceTree = "<group>"; };
 		3A9446741280E5CD00590EFA /* hadiqah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hadiqah.mp3; sourceTree = "<group>"; };
-		3A9446751280E5CD00590EFA /* halwa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = halwa.mp3; sourceTree = "<group>"; };
+		3A9446751280E5CD00590EFA /* halwaa.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = halwaa.mp3; sourceTree = "<group>"; };
 		3A9446761280E5CD00590EFA /* haqibah.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = haqibah.mp3; sourceTree = "<group>"; };
 		3A9446771280E5CD00590EFA /* hiza.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hiza.mp3; sourceTree = "<group>"; };
 		3A9446781280E5CD00590EFA /* kaek.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = kaek.mp3; sourceTree = "<group>"; };
@@ -541,7 +541,7 @@
 				3A9446721280E5CD00590EFA /* dukkan.mp3 */,
 				3A9446731280E5CD00590EFA /* ghurfatunnaum.mp3 */,
 				3A9446741280E5CD00590EFA /* hadiqah.mp3 */,
-				3A9446751280E5CD00590EFA /* halwa.mp3 */,
+				3A9446751280E5CD00590EFA /* halwaa.mp3 */,
 				3A9446761280E5CD00590EFA /* haqibah.mp3 */,
 				3A9446771280E5CD00590EFA /* hiza.mp3 */,
 				3A9446781280E5CD00590EFA /* kaek.mp3 */,
@@ -817,7 +817,7 @@
 				3A94468E1280E5CD00590EFA /* dukkan.mp3 in Resources */,
 				3A94468F1280E5CD00590EFA /* ghurfatunnaum.mp3 in Resources */,
 				3A9446901280E5CD00590EFA /* hadiqah.mp3 in Resources */,
-				3A9446911280E5CD00590EFA /* halwa.mp3 in Resources */,
+				3A9446911280E5CD00590EFA /* halwaa.mp3 in Resources */,
 				3A9446921280E5CD00590EFA /* haqibah.mp3 in Resources */,
 				3A9446931280E5CD00590EFA /* hiza.mp3 in Resources */,
 				3A9446941280E5CD00590EFA /* kaek.mp3 in Resources */,
