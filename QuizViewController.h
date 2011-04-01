@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 
 
 @interface QuizViewController : UIViewController {
@@ -15,6 +16,9 @@
 	int currentQuestionNo;
 	int totalScore;
 	int totalCorrectAnswer;
+	
+	AVAudioPlayer *correctSound;
+	AVAudioPlayer *incorrectSound;
 	
 	NSMutableDictionary *theData;
 	UIImage				*gameNumberImage;
@@ -74,6 +78,7 @@
 - (void)nextQuestion;
 - (void)cleanUp;
 - (void)toBookMenu;
+- (void)initSounds;
 
 // IBAction
 - (IBAction)startGame:(id)sender;

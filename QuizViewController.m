@@ -44,9 +44,30 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 		self.gameNumberImage = [[UIImage alloc] initWithContentsOfFile:[[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"%d", bookVolume] 
 																								  ofType:@"png"]];
     }
+	[self initSounds];
+	
     return self;
 }
 
+- (void)initSounds {
+	
+	NSString *pathToSound = [[NSBundle mainBundle] pathForResource:@"correct" ofType:@"mp3"];
+	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:pathToSound];
+	
+	if (fileExists) {
+		correctSound = [[AVAudioPlayer alloc] initWithContentsOfURL:
+						[NSURL fileURLWithPath:pathToSound] error:NULL];
+		[correctSound prepareToPlay];
+	}
+	
+	pathToSound = [[NSBundle mainBundle] pathForResource:@"incorrect" ofType:@"mp3"];
+	fileExists = [[NSFileManager defaultManager] fileExistsAtPath:pathToSound];
+	
+	if (fileExists) {
+		incorrectSound = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathToSound] error:NULL];
+		[incorrectSound prepareToPlay];
+	}
+}
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
@@ -364,6 +385,12 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	
 	if ([self.countdownTimer isValid]) 
 	{
+		/*
+		 * Play Correct/Incorrect Sound.
+		 */
+		
+		[correctSound play];
+		
 		[self.countdownTimer invalidate];
 		
 		self.totalCorrectAnswer += 1;
@@ -397,6 +424,8 @@ finalTotalWrongAnswers, finalPercentage, finalPercentageRequiredToPass;
 	
 	if ([self.countdownTimer isValid]) 
 	{
+		[incorrectSound play];
+		
 		[self.countdownTimer invalidate];
 		
 		// clear all subviews added.
