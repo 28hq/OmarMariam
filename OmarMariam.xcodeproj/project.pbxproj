@@ -166,6 +166,7 @@
 		7AD056B01234805400C2EC84 /* LeavesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD056A91234805400C2EC84 /* LeavesView.m */; };
 		7AD056B11234805400C2EC84 /* LeavesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD056AB1234805400C2EC84 /* LeavesViewController.m */; };
 		7AD056B21234805400C2EC84 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7AD056AE1234805400C2EC84 /* Utilities.m */; };
+		DCD8D2A81350B43E00337283 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = DCD8D2A71350B43E00337283 /* icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -350,6 +351,7 @@
 		7AD056AD1234805400C2EC84 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		7AD056AE1234805400C2EC84 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* OmarMariam-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OmarMariam-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		DCD8D2A71350B43E00337283 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -403,6 +405,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				DCD8D2A71350B43E00337283 /* icon.png */,
 				7AD05BFA1234DC3F00C2EC84 /* Resources */,
 				7AD056A41234805400C2EC84 /* Classes */,
 				2860E386111B897F00E27156 /* iPhone */,
@@ -871,6 +874,7 @@
 				3AB53EB212B67ABF0047F85B /* Icon.png in Resources */,
 				3A7E5DC01342D22800ADD973 /* correct.mp3 in Resources */,
 				3A7E6228134439C500ADD973 /* flip.mp3 in Resources */,
+				DCD8D2A81350B43E00337283 /* icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -911,6 +915,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brainstorm Technologies Sdn Bhd";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -925,11 +930,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brainstorm Technologies Sdn Bhd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brainstorm Technologies Sdn Bhd";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = OmarMariam_Prefix.pch;
 				INFOPLIST_FILE = "OmarMariam-Info.plist";
 				PRODUCT_NAME = OmarMariam;
+				PROVISIONING_PROFILE = "B9CB6397-5F91-466D-A16A-EA6DB216824A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B9CB6397-5F91-466D-A16A-EA6DB216824A";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -938,14 +947,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Mohd Zahiruddin (W59B5Y3ZS3)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brainstorm Technologies Sdn Bhd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brainstorm Technologies Sdn Bhd";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				PREBINDING = NO;
 				SDKROOT = iphonesimulator3.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -953,15 +963,18 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: Brainstorm Technologies Sdn Bhd";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Brainstorm Technologies Sdn Bhd";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 3.2;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				PREBINDING = NO;
+				PROVISIONING_PROFILE = "B9CB6397-5F91-466D-A16A-EA6DB216824A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B9CB6397-5F91-466D-A16A-EA6DB216824A";
 				SDKROOT = iphoneos4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};

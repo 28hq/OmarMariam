@@ -10,6 +10,10 @@
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
 	<string>Icon.png</string>
+	<key>CFBundleIconFiles</key>
+	<array>
+		<string>icon.png</string>
+	</array>
 	<key>CFBundleIdentifier</key>
 	<string>pro.brainstorm.OmarMariam</string>
 	<key>CFBundleInfoDictionaryVersion</key>
