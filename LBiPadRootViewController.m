@@ -89,13 +89,6 @@
 
 - (void)dealloc 
 {
-	[btnBook1 release];
-	[btnBook2 release];
-	[btnBook3 release];
-	[btnBook4 release];
-	[btnBook5 release];
-	[btnBook6 release];
-	[btnBook7 release];
 	[nvcBook1 release];
     [super dealloc];
 }
@@ -112,10 +105,9 @@
 	gameController.bookNumber = 1;
 	gameController.bookVolume = [sender tag];
 	
-	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
+	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];	
 	[self presentModalViewController:navController animated:YES];
 	
-	[navController release];
 	[gameController release];
 }
 
@@ -131,9 +123,7 @@
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
 	
-	[navController release];
-	[gameController release];
-}
+	[gameController release];}
 
 - (IBAction)openBook3:(id)sender
 {
@@ -162,7 +152,6 @@
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
 	
-	[navController release];
 	[gameController release];
 }
 
@@ -193,7 +182,6 @@
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
 	
-	[navController release];
 	[gameController release];
 }
 
@@ -209,7 +197,6 @@
 	UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:gameController];
 	[self presentModalViewController:navController animated:YES];
 	
-	[navController release];
 	[gameController release];
 }
 
