@@ -163,12 +163,12 @@
 	BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:pathToMusicFile];
 	
 	if (fileExists) {
-		btnPlay.hidden = NO;
+		leftPlayButton.hidden = NO;
 		
-		[self clearPlayButtonAttributesForButton:btnPlay];
+		[self clearPlayButtonAttributesForButton:leftPlayButton];
 		
-		[btnPlay addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchDown];
-		
+		[leftPlayButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchDown];
+				
 		soundPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathToMusicFile] error:NULL];
 		soundPlay.delegate = self;
 		[soundPlay prepareToPlay];
@@ -179,15 +179,18 @@
 														  ofType:@"mp3" 
 													 inDirectory:[NSString stringWithFormat:@"Volume%d/iBooks/iBook%d", bookVolume, bookNumber]];
 		
+		btnPlay.hidden = NO;
+		
+		[self clearPlayButtonAttributesForButton:btnPlay];
+		
+		[btnPlay addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchDown];
+
+		
 		BOOL file2Exists = [[NSFileManager defaultManager] fileExistsAtPath:pathToMusicFile];
 		
 		if (file2Exists) {
 
-			leftPlayButton.hidden = NO;
-			
-			[self clearPlayButtonAttributesForButton:leftPlayButton];
-			
-			[leftPlayButton addTarget:self action:@selector(playSound:) forControlEvents:UIControlEventTouchDown];
+
 			
 			soundPlay = [[AVAudioPlayer alloc] initWithContentsOfURL:[NSURL fileURLWithPath:pathToMusicFile] error:NULL];
 			soundPlay.delegate = self;
